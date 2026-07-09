@@ -1,0 +1,150 @@
+baseURL: https://volunteertransportationcenter.org/
+locale: en-US
+title: Volunteer Transportation Center
+enableRobotsTXT: true
+summaryLength: 30
+timeZone: America/New_York
+disableKinds:
+  - taxonomy
+  - term
+
+# Site-wide facts (contact info, stats, links, mission) live in data/site.yaml.
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+build:
+  buildStats:
+    enable: true
+  cachebusters:
+    - source: assets/notwatching/hugo_stats\.json
+      target: css
+    - source: (postcss|tailwind)\.config\.js
+      target: css
+
+module:
+  mounts:
+    - source: assets
+      target: assets
+    - source: hugo_stats.json
+      target: assets/notwatching/hugo_stats.json
+      disableWatch: true
+
+menu:
+  main:
+    - identifier: about
+      name: About
+      url: /about-us/
+      weight: 10
+    - identifier: about-us
+      name: Who We Are
+      url: /about-us/
+      parent: about
+      weight: 11
+    - identifier: board
+      name: Boards of Directors
+      url: /board-of-directors/
+      parent: about
+      weight: 12
+    - identifier: scrapbook
+      name: Scrapbook
+      url: /scrapbook/
+      parent: about
+      weight: 13
+    - identifier: compliance
+      name: Corporate Compliance
+      url: /corporate-compliance/
+      parent: about
+      weight: 14
+    - identifier: clients
+      name: Get a Ride
+      url: /clients/
+      weight: 20
+    - identifier: volunteer
+      name: Volunteer
+      url: /volunteers/
+      weight: 30
+    - identifier: volunteer-overview
+      name: Become a Volunteer
+      url: /volunteers/
+      parent: volunteer
+      weight: 31
+    - identifier: jefferson
+      name: Jefferson County
+      url: /jefferson-county/
+      parent: volunteer
+      weight: 32
+    - identifier: lewis
+      name: Lewis County
+      url: /lewis-county/
+      parent: volunteer
+      weight: 33
+    - identifier: st-lawrence
+      name: St. Lawrence County
+      url: /st-lawrence-county/
+      parent: volunteer
+      weight: 34
+    - identifier: genesee
+      name: Genesee County
+      url: /genesee-county/
+      parent: volunteer
+      weight: 35
+    - identifier: oswego
+      name: Oswego County
+      url: /oswego-county/
+      parent: volunteer
+      weight: 36
+    - identifier: madison
+      name: Madison County
+      url: /madison-county/
+      parent: volunteer
+      weight: 37
+    - identifier: erie
+      name: Western New York (VTWNY)
+      url: /erie-county/
+      parent: volunteer
+      weight: 38
+    - identifier: events
+      name: Events
+      url: /events/
+      weight: 40
+    - identifier: forms
+      name: Forms
+      url: /forms/
+      weight: 50
+    - identifier: faq
+      name: FAQ
+      url: /faq/
+      weight: 60
+    - identifier: foundation
+      name: Foundation
+      url: /foundation/
+      weight: 70
+    - identifier: contact
+      name: Contact
+      url: /contact-us/
+      weight: 80
+  footer:
+    - name: Get a Ride
+      url: /clients/
+      weight: 1
+    - name: Volunteer
+      url: /volunteers/
+      weight: 2
+    - name: Donate
+      url: /donate/
+      weight: 3
+    - name: Events
+      url: /events/
+      weight: 4
+    - name: Forms
+      url: /forms/
+      weight: 5
+    - name: FAQ
+      url: /faq/
+      weight: 6
+    - name: Contact Us
+      url: /contact-us/
+      weight: 7

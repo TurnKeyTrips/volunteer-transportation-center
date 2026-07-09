@@ -1,0 +1,18 @@
+{
+  "name": "volunteer-transportation-center",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hugo + Tailwind CSS + Alpine.js site for the Volunteer Transportation Center",
+  "scripts": {
+    "dev": "hugo server --disableFastRender",
+    "build": "hugo --gc --minify",
+    "clean": "rm -rf public resources/_gen hugo_stats.json .hugo_build.lock"
+  },
+  "devDependencies": {
+    "@alpinejs/collapse": "^3.14.9",
+    "@tailwindcss/cli": "^4.1.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "alpinejs": "^3.14.9",
+    "tailwindcss": "^4.1.0"
+  }
+}
