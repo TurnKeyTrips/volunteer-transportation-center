@@ -1,0 +1,28 @@
+{{- /*
+  Person avatar: rounded-square photo with two offset-rotated colored squares
+  behind it. The second image cross-fades in on hover (needs a `group` class on
+  an ancestor); on hover the backing squares also tilt a little further.
+  Usage: partial "person-avatar.html" (dict "person" . "class" "size-14" "variant" $i)
+  "variant" cycles a hue shift so placeholder people get different color combos —
+  it is only applied when the person has no real photo.
+  Photos come from .person.photo / .person.photo2, falling back to the
+  hand-drawn placeholders in static/images/people/.
+*/ -}}
+{{- $person := .person -}}
+{{- $class := .class | default "size-12" -}}
+{{- $variant := .variant | default 0 -}}
+{{- $photo := $person.photo | default "/images/people/placeholder-1.svg" -}}
+{{- $photo2 := $person.photo2 | default "/images/people/placeholder-2.svg" -}}
+{{- $hues := slice "" "hue-rotate-60" "hue-rotate-[150deg]" "hue-rotate-[230deg]" "hue-rotate-[310deg]" -}}
+{{- $hue := "" -}}
+{{- if not $person.photo -}}{{ $hue = index $hues (mod $variant (len $hues)) }}{{- end -}}
+<span class="relative {{ $class }} shrink-0 {{ $hue }}">
+  <span class="absolute inset-[2%] -translate-x-[5%] -translate-y-[4%] -rotate-6 rounded-[15%] bg-teal-800 transition-transform duration-300 group-hover:-translate-x-[9%] group-hover:-translate-y-[7%] group-hover:-rotate-[14deg]" aria-hidden="true"></span>
+  <span class="absolute inset-[2%] translate-x-[5%] translate-y-[4%] rotate-3 rounded-[15%] bg-amber-200 transition-transform duration-300 group-hover:translate-x-[9%] group-hover:translate-y-[7%] group-hover:rotate-[11deg]" aria-hidden="true"></span>
+  <span class="absolute inset-0 overflow-hidden rounded-[13%]">
+    <img src="{{ $photo | relURL }}" alt="{{ $person.name }}" loading="lazy"
+      class="absolute inset-0 size-full object-cover">
+    <img src="{{ $photo2 | relURL }}" alt="" loading="lazy" aria-hidden="true"
+      class="absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+  </span>
+</span>

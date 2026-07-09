@@ -1,0 +1,19 @@
+{{- /* Grid of links to the county volunteer-program pages. */ -}}
+{{ $counties := slice
+  (dict "name" "Jefferson County" "url" "/jefferson-county/")
+  (dict "name" "Lewis County" "url" "/lewis-county/")
+  (dict "name" "St. Lawrence County" "url" "/st-lawrence-county/")
+  (dict "name" "Genesee County" "url" "/genesee-county/")
+  (dict "name" "Oswego County" "url" "/oswego-county/")
+  (dict "name" "Madison County" "url" "/madison-county/")
+  (dict "name" "Western NY (VTWNY)" "url" "/erie-county/")
+}}
+<div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+  {{ range $counties }}
+    <a href="{{ .url }}"
+      class="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm hover:border-brand-300 hover:text-brand-700">
+      {{ partial "icon.html" (dict "name" "map-pin" "class" "size-4 shrink-0 text-brand-500") }}
+      {{ .name }}
+    </a>
+  {{ end }}
+</div>

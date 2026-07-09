@@ -1,0 +1,84 @@
+{{ define "main" }}
+{{ $site := hugo.Data.site }}
+{{ partial "page-header.html" (dict "title" .Title "subtitle" "Your car. Your schedule. A neighbor's independence.") }}
+
+<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+
+  {{/* Intro + apply card */}}
+  <div class="grid items-start gap-10 lg:grid-cols-3">
+    <div class="prose prose-slate max-w-none prose-headings:tracking-tight prose-a:font-medium prose-a:text-brand-700 hover:prose-a:text-brand-500 lg:col-span-2">
+      {{ .Content }}
+    </div>
+    <aside class="rounded-2xl bg-brand-800 p-6 text-white">
+      <h2 class="text-lg font-bold">Ready to roll?</h2>
+      <p class="mt-2 text-sm leading-relaxed text-brand-100">
+        The application takes just a few minutes. We'll walk you through the rest: training,
+        paperwork, and your first trip.
+      </p>
+      <a href="{{ $site.links.volunteer_apply }}" target="_blank" rel="noopener" data-confetti
+        class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 px-5 py-3 text-sm font-semibold text-white hover:bg-accent-600">
+        Apply to Volunteer
+        {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
+      </a>
+      <p class="mt-4 text-center text-sm text-brand-100">
+        Prefer to talk first? Call <a href="tel:{{ $site.org.phone | replaceRE `[^0-9]` `` }}" class="font-semibold text-white hover:underline">{{ $site.org.phone }}</a>
+      </p>
+    </aside>
+  </div>
+
+  {{/* Why volunteers love it */}}
+  <h2 class="mt-14 text-2xl font-bold tracking-tight text-slate-900">Why Our Volunteers Love the Ride</h2>
+  <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div class="mb-3 inline-flex rounded-xl bg-brand-100 p-2.5 text-brand-700">
+        {{ partial "icon.html" (dict "name" "calendar" "class" "size-6") }}
+      </div>
+      <h3 class="font-bold text-slate-900">You set the schedule</h3>
+      <p class="mt-2 text-sm leading-relaxed text-slate-600">Drive when it works for you, a trip a week or a trip a day. There's no minimum and no pressure.</p>
+    </div>
+    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div class="mb-3 inline-flex rounded-xl bg-brand-100 p-2.5 text-brand-700">
+        {{ partial "icon.html" (dict "name" "truck" "class" "size-6") }}
+      </div>
+      <h3 class="font-bold text-slate-900">Your own car, reimbursed</h3>
+      <p class="mt-2 text-sm leading-relaxed text-slate-600">Drive the vehicle you already know, and get reimbursed up to {{ $site.volunteer.mileage_rate }} per mile for every trip you complete.</p>
+    </div>
+    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div class="mb-3 inline-flex rounded-xl bg-brand-100 p-2.5 text-brand-700">
+        {{ partial "icon.html" (dict "name" "users" "class" "size-6") }}
+      </div>
+      <h3 class="font-bold text-slate-900">Real neighbors, real thanks</h3>
+      <p class="mt-2 text-sm leading-relaxed text-slate-600">You're the reason someone makes it to dialysis, the dentist, or the grocery store. Every trip matters to someone.</p>
+    </div>
+    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div class="mb-3 inline-flex rounded-xl bg-accent-100 p-2.5 text-accent-600">
+        {{ partial "icon.html" (dict "name" "heart" "class" "size-6") }}
+      </div>
+      <h3 class="font-bold text-slate-900">Good company</h3>
+      <p class="mt-2 text-sm leading-relaxed text-slate-600">Join hundreds of drivers across New York who've discovered the best seat in volunteering is the driver's seat.</p>
+    </div>
+  </div>
+
+  {{/* Impact stats */}}
+  <div class="mt-14 rounded-2xl bg-brand-50 px-6 py-10">
+    <p class="text-center text-sm font-semibold uppercase tracking-wider text-brand-600">{{ $site.volunteer.impact_intro }}</p>
+    <div class="mx-auto mt-6 grid max-w-3xl grid-cols-1 gap-8 text-center sm:grid-cols-3">
+      {{ range $site.volunteer.impact }}
+      <div>
+        <p class="text-4xl font-extrabold text-brand-800">{{ .value }}</p>
+        <p class="mt-1 text-sm font-medium text-slate-600">{{ .label }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+
+  {{/* County programs */}}
+  <h2 class="mt-14 text-2xl font-bold tracking-tight text-slate-900">Volunteer Where You Live</h2>
+  <p class="mt-2 max-w-2xl text-sm text-slate-600">
+    Each county program has its own coordinator and community. Pick yours to learn more and meet the team.
+  </p>
+  <div class="mt-6">
+    {{ partial "county-grid.html" . }}
+  </div>
+</div>
+{{ end }}

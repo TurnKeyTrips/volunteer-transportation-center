@@ -1,0 +1,8 @@
+{{ define "main" }}
+{{ partial "page-header.html" (dict "title" .Title "subtitle" .Params.subtitle) }}
+<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+  <div class="prose prose-slate max-w-none prose-headings:tracking-tight prose-a:font-medium prose-a:text-brand-700 hover:prose-a:text-brand-500 prose-img:rounded-lg">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

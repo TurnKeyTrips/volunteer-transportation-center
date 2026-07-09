@@ -1,0 +1,92 @@
+{{ define "main" }}
+{{ partial "page-header.html" (dict "title" .Title "subtitle" "Neighbors helping neighbors across Northern New York since 1991.") }}
+
+<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+
+  {{/* Intro and sidebar */}}
+  <div class="grid items-start gap-10 lg:grid-cols-3">
+    <div class="lg:col-span-2">
+      <div class="prose prose-slate max-w-none prose-headings:tracking-tight prose-a:font-medium prose-a:text-brand-700 hover:prose-a:text-brand-500 prose-img:rounded-lg">
+        {{ .Content }}
+      </div>
+
+      {{/* At a glance — balances the sidebar height */}}
+      {{ $site := hugo.Data.site }}
+      <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div class="rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-sm">
+          <p class="text-2xl font-extrabold text-brand-800">{{ $site.org.founded }}</p>
+          <p class="mt-1 text-xs font-medium text-slate-600">Year founded</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-sm">
+          <p class="text-2xl font-extrabold text-brand-800">7</p>
+          <p class="mt-1 text-xs font-medium text-slate-600">County programs</p>
+        </div>
+        {{ range after 1 $site.stats }}
+        <div class="rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-sm">
+          <p class="text-2xl font-extrabold text-brand-800">{{ .value }}</p>
+          <p class="mt-1 text-xs font-medium text-slate-600">{{ .label }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+    <aside class="space-y-6">
+      <div class="rounded-2xl bg-brand-800 p-6 text-white">
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-accent-300">Our Mission</h2>
+        <p class="mt-3 text-sm leading-relaxed">{{ hugo.Data.site.mission }}</p>
+      </div>
+      <div class="rounded-2xl border border-slate-200 p-6">
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-500">Learn More</h2>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="https://www.youtube.com/embed/bXn1eE3vekY" target="_blank" rel="noopener" class="font-medium text-brand-700 hover:underline">Watch our story on YouTube →</a></li>
+          <li><a href="/board-of-directors/" class="font-medium text-brand-700 hover:underline">Meet our Boards of Directors →</a></li>
+          <li><a href="/scrapbook/" class="font-medium text-brand-700 hover:underline">Browse the scrapbook →</a></li>
+          <li><a href="{{ hugo.Data.site.social.facebook }}" target="_blank" rel="noopener" class="font-medium text-brand-700 hover:underline">Follow us on Facebook for annual events →</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  {{ with hugo.Data.people }}
+  {{/* Leadership */}}
+  <h2 class="mt-16 text-2xl font-bold tracking-tight text-slate-900">Leadership</h2>
+  <div class="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-2">
+    {{ range $i, $p := .leadership }}
+      <div class="group flex items-start gap-5">
+        {{ partial "person-avatar.html" (dict "person" $p "class" "size-28" "variant" $i) }}
+        <div class="min-w-0 flex-1 pt-1">
+          <p class="font-semibold text-slate-900">{{ $p.name }}</p>
+          <p class="mt-0.5 text-sm font-medium text-brand-700">{{ $p.title }}</p>
+          <p class="mt-2 text-sm italic text-slate-400">{{ $p.blurb | default "A quick hello about me is on its way." }}</p>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+
+  {{/* Regional teams */}}
+  <h2 class="mt-16 text-2xl font-bold tracking-tight text-slate-900">Our Team</h2>
+  <div class="mt-6 flex flex-col gap-6">
+    {{ range $t, $team := .teams }}
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h3 class="flex items-center gap-2 text-base font-bold text-brand-800">
+          {{ partial "icon.html" (dict "name" "users" "class" "size-5 text-brand-500") }}
+          {{ $team.name }}
+        </h3>
+        <div class="mt-6 grid gap-x-8 gap-y-7 sm:grid-cols-2">
+          {{ range $i, $p := $team.members }}
+            <div class="group flex items-start gap-4">
+              {{ partial "person-avatar.html" (dict "person" $p "class" "size-24" "variant" (add $i $t)) }}
+              <div class="min-w-0 flex-1 pt-1">
+                <p class="text-sm font-semibold text-slate-900">{{ $p.name }}</p>
+                <p class="mt-0.5 text-sm font-medium text-brand-700">{{ $p.title }}</p>
+                <p class="mt-1.5 text-sm italic text-slate-400">{{ $p.blurb | default "A quick hello about me is on its way." }}</p>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}

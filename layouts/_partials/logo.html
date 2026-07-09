@@ -1,0 +1,11 @@
+{{- /*
+  VTC logo — the carriage mark (static/images/logo-car.png) in a circular badge.
+  Usage: partial "logo.html" (dict "class" "size-10")
+  Optional "src" overrides the image (defaults to the 96px copy; pass
+  "/images/logo-car.png" for the full-size 225px original where it renders large).
+*/ -}}
+{{- $class := .class | default "size-10" -}}
+{{- $src := .src | default "/images/logo-car-96.png" -}}
+<span class="inline-flex {{ $class }} shrink-0 items-center justify-center overflow-hidden rounded-full bg-white ring-1 ring-slate-200">
+  <img src="{{ $src | relURL }}" alt="Volunteer Transportation Center logo" class="size-full object-cover" loading="lazy">
+</span>

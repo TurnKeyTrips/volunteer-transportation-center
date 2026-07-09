@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="mx-auto flex max-w-3xl flex-col items-center px-4 py-24 text-center sm:px-6">
+  {{ partial "logo.html" (dict "class" "size-20" "src" "/images/logo-car.png") }}
+  <h1 class="mt-8 text-4xl font-extrabold tracking-tight text-brand-900">Page not found</h1>
+  <p class="mt-4 max-w-md text-slate-600">
+    Sorry, we couldn't find that page. It may have moved when we rebuilt the site.
+  </p>
+  <div class="mt-8 flex flex-wrap justify-center gap-4">
+    <a href="/" class="rounded-full bg-brand-700 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-600">
+      Back to Home
+    </a>
+    <a href="/contact-us/" class="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">
+      Contact Us
+    </a>
+  </div>
+</section>
+{{ end }}

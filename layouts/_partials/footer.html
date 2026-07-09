@@ -1,0 +1,66 @@
+{{- $site := hugo.Data.site -}}
+<footer class="border-t border-slate-200 bg-brand-950 text-slate-300">
+  <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
+
+    {{/* Mission */}}
+    <div class="space-y-4">
+      <div class="flex items-center gap-3">
+        {{ partial "logo.html" (dict "class" "size-9") }}
+        <span class="text-base font-bold text-white">{{ $site.org.name }}</span>
+      </div>
+      <p class="text-sm leading-relaxed">{{ $site.org.tagline_long }}</p>
+      <p class="text-sm">A 501(c)(3) nonprofit organization.</p>
+      {{ partial "social.html" (dict "class" "size-5") }}
+    </div>
+
+    {{/* Quick links */}}
+    <div>
+      <h2 class="mb-4 text-sm font-semibold uppercase tracking-wider text-white">Quick Links</h2>
+      <ul class="space-y-2 text-sm">
+        {{ range .Site.Menus.footer }}
+          <li><a href="{{ .URL }}" class="hover:text-white hover:underline">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+
+    {{/* Ride request lines */}}
+    <div>
+      <h2 class="mb-4 text-sm font-semibold uppercase tracking-wider text-white">Ride Request Lines</h2>
+      <ul class="space-y-3 text-sm">
+        {{ range $site.ride_lines }}
+          <li class="flex items-start gap-2">
+            {{ partial "icon.html" (dict "name" "phone" "class" "size-4 mt-0.5 shrink-0 text-accent-400") }}
+            <span>{{ .name }}<br><a href="tel:{{ .phone | replaceRE `[^0-9]` `` }}" class="font-medium text-white hover:underline">{{ .phone }}</a></span>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+
+    {{/* Contact */}}
+    <div>
+      <h2 class="mb-4 text-sm font-semibold uppercase tracking-wider text-white">Contact</h2>
+      <ul class="space-y-3 text-sm">
+        <li class="flex items-start gap-2">
+          {{ partial "icon.html" (dict "name" "map-pin" "class" "size-4 mt-0.5 shrink-0 text-accent-400") }}
+          <span>{{ $site.org.address.street }}<br>{{ $site.org.address.city }}, {{ $site.org.address.state }} {{ $site.org.address.zip }}</span>
+        </li>
+        <li class="flex items-start gap-2">
+          {{ partial "icon.html" (dict "name" "mail" "class" "size-4 mt-0.5 shrink-0 text-accent-400") }}
+          <a href="mailto:{{ $site.org.email }}" class="hover:text-white hover:underline">{{ $site.org.email }}</a>
+        </li>
+      </ul>
+      <a href="{{ $site.links.donate }}" data-confetti
+        class="mt-5 inline-flex items-center gap-2 rounded-full bg-accent-500 px-4 py-2 text-sm font-semibold text-white hover:bg-accent-600">
+        {{ partial "icon.html" (dict "name" "heart" "class" "size-4") }}
+        Donate
+      </a>
+    </div>
+  </div>
+
+  <div class="border-t border-brand-900">
+    <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+      <p>&copy; {{ now.Year }} {{ $site.org.name }}, Inc. All rights reserved.</p>
+      <p>Neighbors helping neighbors since {{ $site.org.founded }}.</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,76 @@
+{{ define "main" }}
+{{ partial "page-header.html" (dict "title" .Title "subtitle" "Community fundraisers that keep our volunteer drivers on the road, year after year.") }}
+
+<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+
+  {{/* Intro from page content */}}
+  {{ with .Content }}
+    <div class="prose prose-slate max-w-3xl prose-headings:tracking-tight prose-a:font-medium prose-a:text-brand-700 hover:prose-a:text-brand-500">{{ . }}</div>
+  {{ end }}
+
+  {{/* Facebook callout */}}
+  {{ with hugo.Data.site.social.facebook }}
+  <div class="mt-8 flex flex-col items-start gap-4 rounded-2xl bg-brand-800 p-6 text-white sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      <h2 class="text-lg font-bold">Looking for what's coming up?</h2>
+      <p class="mt-1 text-sm text-brand-100">Dates and details for our latest events are always posted on our Facebook page.</p>
+    </div>
+    <a href="{{ . }}" target="_blank" rel="noopener"
+      class="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-brand-800 hover:bg-brand-50">
+      Follow us on Facebook
+      {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
+    </a>
+  </div>
+  {{ end }}
+
+  {{/* Annual events */}}
+  <h2 class="mt-14 text-2xl font-bold tracking-tight text-slate-900">Our Annual Events</h2>
+  <p class="mt-2 max-w-2xl text-sm text-slate-600">
+    Many of our events return every year. Here's a taste of what to look forward to.
+  </p>
+  <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    {{ range $event := hugo.Data.events }}
+      <div class="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="mb-3 inline-flex self-start rounded-xl bg-brand-100 p-2.5 text-brand-700">
+          {{ partial "icon.html" (dict "name" ($event.icon | default "calendar") "class" "size-6") }}
+        </div>
+        <h3 class="font-bold text-slate-900">{{ $event.name }}</h3>
+        <p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{{ $event.blurb }}</p>
+        {{ with $event.link }}
+          <a href="{{ . }}" {{ if hasPrefix . "http" }}target="_blank" rel="noopener"{{ end }}
+            class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:underline">
+            {{ $event.link_text | default "Learn more" }}
+            {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
+          </a>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+
+  {{/* Sponsors */}}
+  <h2 class="mt-16 text-2xl font-bold tracking-tight text-slate-900">Thank You to Our Sponsors</h2>
+  <p class="mt-2 max-w-2xl text-sm text-slate-600">
+    Our events are made possible by the generosity of local businesses and foundations.
+  </p>
+  <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    {{ range hugo.Data.sponsors }}
+      <a href="{{ .url }}" target="_blank" rel="noopener"
+        class="group flex items-center justify-center rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:border-brand-300 hover:shadow-md">
+        <span class="font-semibold text-slate-700 group-hover:text-brand-700">{{ .name }}</span>
+      </a>
+    {{ end }}
+  </div>
+
+  {{/* Get involved */}}
+  <div class="mt-16 rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center">
+    <h2 class="text-xl font-bold text-slate-900">Want to sponsor or attend an event?</h2>
+    <p class="mx-auto mt-2 max-w-xl text-sm text-slate-600">
+      Every dollar raised goes to mileage reimbursement for our dedicated volunteer drivers.
+      We'd love to have you along for the ride.
+    </p>
+    <a href="/contact-us/" class="mt-5 inline-flex items-center gap-2 rounded-full bg-brand-700 px-6 py-2.5 text-sm font-semibold text-white hover:bg-brand-600">
+      Get in touch {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
+    </a>
+  </div>
+</div>
+{{ end }}

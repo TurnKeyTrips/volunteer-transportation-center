@@ -1,0 +1,129 @@
+{{ define "main" }}
+{{ $site := hugo.Data.site }}
+
+{{/* Hero — layered brand gradient, soft glows, and a quiet road curve */}}
+<section class="relative overflow-hidden bg-gradient-to-br from-brand-800 via-brand-900 to-brand-950 text-white">
+  <div class="absolute -right-40 -top-48 size-[36rem] rounded-full bg-brand-500/15 blur-3xl" aria-hidden="true"></div>
+  <div class="absolute -bottom-56 -left-32 size-[32rem] rounded-full bg-accent-500/10 blur-3xl" aria-hidden="true"></div>
+  <svg class="absolute inset-0 size-full" viewBox="0 0 1440 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M-80 520 C 360 400 720 580 1520 280" stroke="rgba(255,255,255,0.05)" stroke-width="90" fill="none" />
+    <path d="M-80 520 C 360 400 720 580 1520 280" stroke="rgba(255,255,255,0.16)" stroke-width="2.5" stroke-dasharray="16 20" fill="none" />
+  </svg>
+  <div class="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+    <div class="grid items-center gap-12 lg:grid-cols-5">
+      <div class="lg:col-span-3">
+        <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-accent-300">Neighbors helping neighbors since {{ $site.org.founded }}</p>
+        <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl">
+          Ensuring independence by transporting neighbors
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-brand-100">
+          The Volunteer Transportation Center provides essential rides to health, wellness, social,
+          and other critical destinations for Northern New York neighbors who face transportation barriers.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="/clients/" data-confetti
+            class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-brand-800 shadow-sm hover:bg-brand-50">
+            {{ partial "icon.html" (dict "name" "truck" "class" "size-5") }}
+            Need a Ride?
+          </a>
+          <a href="/volunteers/" data-confetti
+            class="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-base font-semibold text-white hover:bg-white/10">
+            {{ partial "icon.html" (dict "name" "users" "class" "size-5") }}
+            Become a Volunteer
+          </a>
+          <a href="{{ $site.links.donate }}" data-confetti
+            class="inline-flex items-center gap-2 rounded-full bg-accent-500 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-accent-600">
+            {{ partial "icon.html" (dict "name" "heart" "class" "size-5") }}
+            Donate
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-2">
+        <div class="aspect-video overflow-hidden rounded-2xl shadow-lg shadow-brand-950/60 ring-1 ring-white/20">
+          <iframe class="size-full" src="https://www.youtube-nocookie.com/embed/bXn1eE3vekY"
+            title="Watch Our Story — Volunteer Transportation Center"
+            allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="mt-3 px-1 text-sm text-brand-200">Watch our story and see what a ride means to our neighbors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* Impact stats */}}
+<section class="border-b border-slate-200 bg-brand-50" aria-label="Our impact">
+  <div class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-12 text-center sm:grid-cols-3 sm:px-6 lg:px-8">
+    {{ range $site.stats }}
+    <div>
+      <p class="text-4xl font-extrabold text-brand-800">{{ .value }}</p>
+      <p class="mt-1 text-sm font-medium text-slate-600">{{ .label }}</p>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+{{/* Three paths */}}
+<section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8" aria-label="How to get involved">
+  <div class="grid gap-8 md:grid-cols-3">
+    <a href="/clients/" data-confetti class="group rounded-2xl border border-slate-200 p-8 shadow-sm transition hover:border-brand-300 hover:shadow-md">
+      <div class="mb-4 inline-flex rounded-xl bg-brand-100 p-3 text-brand-700">
+        {{ partial "icon.html" (dict "name" "truck" "class" "size-7") }}
+      </div>
+      <h2 class="text-xl font-bold text-slate-900 group-hover:text-brand-700">Get a Ride</h2>
+      <p class="mt-2 text-sm leading-relaxed text-slate-600">
+        We provide rides to medical, mental health, dental, and other life-sustaining services,
+        regardless of your ability to pay.
+      </p>
+      <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
+        Learn more {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
+      </span>
+    </a>
+    <a href="/volunteers/" data-confetti class="group rounded-2xl border border-slate-200 p-8 shadow-sm transition hover:border-brand-300 hover:shadow-md">
+      <div class="mb-4 inline-flex rounded-xl bg-brand-100 p-3 text-brand-700">
+        {{ partial "icon.html" (dict "name" "users" "class" "size-7") }}
+      </div>
+      <h2 class="text-xl font-bold text-slate-900 group-hover:text-brand-700">Volunteer to Drive</h2>
+      <p class="mt-2 text-sm leading-relaxed text-slate-600">
+        Join hundreds of volunteer drivers across seven counties. Mileage is reimbursed, and the
+        schedule is yours.
+      </p>
+      <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
+        Learn more {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
+      </span>
+    </a>
+    <a href="{{ $site.links.donate }}" data-confetti class="group rounded-2xl border border-slate-200 p-8 shadow-sm transition hover:border-brand-300 hover:shadow-md">
+      <div class="mb-4 inline-flex rounded-xl bg-accent-100 p-3 text-accent-600">
+        {{ partial "icon.html" (dict "name" "heart" "class" "size-7") }}
+      </div>
+      <h2 class="text-xl font-bold text-slate-900 group-hover:text-brand-700">Support the Mission</h2>
+      <p class="mt-2 text-sm leading-relaxed text-slate-600">
+        Every dollar raised goes toward mileage reimbursement for our dedicated volunteer drivers.
+        That is what makes these rides possible.
+      </p>
+      <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
+        Donate today {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
+      </span>
+    </a>
+  </div>
+</section>
+
+{{/* Page body from content/_index.md, if any meaningful content exists */}}
+{{ with .Content }}
+<section class="mx-auto max-w-3xl px-4 pb-16 sm:px-6 lg:px-8">
+  <div class="prose prose-slate max-w-none prose-a:text-brand-700">{{ . }}</div>
+</section>
+{{ end }}
+
+{{/* Counties served */}}
+<section class="bg-slate-50">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <h2 class="text-center text-3xl font-bold tracking-tight text-slate-900">Where We Serve</h2>
+    <p class="mx-auto mt-3 max-w-2xl text-center text-slate-600">
+      Volunteer driver programs across New York State. Find your county to get started.
+    </p>
+    <div class="mt-10">
+      {{ partial "county-grid.html" . }}
+    </div>
+  </div>
+</section>
+{{ end }}

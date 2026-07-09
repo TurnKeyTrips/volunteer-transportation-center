@@ -1,0 +1,63 @@
+{{ define "main" }}
+{{ partial "page-header.html" (dict "title" .Title "subtitle" "We'd love to hear from you. Reach the office nearest you, or email us anytime.") }}
+
+<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+
+  {{/* Primary contact actions */}}
+  <div class="grid gap-6 sm:grid-cols-2">
+    <a href="mailto:{{ hugo.Data.site.org.email }}"
+      class="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-brand-300 hover:shadow-md">
+      <span class="inline-flex shrink-0 rounded-xl bg-brand-100 p-3 text-brand-700">
+        {{ partial "icon.html" (dict "name" "mail" "class" "size-7") }}
+      </span>
+      <span>
+        <span class="block text-lg font-bold text-slate-900 group-hover:text-brand-700">Email Us</span>
+        <span class="block text-sm text-slate-600">{{ hugo.Data.site.org.email }}</span>
+      </span>
+    </a>
+    <a href="{{ hugo.Data.site.links.ride_request }}"
+      class="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-brand-300 hover:shadow-md">
+      <span class="inline-flex shrink-0 rounded-xl bg-accent-100 p-3 text-accent-600">
+        {{ partial "icon.html" (dict "name" "truck" "class" "size-7") }}
+      </span>
+      <span>
+        <span class="block text-lg font-bold text-slate-900 group-hover:text-brand-700">Need a Ride?</span>
+        <span class="block text-sm text-slate-600">Complete a ride request application online</span>
+      </span>
+    </a>
+  </div>
+
+  {{/* Page body, if any */}}
+  {{ with .Content }}
+    <div class="prose prose-slate mt-10 max-w-3xl prose-headings:tracking-tight prose-a:font-medium prose-a:text-brand-700 hover:prose-a:text-brand-500">{{ . }}</div>
+  {{ end }}
+
+  {{/* Office cards */}}
+  <h2 class="mt-14 text-2xl font-bold tracking-tight text-slate-900">Our Offices</h2>
+  <p class="mt-2 text-sm text-slate-600">Offices are open 8am–5pm, Monday through Friday.</p>
+  <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {{ range hugo.Data.offices }}
+      <div class="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h3 class="text-base font-bold text-brand-800">{{ .name }}</h3>
+        <ul class="mt-4 space-y-3 text-sm text-slate-600">
+          <li class="flex items-start gap-2">
+            {{ partial "icon.html" (dict "name" "map-pin" "class" "size-4 mt-0.5 shrink-0 text-brand-500") }}
+            <span>
+              {{ with .address2 }}{{ . }}<br>{{ end }}
+              <a href="{{ .map }}" target="_blank" rel="noopener" class="hover:text-brand-700 hover:underline">{{ .address }}</a>
+            </span>
+          </li>
+          <li class="flex items-center gap-2">
+            {{ partial "icon.html" (dict "name" "phone" "class" "size-4 shrink-0 text-brand-500") }}
+            <a href="tel:{{ .phone | replaceRE `[^0-9]` `` }}" class="font-medium text-slate-800 hover:text-brand-700 hover:underline">{{ .phone }}</a>
+          </li>
+          <li class="flex items-center gap-2 text-slate-400">
+            {{ partial "icon.html" (dict "name" "document" "class" "size-4 shrink-0") }}
+            <span>Fax: {{ .fax }}</span>
+          </li>
+        </ul>
+      </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

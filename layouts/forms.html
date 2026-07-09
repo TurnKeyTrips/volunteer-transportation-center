@@ -1,0 +1,86 @@
+{{ define "main" }}
+{{ partial "page-header.html" (dict "title" .Title "subtitle" "Applications, reports, and program documents in one place.") }}
+
+<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8" x-data="{
+    active: [],
+    toggle(id) { this.active = this.active.includes(id) ? this.active.filter(a => a !== id) : [...this.active, id] },
+    show(id) { return this.active.length === 0 || this.active.includes(id) }
+  }">
+
+  {{/* Filter pills — toggle sections on/off; none selected = show everything */}}
+  <div class="flex flex-wrap items-center gap-2" role="group" aria-label="Filter form sections">
+    {{ range hugo.Data.forms }}
+      <button type="button" @click="toggle('{{ .id }}')" :aria-pressed="active.includes('{{ .id }}')"
+        :class="active.includes('{{ .id }}')
+          ? 'border-brand-600 bg-brand-600 text-white shadow-sm'
+          : 'border-slate-200 bg-white text-slate-700 hover:border-brand-400 hover:bg-brand-50 hover:text-brand-800'"
+        class="rounded-full border px-4 py-1.5 text-sm font-medium transition">
+        {{ .name }}
+      </button>
+    {{ end }}
+    <button type="button" x-cloak x-show="active.length > 0" x-transition.opacity.duration.150ms
+      @click="active = []"
+      class="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-sm font-semibold text-accent-700 hover:text-accent-800 hover:underline">
+      {{ partial "icon.html" (dict "name" "x" "class" "size-4") }}
+      Clear all
+    </button>
+  </div>
+
+  {{/* Page body, if any */}}
+  {{ with .Content }}
+    <div class="prose prose-slate mt-8 max-w-3xl prose-headings:tracking-tight prose-a:font-medium prose-a:text-brand-700 hover:prose-a:text-brand-500">{{ . }}</div>
+  {{ end }}
+
+  {{/* Two explicit columns: tall sections go right so leftover space sits bottom-right */}}
+  <div class="mt-10 grid items-start gap-6 md:grid-cols-2">
+    {{ $sections := hugo.Data.forms }}
+    {{ range $col := slice "left" "right" }}
+      <div class="flex flex-col gap-6">
+        {{ range $sections }}
+          {{ $sectionCol := .column | default "left" }}
+          {{ if eq $sectionCol $col }}
+            <section id="{{ .id }}" x-show="show('{{ .id }}')" x-transition.opacity.duration.150ms
+              class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div class="flex flex-wrap items-center gap-3">
+                <h2 class="text-lg font-bold text-brand-800">{{ .name }}</h2>
+                {{ with .note }}
+                  <span class="rounded-full bg-accent-100 px-2.5 py-0.5 text-xs font-semibold text-accent-800">{{ . }}</span>
+                {{ end }}
+              </div>
+              <ul class="mt-4 divide-y divide-slate-100">
+                {{ range sort .links "name" }}
+                  <li class="flex flex-wrap items-center gap-x-3 gap-y-2 py-3 sm:flex-nowrap">
+                    <span class="min-w-0 flex-1">
+                      <span class="block text-sm font-medium text-slate-800">{{ .name }}</span>
+                      <span class="mt-1 inline-flex rounded-full bg-brand-100 px-2 py-0.5 text-xs font-semibold text-brand-700">
+                        {{ if eq .type "online" }}Online form{{ else if eq .type "pdf" }}PDF{{ else if eq .type "image" }}Image{{ else }}Link{{ end }}
+                      </span>
+                    </span>
+                    {{ $btnClass := "inline-flex shrink-0 items-center gap-1.5 rounded-full border border-brand-300 px-3 py-1.5 text-xs font-semibold text-brand-700 transition hover:border-brand-700 hover:bg-brand-700 hover:text-white" }}
+                    {{ if eq .type "online" }}
+                      <a href="{{ .url }}" target="_blank" rel="noopener" class="{{ $btnClass }}">
+                        Open online form
+                        {{ partial "icon.html" (dict "name" "external" "class" "size-3.5") }}
+                      </a>
+                    {{ else if eq .type "link" }}
+                      <a href="{{ .url }}" {{ if hasPrefix .url "http" }}target="_blank" rel="noopener"{{ end }} class="{{ $btnClass }}">
+                        Open link
+                        {{ partial "icon.html" (dict "name" "external" "class" "size-3.5") }}
+                      </a>
+                    {{ else }}
+                      <a href="{{ .url }}" download class="{{ $btnClass }}">
+                        Download {{ if eq .type "pdf" }}PDF{{ else }}image{{ end }}
+                        {{ partial "icon.html" (dict "name" "download" "class" "size-3.5") }}
+                      </a>
+                    {{ end }}
+                  </li>
+                {{ end }}
+              </ul>
+            </section>
+          {{ end }}
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

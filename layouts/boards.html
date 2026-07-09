@@ -1,0 +1,29 @@
+{{ define "main" }}
+{{ partial "page-header.html" (dict "title" .Title "subtitle" "The volunteers who guide our organization and our foundation.") }}
+
+<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+  {{ with .Content }}
+    <div class="prose prose-slate mb-10 max-w-3xl prose-headings:tracking-tight prose-a:font-medium prose-a:text-brand-700 hover:prose-a:text-brand-500">{{ . }}</div>
+  {{ end }}
+
+  <div class="grid items-start gap-6 md:grid-cols-2">
+    {{ range hugo.Data.boards }}
+      <section class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="flex items-center gap-2 text-lg font-bold text-brand-800">
+          {{ partial "icon.html" (dict "name" "users" "class" "size-5 text-brand-500") }}
+          {{ .name }}
+        </h2>
+        <ul class="mt-4 divide-y divide-slate-100">
+          {{ range .members }}
+            <li class="flex items-baseline justify-between gap-4 py-2 text-sm">
+              <span class="{{ if .title }}font-semibold{{ else }}font-medium{{ end }} text-slate-800">{{ .name }}</span>
+              {{ with .title }}<span class="rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-semibold text-brand-700">{{ . }}</span>{{ end }}
+            </li>
+          {{ end }}
+        </ul>
+        {{ with .note }}<p class="mt-4 text-sm italic text-slate-500">{{ . }}</p>{{ end }}
+      </section>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
