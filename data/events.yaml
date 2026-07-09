@@ -1,0 +1,47 @@
+# Annual/recurring events listed on the Events page.
+# To edit: change the blurb text; "link" and "link_text" are optional.
+# Icon names come from layouts/_partials/icon.html.
+- name: North Country Chili Cook-Off
+  icon: heart
+  blurb: >-
+    A North Country tradition for more than two decades. Local restaurants and
+    amateur chefs bring the heat while the community votes for its favorites,
+    all to keep our volunteer drivers on the road.
+- name: SpokerRide
+  icon: map-pin
+  blurb: >-
+    Our annual motorcycle poker run through the scenic North Country. Riders
+    collect cards at stops along the route, and the best hand takes a prize, and
+    every mile ridden supports miles driven for neighbors in need.
+- name: Black River Trail Run
+  icon: arrow-right
+  blurb: >-
+    A 15K, 10K, and 5K trail race along the beautiful Black River in Watertown.
+    Runners and walkers of every level are welcome.
+  link: https://runsignup.com/Race/NY/Watertown/BlackRiverTrail15K10K5K
+  link_text: Race info & registration
+- name: Posh Purse Palooza
+  icon: heart
+  blurb: >-
+    An evening of fun, food, and fundraising built around auctions of designer
+    purses, each stuffed with goodies from local businesses.
+- name: Shootin' Trap for Trips
+  icon: users
+  blurb: >-
+    A 50-bird trap shoot hosted at the Carthage Rod and Gun Club. A decade-long
+    tradition that trades clay pigeons for charitable trips.
+- name: Jefferson–Lewis Golf Tournament
+  icon: calendar
+  blurb: >-
+    Our annual golf tournament benefiting rides in Jefferson and Lewis
+    Counties. A full day on the course with lunch, prizes, and great company.
+- name: St. Lawrence County Golf Tournament
+  icon: calendar
+  blurb: >-
+    A summer golf classic supporting the St. Lawrence County program. Gather a
+    foursome and drive fore a cause.
+- name: Spaghetti Dinner
+  icon: heart
+  blurb: >-
+    A hearty community dinner benefiting the VTC. Good food and good neighbors,
+    together at one table.

@@ -1,0 +1,115 @@
+# Forms listed on the /forms/ page, grouped into sections.
+# To add a form: copy a "- name/url/type" block into the right section
+# (links are sorted alphabetically at build time, so order here doesn't matter).
+#   type: online  = web form filled out in the browser
+#   type: pdf     = downloadable/printable file
+#   type: image   = downloadable image
+#   type: link    = a regular page or external website
+# "note" on a section shows as an amber county-restriction callout.
+# "column: right" places a section in the right-hand column on desktop.
+- name: General
+  id: general
+  links:
+    - name: VTC Agency Brochure
+      url: /files/Volunteer-Transportation-Center-Pamphlet.pdf
+      type: pdf
+    - name: Employment Application
+      url: https://form.jotform.us/72394115932154
+      type: online
+    - name: Clearinghouse for Older Road User Safety
+      url: https://www.roadwaysafety.org/
+      type: link
+- name: Client Forms
+  id: client
+  links:
+    - name: New Client Application
+      url: https://form.jotform.com/230543320621038
+      type: online
+    - name: Client Application for Service (printable)
+      url: /files/2026-Client-Application.pdf
+      type: pdf
+    - name: Carthage Area Hospital Referral Form
+      url: https://form.jotform.com/211433912370144
+      type: online
+    - name: VTC Client Recertification Form
+      url: https://form.jotform.com/vtc/client-recertification-form
+      type: online
+- name: New Volunteer Forms
+  id: new-volunteer
+  links:
+    - name: New Volunteer Application (online)
+      url: https://form.jotform.com/vtc/new-volunteer-application
+      type: online
+    - name: New Volunteer Application (downloadable)
+      url: /files/driver-application-form-2021.06.10.pdf
+      type: pdf
+- name: Volunteer Driver Forms
+  id: volunteer-driver
+  column: right
+  links:
+    - name: Update Volunteer Documents (pdf, jpeg or gif)
+      url: https://dbinbox.com/volunteertransportationcenter.org
+      type: online
+    - name: Jefferson County DSS Release Form
+      url: /files/2018.06.15-DSS-Release-of-Information.pdf
+      type: pdf
+    - name: St. Lawrence County DSS Release Form
+      url: /files/2019.11.21-STL-DSS-Release-of-Information-Fill-Able.pdf
+      type: pdf
+    - name: NYS Justice Form
+      url: /files/Justice-Form-fillable.pdf
+      type: pdf
+    - name: State Central Register Database Check (SCR3370)
+      url: /files/SCR-Fillable.pdf
+      type: pdf
+    - name: Accident/Incident Report Form
+      url: /files/Accident.Incident-Report-Form-2016.04.29.pdf
+      type: pdf
+    - name: Accident/Incident Report (online)
+      url: https://form.jotform.com/212343521841144
+      type: online
+    - name: Background Check Form (printable)
+      url: /files/Unique-Background-Check-Authorization.pdf
+      type: pdf
+    - name: Background Check Form (submit online)
+      url: https://form.jotform.com/vtc/volunteer-background-check
+      type: online
+    - name: New Driver Direct Deposit Authorization Form
+      url: /files/Direct-Deposit-authorization.pdf
+      type: pdf
+    - name: Trip Voucher
+      url: /files/2018.10.22-Driver-Voucher-horizontal.pdf
+      type: pdf
+    - name: 2023 Voucher Due Dates
+      url: /files/2023-Voucher-Due-Dates.pdf
+      type: pdf
+- name: Medicaid Family Drivers
+  id: medicaid-family
+  note: Jefferson County only
+  links:
+    - name: How do I get paid to drive family members who have Medicaid?
+      url: /files/driver-step-by-step-1.pdf
+      type: pdf
+    - name: Medicaid Family Driver Application Packet
+      url: /files/2019.02.26-friends-and-family-complete-packet.pdf
+      type: pdf
+- name: Medicaid Self Drive
+  id: medicaid-self
+  note: Jefferson County only
+  links:
+    - name: How do I get reimbursed if I drive myself?
+      url: /files/self-drive-step-by-step.pdf
+      type: pdf
+    - name: Medicaid Self Drive Application Packet
+      url: /files/2019.02.26-Complete-Self-Drive-Packet.pdf
+      type: pdf
+- name: First Mile Last Mile Program
+  id: fmlm
+  note: St. Lawrence County only
+  links:
+    - name: What is the First Mile Last Mile program?
+      url: /files/2024-FMLM-Rack-Card.pdf
+      type: pdf
+    - name: FMLM No Show Policy
+      url: /files/2018.09.19-FMLM-Cancellations-and-No-Show-Policy.pdf
+      type: pdf

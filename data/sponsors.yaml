@@ -1,0 +1,10 @@
+# Event sponsors listed on the Events page.
+# To add a sponsor: copy a block, set the name and website URL.
+- name: Excellus BlueCross BlueShield
+  url: https://www.excellusbcbs.com/
+- name: Watertown Savings Bank
+  url: https://www.watertownsavingsbank.com/
+- name: Stewart's Shops
+  url: https://www.stewartsshops.com/
+- name: Glenn & Carol Pearsall Adirondack Foundation
+  url: https://pearsallfoundation.org/

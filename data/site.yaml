@@ -1,0 +1,82 @@
+# ============================================================================
+# SITE FACTS — the single place to change numbers, links, and contact info.
+#
+# Everything here flows into the templates automatically on the next build.
+# The other files in this folder hold the longer lists:
+#   people.yaml   → staff shown on About Us
+#   boards.yaml   → both boards of directors
+#   offices.yaml  → office locations on Contact Us
+#   events.yaml   → annual events on the Events page
+#   sponsors.yaml → sponsors on the Events page
+#   forms.yaml    → every form on the Forms page
+# Page text lives in content/*.md. Menus live in hugo.yaml.
+# ============================================================================
+
+org:
+  name: Volunteer Transportation Center
+  # Short motto — header, page meta description
+  tagline: Ensuring independence by transporting neighbors
+  # Longer line used in the footer
+  tagline_long: Providing rides to health, wellness, and critical-needs destinations across Northern New York since 1991.
+  founded: 1991
+  email: info@volunteertransportation.org
+  phone: (315) 788-0422
+  address:
+    street: 24685 NY Route 37
+    city: Watertown
+    state: NY
+    zip: "13601"
+
+links:
+  donate: /donate/
+  donate_checkout: https://checkout.square.site/merchant/14BK7N2VBK5EY/checkout/NYUSGUA5NXCJH77O5JJDJSS3
+  ride_request: https://form.jotform.us/61025552290145
+  volunteer_apply: https://form.jotform.com/61038212879155
+
+# Contact card at the bottom of the Donate page
+donate_contact:
+  name: Jeremiah S. Papineau
+  title: Foundation Director
+  phone: (315) 303-2590
+  email: info@volunteertransportation.org
+
+social:
+  facebook: https://www.facebook.com/VolunteerTransportationCenter/
+  x: https://x.com/VolTransportCtr
+  linkedin: https://www.linkedin.com/company/volunteer-transportation-center
+
+# Impact numbers on the HOME page
+stats:
+  - value: 5M+
+    label: Miles driven every year
+  - value: 200+
+    label: Active certified drivers
+  - value: 30+
+    label: Years serving the North Country
+
+# Numbers on the BECOME A VOLUNTEER page
+volunteer:
+  mileage_rate: $0.625        # per-mile reimbursement shown in the perk card
+  impact_intro: In a recent year, our volunteers provided
+  impact:
+    - value: 150,000+
+      label: charitable trips
+    - value: 5M+
+      label: miles driven
+    - value: $3M+
+      label: reimbursed to volunteer drivers
+
+# Mission statement (About Us sidebar card)
+mission: >-
+  Provide transportation to health, wellness and critical needs destinations
+  utilizing volunteers and mobility management for anyone who has barriers
+  to transportation.
+
+# Phone lines in the footer's "Ride Request Lines" column
+ride_lines:
+  - name: Jefferson County
+    phone: (315) 788-0422
+  - name: Lewis County
+    phone: (315) 376-3777
+  - name: St. Lawrence County
+    phone: (315) 714-2034

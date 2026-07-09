@@ -1,0 +1,90 @@
+# Staff roster shown on the About Us page (edit THIS file — no HTML needed).
+#
+# To add a person:    copy a "- name: / title:" pair into the right section.
+# To remove a person: delete their lines.
+# To add a team:      copy a "- name: ... members:" block under "teams:".
+# Photos (optional):  add "photo:" and "photo2:" paths per person, e.g.
+#                       photo: /images/people/jane-doe.jpg
+#                       photo2: /images/people/jane-doe-fun.jpg
+#                     Put image files in static/images/people/. "photo" shows
+#                     normally; "photo2" is revealed on hover. If omitted, a
+#                     hand-drawn placeholder character is used (who waves and
+#                     puts on neon glasses on hover).
+# Blurb (optional):   blurb: One friendly sentence about this person.
+#                     Shows under the name; a placeholder line appears if omitted.
+# Changes appear on /about-us/ on the next build.
+#
+# Source: staff list from the old WordPress About Us page (2023 export) — verify before launch.
+leadership:
+  - name: Sam Purington
+    title: Executive Director
+  - name: Kathy Birth
+    title: Finance Director
+  - name: Kayla Keenan
+    title: Corporate Compliance Officer
+  - name: Jeremiah S. Papineau
+    title: Foundation Director & Director of Communications
+  - name: Jonathan Mingola
+    title: Director, Software Development
+  - name: Kyle Shannon
+    title: Director, Data & Design
+  - name: Terra Thompson
+    title: Director of Volunteer Recruitment
+  - name: Luanne Wilson
+    title: Human Resource Director
+
+teams:
+  - name: Jefferson & Lewis Counties
+    members:
+      - name: Jaime Stephens
+        title: Deputy Program Director, Jefferson/Lewis
+      - name: Steve Cilbrith
+        title: Transportation Coordinator
+      - name: Meagan Daymont
+        title: Driver Support Technician
+      - name: Laura Finley
+        title: Finance Clerk
+      - name: Honey Marie Galaydick
+        title: Staff Accountant / VTC Foundation Accountant
+      - name: Carol Gardner
+        title: Service Case Manager
+      - name: Heidi Hill
+        title: Transportation Coordinator
+      - name: Darin Keggins
+        title: Driver Support Technician
+      - name: Lydia Lloyd
+        title: Transportation Coordinator
+      - name: Arthur Salisbury
+        title: Driver Support Clerk
+      - name: Ruth Soules
+        title: Billing Manager
+  - name: St. Lawrence County
+    members:
+      - name: Peggy Durant
+        title: Deputy Director
+      - name: Charisse McPherson
+        title: Transportation Coordinator
+      - name: Greg Mastro
+        title: Transportation Coordinator
+      - name: Lisa Waite
+        title: Transportation Coordinator
+  - name: Oswego County
+    members:
+      - name: Doreen Salcido
+        title: Program Director
+      - name: Jordan Anderson
+        title: Transportation Coordinator
+      - name: Sandra Iadanza
+        title: Transportation Coordinator
+  - name: Mobility Management
+    members:
+      - name: Jennifer L. Cross
+        title: Mobility Manager
+      - name: John Exford
+        title: Jefferson County Mobility Manager
+      - name: Sonja Jensen
+        title: St. Lawrence County Mobility Manager
+      - name: Brandi Smith
+        title: Greater Watertown Mobility Manager
+      - name: Heather Snow
+        title: Oswego County Mobility Manager

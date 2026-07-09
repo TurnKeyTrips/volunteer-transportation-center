@@ -1,0 +1,15 @@
+# Scrapbook photos, shown as a carousel on /scrapbook/ (in this order).
+#
+# To add a photo:
+#   1. Put the image file in static/images/scrapbook/
+#   2. Add a block here:
+#        - image: /images/scrapbook/my-photo.jpg
+#          caption: One line describing the moment.
+- image: /images/scrapbook/vtc_photo_1.jpg
+  caption: Neighbors helping neighbors, one ride at a time.
+- image: /images/scrapbook/chili-cookoff-1.jpg
+  caption: Watertown International Airport took home the year's People's Choice Award at the 27th Annual North Country Chili Cook-Off.
+- image: /images/scrapbook/chili-cookoff-2.jpg
+  caption: Samaritan Medical Center took home first place in the Professional category at the 27th Annual North Country Chili Cook-Off.
+- image: /images/scrapbook/chili-cookoff-3.jpg
+  caption: Lowville American Legion Post 162 took home first place in the Amateur category at the 27th Annual North Country Chili Cook-Off.

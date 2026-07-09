@@ -1,0 +1,38 @@
+# Boards shown on /board-of-directors/ (edit THIS file — no HTML needed).
+# Officers get a "title"; regular members just a name. "note" renders in italics at the card bottom.
+- name: VTC Board of Directors
+  note: Ben Coe, Board Member Emeritus
+  members:
+    - name: Trisha Seymour
+      title: President
+    - name: Celia Cook
+      title: Vice-President
+    - name: Lloyd Hurlbut
+      title: Treasurer
+    - name: Jamie Ganter
+      title: Secretary
+    - name: Drew Boulter
+    - name: PJ Difabion
+    - name: Makenzie Piatt
+    - name: Daphne Pickert
+    - name: Tim Ruetten
+    - name: Kathy Webster
+    - name: Jeff Wood
+- name: VTC Foundation Board of Directors
+  members:
+    - name: Jeff Wood
+      title: President
+    - name: Jeany Colello
+      title: Vice-President
+    - name: Drew Boulter
+      title: Treasurer
+    - name: Celia Cook
+      title: Secretary
+    - name: Amy McEathron
+    - name: Tim Sweeney
+    - name: Nancy Spicer
+    - name: Laurie Gleason
+    - name: Blaine Campany
+    - name: Sam Purington
+    - name: Eric Tupper
+    - name: Jamie McGuire
