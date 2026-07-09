@@ -86,26 +86,6 @@ menu:
       url: /st-lawrence-county/
       parent: volunteer
       weight: 34
-    - identifier: genesee
-      name: Genesee County
-      url: /genesee-county/
-      parent: volunteer
-      weight: 35
-    - identifier: oswego
-      name: Oswego County
-      url: /oswego-county/
-      parent: volunteer
-      weight: 36
-    - identifier: madison
-      name: Madison County
-      url: /madison-county/
-      parent: volunteer
-      weight: 37
-    - identifier: erie
-      name: Western New York (VTWNY)
-      url: /erie-county/
-      parent: volunteer
-      weight: 38
     - identifier: events
       name: Events
       url: /events/

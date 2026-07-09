@@ -3,12 +3,8 @@
   (dict "name" "Jefferson County" "url" "/jefferson-county/")
   (dict "name" "Lewis County" "url" "/lewis-county/")
   (dict "name" "St. Lawrence County" "url" "/st-lawrence-county/")
-  (dict "name" "Genesee County" "url" "/genesee-county/")
-  (dict "name" "Oswego County" "url" "/oswego-county/")
-  (dict "name" "Madison County" "url" "/madison-county/")
-  (dict "name" "Western NY (VTWNY)" "url" "/erie-county/")
 }}
-<div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
   {{ range $counties }}
     <a href="{{ partial "url.html" .url }}"
       class="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm hover:border-brand-300 hover:text-brand-700">

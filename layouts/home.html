@@ -26,15 +26,15 @@
             {{ partial "icon.html" (dict "name" "truck" "class" "size-5") }}
             Need a Ride?
           </a>
-          <a href="{{ partial "url.html" "/volunteers/" }}" data-confetti
+          <a href="{{ $site.links.ride_request }}" target="_blank" rel="noopener" data-confetti
             class="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-base font-semibold text-white hover:bg-white/10">
+            {{ partial "icon.html" (dict "name" "document" "class" "size-5") }}
+            Become a Client
+          </a>
+          <a href="{{ partial "url.html" "/volunteers/" }}" data-confetti
+            class="inline-flex items-center gap-2 rounded-full bg-accent-500 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-accent-600">
             {{ partial "icon.html" (dict "name" "users" "class" "size-5") }}
             Become a Volunteer
-          </a>
-          <a href="{{ partial "url.html" $site.links.donate }}" data-confetti
-            class="inline-flex items-center gap-2 rounded-full bg-accent-500 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-accent-600">
-            {{ partial "icon.html" (dict "name" "heart" "class" "size-5") }}
-            Donate
           </a>
         </div>
       </div>
@@ -84,7 +84,7 @@
       </div>
       <h2 class="text-xl font-bold text-slate-900 group-hover:text-brand-700">Volunteer to Drive</h2>
       <p class="mt-2 text-sm leading-relaxed text-slate-600">
-        Join hundreds of volunteer drivers across seven counties. Mileage is reimbursed, and the
+        Join hundreds of volunteer drivers across the North Country. Mileage is reimbursed, and the
         schedule is yours.
       </p>
       <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">

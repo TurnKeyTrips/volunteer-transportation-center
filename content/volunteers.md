@@ -12,6 +12,6 @@ wordpress_id: 943
 
 Volunteer Transportation Center, Inc. (VTC) has been helping local community members gain access to crucial healthcare services and food sources since the early 1990s. Our volunteers use their own vehicles, set their own hours, and are reimbursed for every mile they drive.
 
-And our programming doesn't stop with Northern New York. VTC offers programs in Oswego, Genesee, and Erie Counties and many counties in the Southern Tier, and our staff even works with volunteers in California. That means we are *always* looking for a few good volunteers.
+Volunteering with VTC is very flexible. Many of our volunteers are available weekly, some only a few days a week, others choose to volunteer during certain times of the year. We love to work with you and can accommodate your availability. We are *always* looking for new volunteers.
 
 If getting on the road to help neighbors in your area sounds like what you've been looking for, becoming a volunteer with VTC may be the perfect fit.

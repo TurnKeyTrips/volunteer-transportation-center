@@ -56,7 +56,6 @@ stats:
 
 # Numbers on the BECOME A VOLUNTEER page
 volunteer:
-  mileage_rate: $0.625        # per-mile reimbursement shown in the perk card
   impact_intro: In a recent year, our volunteers provided
   impact:
     - value: 150,000+
