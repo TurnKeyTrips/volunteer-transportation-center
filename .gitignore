@@ -12,7 +12,3 @@ node_modules/
 
 # Claude Code local config and agent notes
 .claude/
-
-# Old WordPress site files kept locally for reference (≈1.6 GB of media,
-# the original WXR export, extraction reports, and archived posts)
-_old_site_files/
