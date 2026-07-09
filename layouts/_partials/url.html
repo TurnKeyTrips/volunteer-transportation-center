@@ -4,9 +4,17 @@
   leading slash. Route every internal href/src through this partial:
     {{ partial "url.html" "/donate/" }}   or   {{ partial "url.html" .url }}
   External URLs (http/https/mailto/tel/#) pass through untouched.
+  IDEMPOTENT: values that already carry the subpath (e.g. menu .URL entries,
+  which Hugo resolves to the page's RelPermalink) are left alone — otherwise
+  they would be double-prefixed (/repo/repo/...).
 */ -}}
 {{- $u := . -}}
+{{- $basePath := (urls.Parse site.BaseURL).Path -}}
 {{- if strings.HasPrefix $u "/" -}}
-  {{- $u = relURL (strings.TrimPrefix "/" $u) -}}
+  {{- if and (ne $basePath "/") (strings.HasPrefix $u $basePath) -}}
+    {{- /* already subpath-prefixed — leave untouched */ -}}
+  {{- else -}}
+    {{- $u = relURL (strings.TrimPrefix "/" $u) -}}
+  {{- end -}}
 {{- end -}}
 {{- return $u -}}
