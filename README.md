@@ -1,6 +1,6 @@
 # Volunteer Transportation Center
 
-Website for the Volunteer Transportation Center, Inc., a 501(c)(3) nonprofit providing rides to health, wellness, and critical-needs destinations across Northern New York.
+Website for the Volunteer Transportation Center, Inc.
 
 ## Tech stack
 
@@ -29,7 +29,7 @@ npm run clean     # removes build artifacts
 
 Push to `main`. The workflow in `.github/workflows/hugo.yaml` builds the site and deploys it to GitHub Pages. One-time repo setup: Settings → Pages → Source → GitHub Actions.
 
-When the custom domain is attached, add a `static/CNAME` file (or set it in the Pages settings) and confirm `baseURL` in `hugo.yaml`. Until then the workflow auto-detects the `*.github.io` URL.
+Custom domain: leave the Pages "Custom domain" field **empty** until DNS resolves (a configured-but-dead domain redirects the github.io URL into the void). Once the apex `A` records (185.199.108.153 / .109 / .110 / .111) and the `www` CNAME record point at GitHub, enter the domain in Settings → Pages and enable Enforce HTTPS. No CNAME file in the repo is needed — Actions-based deploys ignore it — and the workflow picks up the right base URL automatically on the next build.
 
 ## Style guide
 

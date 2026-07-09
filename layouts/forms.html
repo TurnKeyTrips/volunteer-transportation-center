@@ -58,17 +58,17 @@
                     </span>
                     {{ $btnClass := "inline-flex shrink-0 items-center gap-1.5 rounded-full border border-brand-300 px-3 py-1.5 text-xs font-semibold text-brand-700 transition hover:border-brand-700 hover:bg-brand-700 hover:text-white" }}
                     {{ if eq .type "online" }}
-                      <a href="{{ .url }}" target="_blank" rel="noopener" class="{{ $btnClass }}">
+                      <a href="{{ partial "url.html" .url }}" target="_blank" rel="noopener" class="{{ $btnClass }}">
                         Open online form
                         {{ partial "icon.html" (dict "name" "external" "class" "size-3.5") }}
                       </a>
                     {{ else if eq .type "link" }}
-                      <a href="{{ .url }}" {{ if hasPrefix .url "http" }}target="_blank" rel="noopener"{{ end }} class="{{ $btnClass }}">
+                      <a href="{{ partial "url.html" .url }}" {{ if hasPrefix .url "http" }}target="_blank" rel="noopener"{{ end }} class="{{ $btnClass }}">
                         Open link
                         {{ partial "icon.html" (dict "name" "external" "class" "size-3.5") }}
                       </a>
                     {{ else }}
-                      <a href="{{ .url }}" download class="{{ $btnClass }}">
+                      <a href="{{ partial "url.html" .url }}" download class="{{ $btnClass }}">
                         Download {{ if eq .type "pdf" }}PDF{{ else }}image{{ end }}
                         {{ partial "icon.html" (dict "name" "download" "class" "size-3.5") }}
                       </a>

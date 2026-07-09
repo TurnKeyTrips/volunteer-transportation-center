@@ -9,7 +9,12 @@
 
   {{ $photos := hugo.Data.scrapbook }}
   {{ if $photos }}
-  <div x-data='{ open: false, i: 0, photos: {{ $photos | jsonify }},
+  {{/* Rebuild the list with base-URL-aware image paths for the Alpine lightbox */}}
+  {{ $photosSafe := slice }}
+  {{ range $photos }}
+    {{ $photosSafe = $photosSafe | append (dict "image" (partial "url.html" .image) "caption" .caption) }}
+  {{ end }}
+  <div x-data='{ open: false, i: 0, photos: {{ $photosSafe | jsonify }},
       show(idx) { this.i = idx; this.open = true },
       prev() { this.i = (this.i + this.photos.length - 1) % this.photos.length },
       next() { this.i = (this.i + 1) % this.photos.length } }'
@@ -24,7 +29,7 @@
           <button type="button" @click="show({{ $idx }})"
             class="block w-full overflow-hidden rounded-2xl border border-slate-200 shadow-sm transition hover:shadow-md focus-visible:outline-2 focus-visible:outline-brand-600"
             aria-label="View photo: {{ $photo.caption }}">
-            <img src="{{ $photo.image | relURL }}" alt="{{ $photo.caption }}" loading="lazy"
+            <img src="{{ partial "url.html" $photo.image }}" alt="{{ $photo.caption }}" loading="lazy"
               class="w-full transition duration-300 group-hover:scale-[1.02]">
           </button>
           <figcaption class="mt-2 px-1 text-sm text-slate-600">{{ $photo.caption }}</figcaption>

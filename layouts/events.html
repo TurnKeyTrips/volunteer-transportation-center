@@ -37,7 +37,7 @@
         <h3 class="font-bold text-slate-900">{{ $event.name }}</h3>
         <p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{{ $event.blurb }}</p>
         {{ with $event.link }}
-          <a href="{{ . }}" {{ if hasPrefix . "http" }}target="_blank" rel="noopener"{{ end }}
+          <a href="{{ partial "url.html" . }}" {{ if hasPrefix . "http" }}target="_blank" rel="noopener"{{ end }}
             class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:underline">
             {{ $event.link_text | default "Learn more" }}
             {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
@@ -68,7 +68,7 @@
       Every dollar raised goes to mileage reimbursement for our dedicated volunteer drivers.
       We'd love to have you along for the ride.
     </p>
-    <a href="/contact-us/" class="mt-5 inline-flex items-center gap-2 rounded-full bg-brand-700 px-6 py-2.5 text-sm font-semibold text-white hover:bg-brand-600">
+    <a href="{{ partial "url.html" "/contact-us/" }}" class="mt-5 inline-flex items-center gap-2 rounded-full bg-brand-700 px-6 py-2.5 text-sm font-semibold text-white hover:bg-brand-600">
       Get in touch {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
     </a>
   </div>

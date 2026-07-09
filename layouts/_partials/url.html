@@ -1,0 +1,12 @@
+{{- /*
+  Base-URL-aware link helper. GitHub Pages project sites live under a /repo/
+  subpath, and Hugo's relURL does NOT prepend the subpath when the input has a
+  leading slash. Route every internal href/src through this partial:
+    {{ partial "url.html" "/donate/" }}   or   {{ partial "url.html" .url }}
+  External URLs (http/https/mailto/tel/#) pass through untouched.
+*/ -}}
+{{- $u := . -}}
+{{- if strings.HasPrefix $u "/" -}}
+  {{- $u = relURL (strings.TrimPrefix "/" $u) -}}
+{{- end -}}
+{{- return $u -}}

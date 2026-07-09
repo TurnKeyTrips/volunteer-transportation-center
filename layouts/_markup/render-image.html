@@ -1,0 +1,3 @@
+{{- /* Make markdown image paths subpath-safe on GitHub Pages (see _partials/url.html). */ -}}
+<img src="{{ partial "url.html" .Destination }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy">
+{{- /**/ -}}

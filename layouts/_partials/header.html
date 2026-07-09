@@ -18,7 +18,7 @@
         {{ if .HasChildren }}
           <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false"
             @focusin="open = true" @keydown.escape.window="open = false">
-            <a href="{{ .URL }}"
+            <a href="{{ partial "url.html" .URL }}"
               class="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-800"
               :aria-expanded="open">
               {{ .Name }}
@@ -27,17 +27,17 @@
             <div x-cloak x-show="open" x-transition.opacity.duration.150ms
               class="absolute left-0 top-full z-50 min-w-56 rounded-lg border border-slate-200 bg-white py-2 shadow-lg">
               {{ range .Children }}
-                <a href="{{ .URL }}"
+                <a href="{{ partial "url.html" .URL }}"
                   class="block px-4 py-2 text-sm text-slate-700 hover:bg-brand-50 hover:text-brand-800">{{ .Name }}</a>
               {{ end }}
             </div>
           </div>
         {{ else }}
-          <a href="{{ .URL }}"
+          <a href="{{ partial "url.html" .URL }}"
             class="rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-800">{{ .Name }}</a>
         {{ end }}
       {{ end }}
-      <a href="{{ $site.links.donate }}" data-confetti
+      <a href="{{ partial "url.html" $site.links.donate }}" data-confetti
         class="ml-2 inline-flex items-center gap-1.5 rounded-full bg-accent-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-accent-600">
         {{ partial "icon.html" (dict "name" "heart" "class" "size-4") }}
         Donate
@@ -69,16 +69,16 @@
             </button>
             <div x-cloak x-show="open" x-collapse.duration.150ms class="ml-3 border-l border-slate-200 pl-3">
               {{ range .Children }}
-                <a href="{{ .URL }}" class="block rounded-md px-3 py-2 text-sm text-slate-600 hover:bg-brand-50">{{ .Name }}</a>
+                <a href="{{ partial "url.html" .URL }}" class="block rounded-md px-3 py-2 text-sm text-slate-600 hover:bg-brand-50">{{ .Name }}</a>
               {{ end }}
             </div>
           </div>
         {{ else }}
-          <a href="{{ .URL }}"
+          <a href="{{ partial "url.html" .URL }}"
             class="block rounded-md px-3 py-2 text-base font-medium text-slate-800 hover:bg-brand-50">{{ .Name }}</a>
         {{ end }}
       {{ end }}
-      <a href="{{ $site.links.donate }}" data-confetti
+      <a href="{{ partial "url.html" $site.links.donate }}" data-confetti
         class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 px-4 py-2.5 text-base font-semibold text-white hover:bg-accent-600">
         {{ partial "icon.html" (dict "name" "heart" "class" "size-5") }}
         Donate

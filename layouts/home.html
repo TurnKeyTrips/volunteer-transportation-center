@@ -21,17 +21,17 @@
           and other critical destinations for Northern New York neighbors who face transportation barriers.
         </p>
         <div class="mt-10 flex flex-wrap gap-4">
-          <a href="/clients/" data-confetti
+          <a href="{{ partial "url.html" "/clients/" }}" data-confetti
             class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-brand-800 shadow-sm hover:bg-brand-50">
             {{ partial "icon.html" (dict "name" "truck" "class" "size-5") }}
             Need a Ride?
           </a>
-          <a href="/volunteers/" data-confetti
+          <a href="{{ partial "url.html" "/volunteers/" }}" data-confetti
             class="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-base font-semibold text-white hover:bg-white/10">
             {{ partial "icon.html" (dict "name" "users" "class" "size-5") }}
             Become a Volunteer
           </a>
-          <a href="{{ $site.links.donate }}" data-confetti
+          <a href="{{ partial "url.html" $site.links.donate }}" data-confetti
             class="inline-flex items-center gap-2 rounded-full bg-accent-500 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-accent-600">
             {{ partial "icon.html" (dict "name" "heart" "class" "size-5") }}
             Donate
@@ -65,7 +65,7 @@
 {{/* Three paths */}}
 <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8" aria-label="How to get involved">
   <div class="grid gap-8 md:grid-cols-3">
-    <a href="/clients/" data-confetti class="group rounded-2xl border border-slate-200 p-8 shadow-sm transition hover:border-brand-300 hover:shadow-md">
+    <a href="{{ partial "url.html" "/clients/" }}" data-confetti class="group rounded-2xl border border-slate-200 p-8 shadow-sm transition hover:border-brand-300 hover:shadow-md">
       <div class="mb-4 inline-flex rounded-xl bg-brand-100 p-3 text-brand-700">
         {{ partial "icon.html" (dict "name" "truck" "class" "size-7") }}
       </div>
@@ -78,7 +78,7 @@
         Learn more {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
       </span>
     </a>
-    <a href="/volunteers/" data-confetti class="group rounded-2xl border border-slate-200 p-8 shadow-sm transition hover:border-brand-300 hover:shadow-md">
+    <a href="{{ partial "url.html" "/volunteers/" }}" data-confetti class="group rounded-2xl border border-slate-200 p-8 shadow-sm transition hover:border-brand-300 hover:shadow-md">
       <div class="mb-4 inline-flex rounded-xl bg-brand-100 p-3 text-brand-700">
         {{ partial "icon.html" (dict "name" "users" "class" "size-7") }}
       </div>
@@ -91,7 +91,7 @@
         Learn more {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
       </span>
     </a>
-    <a href="{{ $site.links.donate }}" data-confetti class="group rounded-2xl border border-slate-200 p-8 shadow-sm transition hover:border-brand-300 hover:shadow-md">
+    <a href="{{ partial "url.html" $site.links.donate }}" data-confetti class="group rounded-2xl border border-slate-200 p-8 shadow-sm transition hover:border-brand-300 hover:shadow-md">
       <div class="mb-4 inline-flex rounded-xl bg-accent-100 p-3 text-accent-600">
         {{ partial "icon.html" (dict "name" "heart" "class" "size-7") }}
       </div>
