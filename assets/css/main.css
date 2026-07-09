@@ -4,8 +4,6 @@
 @source "hugo_stats.json";
 
 @theme {
-  /* Brand palette — deep "road at dusk" blue with a warm amber accent.
-     Swap these values once official VTC brand colors are confirmed. */
   --color-brand-50: #eef6fb;
   --color-brand-100: #d9eaf5;
   --color-brand-200: #b6d7ec;
