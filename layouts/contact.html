@@ -34,30 +34,33 @@
 
   {{/* Office cards */}}
   <h2 class="mt-14 text-2xl font-bold tracking-tight text-slate-900">Our Offices</h2>
-  <p class="mt-2 text-sm text-slate-600">Offices are open 8am–5pm, Monday through Friday.</p>
-  <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  <p class="mt-2 text-sm text-slate-600">Offices are open 8am to 5pm, Monday through Friday.</p>
+  <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
     {{ range hugo.Data.offices }}
-      <div class="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h3 class="text-base font-bold text-brand-800">{{ .name }}</h3>
-        <ul class="mt-4 space-y-3 text-sm text-slate-600">
-          <li class="flex items-start gap-2">
-            {{ partial "icon.html" (dict "name" "map-pin" "class" "size-4 mt-0.5 shrink-0 text-brand-500") }}
-            <span>
-              {{ with .address2 }}{{ . }}<br>{{ end }}
-              <a href="{{ .map }}" target="_blank" rel="noopener" class="hover:text-brand-700 hover:underline">{{ .address }}</a>
-            </span>
-          </li>
-          <li class="flex items-center gap-2">
-            {{ partial "icon.html" (dict "name" "phone" "class" "size-4 shrink-0 text-brand-500") }}
-            <a href="tel:{{ .phone | replaceRE `[^0-9]` `` }}" class="font-medium text-slate-800 hover:text-brand-700 hover:underline">{{ .phone }}</a>
-          </li>
-          <li class="flex items-center gap-2 text-slate-400">
-            {{ partial "icon.html" (dict "name" "document" "class" "size-4 shrink-0") }}
-            <span>Fax: {{ .fax }}</span>
-          </li>
-        </ul>
+      <div class="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-brand-300 hover:shadow-md">
+        <div class="flex items-start justify-between gap-3">
+          <h3 class="text-base font-bold text-slate-900">{{ .name }}</h3>
+          <a href="{{ .map }}" target="_blank" rel="noopener" aria-label="Open {{ .name }} office in Google Maps"
+            class="inline-flex shrink-0 items-center gap-1 rounded-full border border-slate-200 px-2.5 py-1 text-xs font-semibold text-slate-500 transition hover:border-brand-400 hover:text-brand-700">
+            {{ partial "icon.html" (dict "name" "map-pin" "class" "size-3.5") }}
+            Map
+          </a>
+        </div>
+        <a href="tel:{{ .phone | replaceRE `[^0-9]` `` }}"
+          class="mt-4 inline-flex items-center gap-2 text-xl font-bold text-brand-700 transition hover:text-brand-500">
+          {{ partial "icon.html" (dict "name" "phone" "class" "size-5") }}
+          {{ .phone }}
+        </a>
+        <p class="mt-3 text-sm leading-relaxed text-slate-500">
+          {{ with .address2 }}{{ . }}<br>{{ end }}
+          {{ .address }}
+        </p>
       </div>
     {{ end }}
   </div>
+  <p class="mt-5 flex items-center gap-2 text-sm text-slate-500">
+    {{ partial "icon.html" (dict "name" "document" "class" "size-4 shrink-0 text-slate-400") }}
+    Fax for all offices: {{ (index hugo.Data.offices 0).fax }}
+  </p>
 </div>
 {{ end }}

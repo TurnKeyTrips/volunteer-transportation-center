@@ -1,0 +1,53 @@
+{{ define "main" }}
+{{ $site := hugo.Data.site }}
+{{ partial "page-header.html" (dict "title" .Title "subtitle" "Answers to the questions we hear most from clients and volunteer drivers.") }}
+
+<div class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+
+  {{ with .Content }}
+    <div class="prose prose-slate mb-10 prose-headings:tracking-tight prose-a:font-medium prose-a:text-brand-700 hover:prose-a:text-brand-500">{{ . }}</div>
+  {{ end }}
+
+  {{ range $sIdx, $s := hugo.Data.faq }}
+    <h2 class="{{ if gt $sIdx 0 }}mt-14{{ end }} text-2xl font-bold tracking-tight text-slate-900">{{ $s.section }}</h2>
+    <div class="mt-6 flex flex-col gap-3">
+      {{ range $s.items }}
+        {{/* Native accordion: the shared name attribute keeps one item open per section */}}
+        <details name="faq-{{ $s.id }}" class="group rounded-xl border border-slate-200 bg-white shadow-sm open:border-brand-300">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-semibold text-slate-900 transition hover:text-brand-700 [&::-webkit-details-marker]:hidden">
+            {{ .q }}
+            <span class="shrink-0 text-brand-500 transition-transform duration-200 group-open:rotate-180">
+              {{ partial "icon.html" (dict "name" "chevron-down" "class" "size-5") }}
+            </span>
+          </summary>
+          <div class="border-t border-slate-100 px-5 py-4">
+            <div class="prose prose-sm prose-slate max-w-none prose-a:font-medium prose-a:text-brand-700 hover:prose-a:text-brand-500">
+              {{ $.RenderString .a }}
+            </div>
+          </div>
+        </details>
+      {{ end }}
+    </div>
+  {{ end }}
+
+  {{/* Still stuck? */}}
+  <div class="mt-14 rounded-2xl bg-brand-50 p-8 text-center">
+    <h2 class="text-lg font-bold text-slate-900">Didn't find your answer?</h2>
+    <p class="mx-auto mt-2 max-w-md text-sm text-slate-600">
+      We're happy to help with anything else. Reach out and a real neighbor will get back to you.
+    </p>
+    <div class="mt-5 flex flex-wrap justify-center gap-3">
+      <a href="mailto:{{ $site.org.email }}"
+        class="inline-flex items-center gap-2 rounded-full bg-brand-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600">
+        {{ partial "icon.html" (dict "name" "mail" "class" "size-4") }}
+        Email Us
+      </a>
+      <a href="{{ partial "url.html" "/contact-us/" }}"
+        class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-brand-400 hover:text-brand-700">
+        {{ partial "icon.html" (dict "name" "phone" "class" "size-4") }}
+        Contact Us
+      </a>
+    </div>
+  </div>
+</div>
+{{ end }}

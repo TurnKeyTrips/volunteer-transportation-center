@@ -1,0 +1,81 @@
+# FAQ shown on /faq/ as native accordions, grouped into sections.
+# To add a question: copy a "- q: / a:" block. Answers are Markdown
+# (links, lists, and bold work; use "\" at end of line for a line break).
+- section: Client Questions
+  id: clients
+  items:
+    - q: Who is eligible for transportation?
+      a: >-
+        Please note that Volunteer Transportation Center does not discriminate.
+        The eligibility of each client is based upon need.
+
+
+        The *Senior Transportation Program* is made possible by funding from the
+        New York Office for the Aging, Title III of the Older Americans Act, and
+        the Counties of Jefferson, Lewis, St. Lawrence and the Madison County
+        Office for the Aging. This program is for persons 60 years of age or older.
+    - q: How do I become a client?
+      a: >-
+        In order to provide transportation services, Volunteer Transportation
+        Center must register participants *before* they can be transported.
+        [Complete an application online](https://form.jotform.us/61025552290145)
+        or call us at (315) 788-0422.
+    - q: How do I request transportation?
+      a: |-
+        Call the office in your county between 8am and 5pm, Monday through Friday.
+
+        Jefferson County (315) 788-0422\
+        Lewis County (315) 376-3777\
+        St. Lawrence County (315) 714-2034\
+        Madison County (315) 628-8732
+    - q: How soon should I call for my appointment?
+      a: >-
+        You must allow the office **at least two (2) business days** prior to
+        your appointment to locate a driver. Our drivers are booked well in
+        advance, therefore we require as much advance notice as possible.
+    - q: May I bring someone with me on my trip?
+      a: >-
+        If you need to bring a companion, please let us know in advance, so the
+        volunteer can make sure he or she has sufficient room in the vehicle.
+    - q: Can I stop at another location on my trip?
+      a: >-
+        **No.** Extra stops are not allowed because our volunteers are often
+        scheduled for more than one drive per day, and any unplanned stops could
+        put the volunteer behind schedule.
+    - q: What if I have a smoke allergy?
+      a: >-
+        **All vehicles are non-smoking.** Neither the volunteer nor the client
+        are permitted to smoke per New York State Department of Health regulations.
+    - q: What if I want to take the bus, but I am not close to a stop?
+      a: >-
+        St. Lawrence County Public Transit and Volunteer Transportation Center
+        are partnering for the First Mile Last Mile Program. Don't let the
+        program's name fool you: this service picks you up at home and drops you
+        off at the closest bus stop. You catch the bus to work, school, the
+        grocery store, or wherever you need to go. When you are ready to come
+        home, catch the bus back and a volunteer driver will pick you up at your
+        original stop and take you home.
+
+
+        Learn more: [First Mile Last Mile rack card (PDF)](/files/2024-FMLM-Rack-Card.pdf)
+- section: Volunteer Driver Questions
+  id: drivers
+  items:
+    - q: Do volunteers who drive get paid?
+      a: >-
+        Our volunteers get reimbursed up to the IRS rate for their mileage
+        driven, and we pay for parking per our policy. Volunteers do not get an
+        hourly rate or any other payment for services.
+    - q: As a volunteer, do I get to make my own hours?
+      a: >-
+        Yes. Just let us know what your availability is and we will schedule you
+        to drive in that time frame as trips are available.
+    - q: As a volunteer driver, what will I need to provide?
+      a: |-
+        You will need the following:
+
+        - Your own vehicle (clean and in good working condition), preferred to be 15 years old or newer
+        - A copy of your driver's license
+        - Proof of insurance for your vehicle
+        - Vehicle registration
+        - A completed application and agreement to a thorough background check

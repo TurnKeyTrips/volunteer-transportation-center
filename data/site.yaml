@@ -66,6 +66,26 @@ volunteer:
     - value: $3M+
       label: reimbursed to volunteer drivers
 
+# VTC FOUNDATION page
+foundation:
+  mission: >-
+    The purpose of the Volunteer Transportation Center Foundation, Inc. is to
+    ensure the long-term financial stability of the Volunteer Transportation
+    Center, Inc. This will be done by raising money through fundraising efforts,
+    charitable solicitation, bequests and other sources to support the mission,
+    vision and operations of the Volunteer Transportation Center, Inc., and no
+    other entity.
+  # "Every dollar provides two miles" examples
+  dollar_examples:
+    - give: $1
+      miles: 2 miles
+    - give: $5
+      miles: 10 miles
+    - give: $20
+      miles: 40 miles
+    - give: $100
+      miles: 200 miles
+
 # Mission statement (About Us sidebar card)
 mission: >-
   Provide transportation to health, wellness and critical needs destinations
