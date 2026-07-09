@@ -37,6 +37,16 @@
   display: none !important;
 }
 
+/* Phone links in prose: no underline (the skip-ink gap around "(" reads as a
+   stray period); bold + brand color keeps them clearly tappable. */
+.prose a[href^="tel:"] {
+  text-decoration: none;
+  font-weight: 600;
+}
+.prose a[href^="tel:"]:hover {
+  text-decoration: underline;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

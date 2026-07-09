@@ -1,3 +1,4 @@
-{{- /* Make internal markdown links subpath-safe on GitHub Pages (see _partials/url.html). */ -}}
-<a href="{{ partial "url.html" .Destination }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text }}</a>
+{{- /* Make internal markdown links subpath-safe on GitHub Pages (see _partials/url.html).
+     safeURL is required: Go's template sanitizer otherwise rejects tel: links as #ZgotmplZ. */ -}}
+<a href="{{ partial "url.html" .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text }}</a>
 {{- /**/ -}}
