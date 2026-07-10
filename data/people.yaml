@@ -99,12 +99,13 @@ teams:
     members:
       - name: Areeb Asad Syed
         title: Software Engineer
-        title_2: International Football Attaché ⚽
+        title_2: Bug Detective & Code Attaché
         blurb: Coffee ☕ connoisseur
         photo: /images/people/areeb-syed-1.jpeg
         photo2: /images/people/areeb-syed-2.jpeg
       - name: Anuj Patil
         title: GIS Data Scientist
+        photo: /images/people/anuj-patil-1.jpeg
       - name: Owen Miller
         title: Software Engineer Intern
       - name: Bobby Zhu
