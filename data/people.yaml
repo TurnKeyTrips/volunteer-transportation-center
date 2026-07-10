@@ -18,89 +18,91 @@
 # Title 2 (optional): title_2: A fun alternate job title revealed on hover.
 #                     Ignored when omitted.
 # Changes appear on /about-us/ on the next build.
-#
-# Source: staff list from the old WordPress About Us page (2023 export) — verify before launch.
 leadership:
-  - name: Sam Purington
+  - name: Samuel Purington
     title: Executive Director
-  - name: Kathy Birth
+  - name: Katherine Birth
     title: Finance Director
+  - name: Luanne Wilson
+    title: HR Director
+  - name: Terra Thompson
+    title: Director of Recruitment/Retention
+  - name: Jeremiah Papineau
+    title: Director of Communications and Foundation Director
   - name: Kayla Keenan
     title: Corporate Compliance Officer
-  - name: Jeremiah S. Papineau
-    title: Foundation Director & Director of Communications
-  - name: Jonathan Mingola
-    title: Director, Software Development
   - name: Kyle Shannon
     title: Director, Data Science & AI
     title_2: Data Soothsayer
     blurb: Likely found on a 🎾 Tennis Court, injured.
-  - name: Terra Thompson
-    title: Director of Volunteer Recruitment
-  - name: Luanne Wilson
-    title: Human Resource Director
+    photo: /images/people/kyle-shannon-1.jpeg
+    photo2: /images/people/kyle-shannon-2.jpeg
+  - name: Jonathan Mingola
+    title: Director, Software Development
 
 teams:
-  - name: Jefferson & Lewis Counties
+  - name: Watertown Office
     members:
       - name: Jaime Stephens
-        title: Deputy Program Director, Jefferson/Lewis
-      - name: Steve Cilbrith
-        title: Transportation Coordinator
-      - name: Meagan Daymont
-        title: Driver Support Technician
-      - name: Laura Finley
+        title: Program Director
+      - name: John Exford
+        title: Deputy Program Director
+      - name: Seth Bettinger
+        title: IT Manager
+      - name: Maranda Bice
+        title: Billing Specialist
+      - name: Steven Cilbrith
+        title: Wheelchair Program Coordinator
+      - name: Jennifer Cross-Hodge
+        title: Mobility Manager
+      - name: Aidan Draper
+        title: Finance/Billing Integration Specialist
+      - name: Azja French
+        title: Transportation Outreach Coordinator
+      - name: Sarah Frey
         title: Finance Clerk
-      - name: Honey Marie Galaydick
-        title: Staff Accountant / VTC Foundation Accountant
+      - name: Honey Galaydick
+        title: Staff Accountant
       - name: Carol Gardner
-        title: Service Case Manager
-      - name: Heidi Hill
+        title: Jeff/Lewis Service Manager
+      - name: Debra Gruver
         title: Transportation Coordinator
       - name: Darin Keggins
         title: Driver Support Technician
       - name: Lydia Lloyd
         title: Transportation Coordinator
+      - name: Misty Partridge
+        title: Transportation Coordinator
+      - name: Meagan Reynolds
+        title: Transportation Coordinator
       - name: Arthur Salisbury
-        title: Driver Support Clerk
+        title: Finance Clerk
       - name: Ruth Soules
         title: Billing Manager
-  - name: St. Lawrence County
-    members:
-      - name: Peggy Durant
-        title: Deputy Director
-      - name: Charisse McPherson
-        title: Transportation Coordinator
-      - name: Greg Mastro
-        title: Transportation Coordinator
-      - name: Lisa Waite
-        title: Transportation Coordinator
-  - name: Oswego County
+  - name: Canton Office
     members:
       - name: Doreen Salcido
         title: Program Director
-      - name: Jordan Anderson
-        title: Transportation Coordinator
-      - name: Sandra Iadanza
-        title: Transportation Coordinator
-  - name: Mobility Management
-    members:
-      - name: Jennifer L. Cross
-        title: Mobility Manager
-      - name: John Exford
-        title: Jefferson County Mobility Manager
+      - name: Peggy Durant
+        title: Deputy Program Director
       - name: Sonja Jensen
-        title: St. Lawrence County Mobility Manager
-      - name: Brandi Smith
-        title: Greater Watertown Mobility Manager
-      - name: Heather Snow
-        title: Oswego County Mobility Manager
+        title: Director of Mobility Management, St. Lawrence County
+      - name: Gregory Mastro
+        title: Transportation Coordinator
+      - name: Taylor McAdoo
+        title: Transportation Coordinator
+      - name: Charisse McPherson
+        title: Senior Transportation Coordinator
+      - name: Lisa Waite
+        title: Transportation Coordinator
   - name: Engineering & Development
     members:
       - name: Areeb Asad Syed
         title: Software Engineer
         title_2: International Football Attaché ⚽
         blurb: Coffee ☕ connoisseur
+        photo: /images/people/areeb-syed-1.jpeg
+        photo2: /images/people/areeb-syed-2.jpeg
       - name: Anuj Patil
         title: GIS Data Scientist
       - name: Owen Miller
