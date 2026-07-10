@@ -1,0 +1,18 @@
+{{- /*
+  Person title + blurb block for the About page.
+  - If the person has an optional `title_2`, it swaps in on hover
+    (requires a `group` class on the ancestor, same as the avatar swap).
+  - Emoji in blurbs are wrapped in a non-italic span so they render upright
+    inside the italic blurb text.
+  Usage: partial "person-titles.html" (dict "person" $p)
+*/ -}}
+{{- $p := .person -}}
+<p class="mt-0.5 text-sm font-medium text-brand-700">
+  {{- if $p.title_2 -}}
+    <span class="group-hover:hidden">{{ $p.title }}</span><span class="hidden group-hover:inline">{{ $p.title_2 }}</span>
+  {{- else -}}
+    {{ $p.title }}
+  {{- end -}}
+</p>
+{{- $blurb := $p.blurb | default "A quick hello about me is on its way." -}}
+<p class="mt-1.5 text-sm italic text-slate-400">{{ replaceRE `(\p{So}+)` `<span class="not-italic">$1</span>` $blurb | safeHTML }}</p>

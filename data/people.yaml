@@ -6,12 +6,17 @@
 # Photos (optional):  add "photo:" and "photo2:" paths per person, e.g.
 #                       photo: /images/people/jane-doe.jpg
 #                       photo2: /images/people/jane-doe-fun.jpg
-#                     Put image files in static/images/people/. "photo" shows
+#                     Put image files in assets/images/people/ — any size is
+#                     fine (phone photos included); the build resizes them to
+#                     small square thumbnails automatically. "photo" shows
 #                     normally; "photo2" is revealed on hover. If omitted, a
 #                     hand-drawn placeholder character is used (who waves and
 #                     puts on neon glasses on hover).
 # Blurb (optional):   blurb: One friendly sentence about this person.
 #                     Shows under the name; a placeholder line appears if omitted.
+#                     Emoji are fine and render upright (not italicized).
+# Title 2 (optional): title_2: A fun alternate job title revealed on hover.
+#                     Ignored when omitted.
 # Changes appear on /about-us/ on the next build.
 #
 # Source: staff list from the old WordPress About Us page (2023 export) — verify before launch.
@@ -27,7 +32,9 @@ leadership:
   - name: Jonathan Mingola
     title: Director, Software Development
   - name: Kyle Shannon
-    title: Director, Data & Design
+    title: Director, Data Science & AI
+    title_2: Data Soothsayer
+    blurb: Likely found on a 🎾 Tennis Court, injured.
   - name: Terra Thompson
     title: Director of Volunteer Recruitment
   - name: Luanne Wilson
@@ -88,3 +95,21 @@ teams:
         title: Greater Watertown Mobility Manager
       - name: Heather Snow
         title: Oswego County Mobility Manager
+  - name: Engineering & Development
+    members:
+      - name: Areeb Asad Syed
+        title: Software Engineer
+        title_2: International Football Attaché ⚽
+        blurb: Coffee ☕ connoisseur
+      - name: Anuj Patil
+        title: GIS Data Scientist
+      - name: Owen Miller
+        title: Software Engineer Intern
+      - name: Bobby Zhu
+        title: Software Engineer Intern
+      - name: Ollie
+        title: QA/QC Lead
+        title_2: Deputy Bark™ Liaison
+        blurb: Woof! Woof!
+        photo: /images/people/ollie-1.jpeg
+        photo2: /images/people/ollie-2.jpeg

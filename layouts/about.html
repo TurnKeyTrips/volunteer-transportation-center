@@ -56,8 +56,7 @@
         {{ partial "person-avatar.html" (dict "person" $p "class" "size-28" "variant" $i) }}
         <div class="min-w-0 flex-1 pt-1">
           <p class="font-semibold text-slate-900">{{ $p.name }}</p>
-          <p class="mt-0.5 text-sm font-medium text-brand-700">{{ $p.title }}</p>
-          <p class="mt-2 text-sm italic text-slate-400">{{ $p.blurb | default "A quick hello about me is on its way." }}</p>
+          {{ partial "person-titles.html" (dict "person" $p) }}
         </div>
       </div>
     {{ end }}
@@ -78,8 +77,7 @@
               {{ partial "person-avatar.html" (dict "person" $p "class" "size-24" "variant" (add $i $t)) }}
               <div class="min-w-0 flex-1 pt-1">
                 <p class="text-sm font-semibold text-slate-900">{{ $p.name }}</p>
-                <p class="mt-0.5 text-sm font-medium text-brand-700">{{ $p.title }}</p>
-                <p class="mt-1.5 text-sm italic text-slate-400">{{ $p.blurb | default "A quick hello about me is on its way." }}</p>
+                {{ partial "person-titles.html" (dict "person" $p) }}
               </div>
             </div>
           {{ end }}

@@ -7,12 +7,21 @@
   it is only applied when the person has no real photo.
   Photos come from .person.photo / .person.photo2, falling back to the
   hand-drawn placeholders in static/images/people/.
+  Real photos live in assets/images/people/ and are resized to small square
+  thumbnails at build time (drop in any size original; ~500KB+ is fine).
 */ -}}
 {{- $person := .person -}}
 {{- $class := .class | default "size-12" -}}
 {{- $variant := .variant | default 0 -}}
 {{- $photo := $person.photo | default "/images/people/placeholder-1.svg" -}}
 {{- $photo2 := $person.photo2 | default "/images/people/placeholder-2.svg" -}}
+{{- /* Auto-thumbnail: if the file exists under assets/, serve a 224px square crop */ -}}
+{{- range $i, $p := slice $photo $photo2 -}}
+  {{- with resources.Get (strings.TrimPrefix "/" $p) -}}
+    {{- $thumb := .Fill "224x224 q80 Center" -}}
+    {{- if eq $i 0 }}{{ $photo = $thumb.RelPermalink }}{{ else }}{{ $photo2 = $thumb.RelPermalink }}{{ end -}}
+  {{- end -}}
+{{- end -}}
 {{- $hues := slice "" "hue-rotate-60" "hue-rotate-[150deg]" "hue-rotate-[230deg]" "hue-rotate-[310deg]" -}}
 {{- $hue := "" -}}
 {{- if not $person.photo -}}{{ $hue = index $hues (mod $variant (len $hues)) }}{{- end -}}
