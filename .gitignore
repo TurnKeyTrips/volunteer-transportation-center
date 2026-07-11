@@ -12,3 +12,6 @@ node_modules/
 
 # Claude Code local config and agent notes
 .claude/
+
+# Local planning docs (not published)
+/docs/

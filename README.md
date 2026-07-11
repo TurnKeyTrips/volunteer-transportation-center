@@ -130,6 +130,30 @@ Optionally give them photos and a one-line blurb (photo files go in `static/imag
 
 **Remove a menu item** — delete its block under `menu:` in `hugo.yaml`. An item becomes a dropdown automatically when other entries list it as `parent:`.
 
+## Coming soon: calendar and event posts
+
+Two features are planned (see `docs/plans/`, local only) and will work like this:
+
+**Events calendar** — a Google Calendar owned by VTC is the source of truth. A
+designated person edits events in Google Calendar (no GitHub needed); the site
+renders them live in a custom-designed month view at `/events/calendar/`, with a
+"next 3 events" widget on the Events page and subscribe buttons (Google / Apple /
+Outlook) so visitors get events in their own calendars. The site reads the calendar
+through a restricted, read-only Google API key: the key is **not** stored in the
+repo — it lives in a GitHub Actions secret (`GCAL_API_KEY`) and is injected at
+build time. Until the real calendar is connected, the pages run on a bundled
+sample dataset so design and development don't block on Google setup.
+
+**Event posts (news)** — a non-technical editor with a free GitHub account writes
+posts through [Pages CMS](https://pagescms.org) (a hosted form UI over this repo;
+nothing to install or host). Each post has a write-up, a photo gallery, an optional
+Google Photos album link, and an optional printable PDF flyer. Saves commit
+straight to `main` and publish automatically in ~2 minutes. Every change is a git
+commit, so "undo" is a one-click revert. Photo rules: **JPEG only, 2 MB max per
+upload** (enforced by the CMS form); the build then generates the actual served
+sizes (~50 KB thumbnails, ~200 KB lightbox images), so visitors never download
+originals. Post pages get the same thumbnail + lightbox gallery as the Scrapbook.
+
 ## Notes
 
 - `LINKS.md` is an inventory of every link in the content (regenerate with `./scripts/gen_links.sh`).
