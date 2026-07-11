@@ -38,6 +38,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Belt-and-suspenders behind the Pages CMS config: editors commit straight
+      # to main, so a bad upload (non-JPEG or oversized photo) fails the deploy
+      # here instead of publishing.
+      - name: Check editor-uploaded media
+        run: ./scripts/check_media.sh
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:

@@ -1,0 +1,20 @@
+{{ define "main" }}
+{{ partial "page-header.html" (dict "title" .Title "subtitle" .Params.subtitle) }}
+
+<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+  {{ with .Content }}
+    <div class="prose prose-slate mb-10 max-w-3xl prose-headings:tracking-tight prose-a:font-medium prose-a:text-brand-700 hover:prose-a:text-brand-500">{{ . }}</div>
+  {{ end }}
+
+  {{ $posts := .Pages.ByDate.Reverse }}
+  {{ if $posts }}
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {{ range $posts }}
+        {{ partial "news-card.html" . }}
+      {{ end }}
+    </div>
+  {{ else }}
+    <p class="text-slate-600">No news yet. Check back soon!</p>
+  {{ end }}
+</div>
+{{ end }}

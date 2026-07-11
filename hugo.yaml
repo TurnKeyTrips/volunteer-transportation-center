@@ -90,6 +90,16 @@ menu:
       name: Events
       url: /events/
       weight: 40
+    - identifier: annual-events
+      name: Annual Events
+      url: /events/
+      parent: events
+      weight: 41
+    - identifier: news
+      name: News
+      url: /news/
+      parent: events
+      weight: 42
     - identifier: forms
       name: Forms
       url: /forms/

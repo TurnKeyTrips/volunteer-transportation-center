@@ -1,0 +1,59 @@
+{{ define "main" }}
+{{ partial "page-header.html" (dict "title" .Title) }}
+
+<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+
+  {{/* Dates */}}
+  <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
+    {{ with .Params.event_date }}
+      <p class="inline-flex items-center gap-1.5 font-medium text-brand-700">
+        {{ partial "icon.html" (dict "name" "calendar" "class" "size-4") }}
+        Event date: {{ (time .).Format "January 2, 2006" }}
+      </p>
+    {{ end }}
+    <p>Posted {{ .Date.Format "January 2, 2006" }}</p>
+  </div>
+
+  {{/* Write-up */}}
+  {{ with .Content }}
+    <div class="prose prose-slate mt-6 max-w-3xl prose-headings:tracking-tight prose-a:font-medium prose-a:text-brand-700 hover:prose-a:text-brand-500 prose-img:rounded-lg">{{ . }}</div>
+  {{ end }}
+
+  {{/* Flyer download + external album */}}
+  {{ if or .Params.flyer .Params.google_photos_album }}
+    <div class="mt-8 flex flex-wrap items-center gap-4">
+      {{ with .Params.flyer }}
+        <a href="{{ partial "url.html" . }}" download
+          class="inline-flex items-center gap-2 rounded-full bg-brand-700 px-6 py-2.5 text-sm font-semibold text-white hover:bg-brand-600">
+          {{ partial "icon.html" (dict "name" "download" "class" "size-4") }}
+          Download printable flyer (PDF)
+        </a>
+      {{ end }}
+      {{ with .Params.google_photos_album }}
+        <a href="{{ . }}" target="_blank" rel="noopener"
+          class="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-6 py-2.5 text-sm font-semibold text-brand-700 hover:bg-brand-100">
+          View full album on Google Photos
+          {{ partial "icon.html" (dict "name" "external" "class" "size-4") }}
+        </a>
+      {{ end }}
+    </div>
+  {{ end }}
+
+  {{/* Photo gallery */}}
+  {{ with .Params.photos }}
+    <h2 class="mt-12 text-2xl font-bold tracking-tight text-slate-900">Photos</h2>
+    <div class="mt-6">
+      {{ partial "photo-gallery.html" (dict "photos" .) }}
+    </div>
+  {{ end }}
+
+  <div class="mt-12 border-t border-slate-200 pt-6">
+    <a href="{{ partial "url.html" "/news/" }}" class="inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:underline">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+      </svg>
+      All news
+    </a>
+  </div>
+</div>
+{{ end }}

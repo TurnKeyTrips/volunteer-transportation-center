@@ -47,6 +47,25 @@
     {{ end }}
   </div>
 
+  {{/* Latest news */}}
+  {{ $news := first 3 (where site.RegularPages "Section" "news").ByDate.Reverse }}
+  {{ if $news }}
+    <div class="mt-16 flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight text-slate-900">Latest News</h2>
+        <p class="mt-2 max-w-2xl text-sm text-slate-600">Recaps and photos from our most recent events.</p>
+      </div>
+      <a href="{{ partial "url.html" "/news/" }}" class="inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:underline">
+        All news {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
+      </a>
+    </div>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {{ range $news }}
+        {{ partial "news-card.html" . }}
+      {{ end }}
+    </div>
+  {{ end }}
+
   {{/* Sponsors */}}
   <h2 class="mt-16 text-2xl font-bold tracking-tight text-slate-900">Thank You to Our Sponsors</h2>
   <p class="mt-2 max-w-2xl text-sm text-slate-600">

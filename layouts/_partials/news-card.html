@@ -1,0 +1,36 @@
+{{- /*
+  News post card: first photo as thumbnail, event date, title, summary teaser.
+  Usage: partial "news-card.html" $newsPage
+  Used by the /news/ list grid and the "Latest News" strip on /events/.
+*/ -}}
+{{- $thumb := "" -}}
+{{- with index .Params.photos 0 -}}
+  {{- with resources.Get (strings.TrimPrefix "/" .) -}}
+    {{- $thumb = (.Fill "480x360 q75 Center").RelPermalink -}}
+  {{- else -}}
+    {{- $thumb = partial "url.html" . -}}
+  {{- end -}}
+{{- end -}}
+<a href="{{ .RelPermalink }}"
+  class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-brand-300 hover:shadow-md">
+  {{ if $thumb }}
+    <img src="{{ $thumb }}" alt="" loading="lazy" class="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-[1.02]">
+  {{ else }}
+    <div class="flex aspect-[4/3] w-full items-center justify-center bg-brand-50 text-brand-300">
+      {{ partial "icon.html" (dict "name" "calendar" "class" "size-10") }}
+    </div>
+  {{ end }}
+  <div class="flex flex-1 flex-col p-5">
+    {{ with .Params.event_date }}
+      <p class="inline-flex items-center gap-1.5 text-xs font-medium text-brand-700">
+        {{ partial "icon.html" (dict "name" "calendar" "class" "size-4") }}
+        {{ (time .).Format "January 2, 2006" }}
+      </p>
+    {{ end }}
+    <h3 class="mt-1.5 font-bold text-slate-900 group-hover:text-brand-700">{{ .Title }}</h3>
+    {{ with .Params.summary }}<p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600 line-clamp-3">{{ . }}</p>{{ end }}
+    <p class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
+      Read more {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
+    </p>
+  </div>
+</a>

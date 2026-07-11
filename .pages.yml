@@ -1,0 +1,132 @@
+# Pages CMS configuration (https://pagescms.org/docs/).
+# Gives a non-technical editor a web form over this repo at https://app.pagescms.org:
+# log in with GitHub, edit, save — every save is a commit to main, which deploys
+# automatically. See EDITING.md for the editor walkthrough.
+#
+# Pages CMS cannot enforce file SIZE limits, only extensions. The 2 MB photo cap
+# is enforced by scripts/check_media.sh in the deploy workflow (a bad upload
+# fails the build instead of publishing).
+
+media:
+  - name: news
+    label: News photos
+    input: assets/images/news
+    output: /images/news
+    extensions: [jpg, jpeg]
+  - name: flyers
+    label: Event flyers (PDF)
+    input: static/files/flyers
+    output: /files/flyers
+    extensions: [pdf]
+  - name: scrapbook
+    label: Scrapbook photos
+    input: static/images/scrapbook
+    output: /images/scrapbook
+    extensions: [jpg, jpeg]
+
+content:
+  - name: news
+    label: News posts
+    description: Event recaps and updates shown at /news/ and on the Events page.
+    type: collection
+    path: content/news
+    exclude: ["_index.md"]
+    view:
+      fields: [title, event_date, date]
+      primary: title
+      sort: [date, event_date]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Publish date
+        description: Shows as "Posted" and controls ordering (newest first).
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: event_date
+        label: Event date
+        description: When the event happens or happened.
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: summary
+        label: Summary
+        description: One sentence shown on the news cards. Keep it short.
+        type: string
+      - name: photos
+        label: Photos
+        description: JPEG only, 2 MB max per photo. The site generates the sizes visitors see.
+        type: image
+        options:
+          media: news
+          multiple: true
+          extensions: [jpg, jpeg]
+      - name: google_photos_album
+        label: Google Photos album link
+        description: Optional. Paste a share link to the full album.
+        type: string
+      - name: flyer
+        label: Printable flyer (PDF)
+        description: Optional. Shows a download button on the post.
+        type: file
+        options:
+          media: flyers
+          extensions: [pdf]
+      - name: draft
+        label: Hide from the site (draft)
+        type: boolean
+        default: false
+      - name: body
+        label: Write-up
+        description: "What happened? Who came? Any thank-yous? Results or totals?"
+        type: rich-text
+
+  - name: events
+    label: Annual events
+    description: The recurring events listed on the Events page.
+    type: file
+    path: data/events.yaml
+    list: true
+    fields:
+      - name: name
+        label: Event name
+        type: string
+        required: true
+      - name: icon
+        label: Icon
+        type: select
+        default: heart
+        options:
+          values: [heart, calendar, map-pin, users, arrow-right, truck, hand-heart, document, question]
+      - name: blurb
+        label: Blurb
+        type: text
+        required: true
+      - name: link
+        label: Link (optional)
+        type: string
+      - name: link_text
+        label: Link text (optional)
+        type: string
+
+  - name: scrapbook
+    label: Scrapbook
+    description: Photos on the Scrapbook page, in this order.
+    type: file
+    path: data/scrapbook.yaml
+    list: true
+    fields:
+      - name: image
+        label: Photo
+        type: image
+        required: true
+        options:
+          media: scrapbook
+          extensions: [jpg, jpeg]
+      - name: caption
+        label: Caption
+        type: string
+        required: true

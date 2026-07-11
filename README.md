@@ -92,6 +92,8 @@ The workflow for any change:
 | Annual events / sponsors on Events | [data/events.yaml](data/events.yaml) / [data/sponsors.yaml](data/sponsors.yaml) |
 | Forms on the Forms page | [data/forms.yaml](data/forms.yaml) |
 | Scrapbook photos and captions | [data/scrapbook.yaml](data/scrapbook.yaml) |
+| News posts (event recaps at `/news/`) | `content/news/<post>.md` — or the CMS, see below |
+| News post photos / printable flyers | `assets/images/news/` / `static/files/flyers/` |
 | The text of a page | `content/<page>.md` (plain Markdown) |
 | The navigation menu | `hugo.yaml` under `menu:` |
 | Downloadable PDFs/documents | `static/files/` — anything there is served at `/files/<name>` |
@@ -130,9 +132,31 @@ Optionally give them photos and a one-line blurb (photo files go in `static/imag
 
 **Remove a menu item** — delete its block under `menu:` in `hugo.yaml`. An item becomes a dropdown automatically when other entries list it as `parent:`.
 
-## Coming soon: calendar and event posts
+## News posts and the CMS
 
-Two features are planned (see `docs/plans/`, local only) and will work like this:
+A non-technical editor with a free GitHub account writes news posts through
+[Pages CMS](https://pagescms.org) (a hosted form UI over this repo; nothing to
+install or host). Each post has a write-up, a photo gallery, an optional Google
+Photos album link, and an optional printable PDF flyer. Saves commit straight to
+`main` and publish automatically in ~2 minutes; every change is a git commit, so
+anything can be reverted.
+
+- **[EDITING.md](EDITING.md) is the editor walkthrough** — send it to whoever
+  will write posts (they must be added as a repo collaborator first).
+- The CMS form is defined in [.pages.yml](.pages.yml): the news collection plus
+  guarded editing of `data/events.yaml` and `data/scrapbook.yaml`.
+- Photo rules: **JPEG only, 2 MB max per upload**. The CMS restricts extensions;
+  sizes are enforced by [scripts/check_media.sh](scripts/check_media.sh), which
+  runs in the deploy workflow and fails the build on a bad upload (the previous
+  site version stays live). Editors should prefer the phone/Google Photos
+  "Large" export size.
+- The build generates the served sizes (~50 KB thumbnails, ~200 KB lightbox
+  images), so visitors never download originals. Post pages get the same
+  thumbnail + lightbox gallery as the Scrapbook.
+
+## Coming soon: events calendar
+
+One more feature is planned (see `docs/plans/`, local only):
 
 **Events calendar** — a Google Calendar owned by VTC is the source of truth. A
 designated person edits events in Google Calendar (no GitHub needed); the site
@@ -143,16 +167,6 @@ through a restricted, read-only Google API key: the key is **not** stored in the
 repo — it lives in a GitHub Actions secret (`GCAL_API_KEY`) and is injected at
 build time. Until the real calendar is connected, the pages run on a bundled
 sample dataset so design and development don't block on Google setup.
-
-**Event posts (news)** — a non-technical editor with a free GitHub account writes
-posts through [Pages CMS](https://pagescms.org) (a hosted form UI over this repo;
-nothing to install or host). Each post has a write-up, a photo gallery, an optional
-Google Photos album link, and an optional printable PDF flyer. Saves commit
-straight to `main` and publish automatically in ~2 minutes. Every change is a git
-commit, so "undo" is a one-click revert. Photo rules: **JPEG only, 2 MB max per
-upload** (enforced by the CMS form); the build then generates the actual served
-sizes (~50 KB thumbnails, ~200 KB lightbox images), so visitors never download
-originals. Post pages get the same thumbnail + lightbox gallery as the Scrapbook.
 
 ## Notes
 
