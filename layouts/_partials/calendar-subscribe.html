@@ -1,0 +1,31 @@
+{{- /*
+  "Add to your calendar" buttons. With a real Google Calendar configured they are
+  live links; in mock mode they render as visibly disabled previews so the design
+  is reviewable before the calendar exists.
+*/ -}}
+{{- $id := hugo.Data.site.calendar.google_calendar_id -}}
+<div class="flex flex-wrap items-center gap-3">
+  {{- if $id }}
+    <a href="https://calendar.google.com/calendar/render?cid={{ $id }}" target="_blank" rel="noopener"
+      class="inline-flex items-center gap-1.5 rounded-full border border-brand-300 px-4 py-2 text-xs font-semibold text-brand-700 transition hover:border-brand-700 hover:bg-brand-700 hover:text-white">
+      {{ partial "icon.html" (dict "name" "calendar" "class" "size-4") }}
+      Add to Google Calendar
+    </a>
+    <a href="webcal://calendar.google.com/calendar/ical/{{ $id }}/public/basic.ics"
+      class="inline-flex items-center gap-1.5 rounded-full border border-brand-300 px-4 py-2 text-xs font-semibold text-brand-700 transition hover:border-brand-700 hover:bg-brand-700 hover:text-white">
+      {{ partial "icon.html" (dict "name" "calendar" "class" "size-4") }}
+      Subscribe (Apple / Outlook)
+    </a>
+  {{- else }}
+    <span aria-disabled="true" title="Available once our public calendar goes live"
+      class="inline-flex cursor-not-allowed items-center gap-1.5 rounded-full border border-slate-200 px-4 py-2 text-xs font-semibold text-slate-400">
+      {{ partial "icon.html" (dict "name" "calendar" "class" "size-4") }}
+      Add to Google Calendar
+    </span>
+    <span aria-disabled="true" title="Available once our public calendar goes live"
+      class="inline-flex cursor-not-allowed items-center gap-1.5 rounded-full border border-slate-200 px-4 py-2 text-xs font-semibold text-slate-400">
+      {{ partial "icon.html" (dict "name" "calendar" "class" "size-4") }}
+      Subscribe (Apple / Outlook)
+    </span>
+  {{- end }}
+</div>

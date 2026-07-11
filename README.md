@@ -134,15 +134,32 @@ Optionally give them photos and a one-line blurb (photo files go in `static/imag
 
 Two features are planned (see `docs/plans/`, local only) and will work like this:
 
-**Events calendar** — a Google Calendar owned by VTC is the source of truth. A
-designated person edits events in Google Calendar (no GitHub needed); the site
-renders them live in a custom-designed month view at `/events/calendar/`, with a
-"next 3 events" widget on the Events page and subscribe buttons (Google / Apple /
-Outlook) so visitors get events in their own calendars. The site reads the calendar
-through a restricted, read-only Google API key: the key is **not** stored in the
-repo — it lives in a GitHub Actions secret (`GCAL_API_KEY`) and is injected at
-build time. Until the real calendar is connected, the pages run on a bundled
-sample dataset so design and development don't block on Google setup.
+**Events calendar** (built — running on sample data until connected) — a Google
+Calendar owned by VTC is the source of truth. A designated person edits events in
+Google Calendar (no GitHub needed); the site renders them live in a custom month
+view at `/events/calendar/`, with a "Next Up" widget on the Events page and
+subscribe buttons (Google / Apple / Outlook) so visitors get events in their own
+calendars. Until the real calendar is connected, the pages run in a clearly-labeled
+preview mode on `static/data-samples/calendar-sample.json`.
+
+To connect the real calendar (one-time):
+
+1. In a VTC-owned Google account, create the calendar, make it public
+   (Settings → Access permissions → *Make available to public*), and share edit
+   access with whoever maintains events.
+2. In Google Cloud Console: create a project, enable the *Google Calendar API*,
+   create an **API key**, and restrict it (API restriction: Calendar API only;
+   Application restriction: HTTP referrers for `volunteertransportation.org/*` and
+   `turnkeytrips.github.io/*`).
+3. Add the key as a repo secret named `GCAL_API_KEY` (Settings → Secrets and
+   variables → Actions). It is injected at build time and never committed.
+4. Put the calendar ID (Settings → *Integrate calendar*, looks like
+   `abc123@group.calendar.google.com`) into `data/site.yaml` under
+   `calendar.google_calendar_id`, then push.
+
+Linking a calendar event to more info (a site post, Facebook event, registration
+form, etc.): paste the URL into the Google Calendar event's **description** — the
+site turns URLs in descriptions into clickable links automatically.
 
 **Event posts (news)** — a non-technical editor with a free GitHub account writes
 posts through [Pages CMS](https://pagescms.org) (a hosted form UI over this repo;

@@ -1,7 +1,9 @@
 import Alpine from 'alpinejs';
 import collapse from '@alpinejs/collapse';
+import { registerCalendarComponents } from './calendar.js';
 
 Alpine.plugin(collapse);
+registerCalendarComponents(Alpine);
 
 window.Alpine = Alpine;
 Alpine.start();
