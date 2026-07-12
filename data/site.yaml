@@ -40,6 +40,14 @@ donate_contact:
   phone: (315) 303-2590
   email: info@volunteertransportation.org
 
+# Events calendar (Google Calendar is the source of truth)
+# google_calendar_id: e.g. abc123@group.calendar.google.com — leave EMPTY to run
+# in mock mode against static/data-samples/calendar-sample.json (local dev/design).
+# The API key is NOT stored here: set the GCAL_API_KEY repo secret (GitHub Actions
+# injects it at build time as HUGO_VTC_GCAL_API_KEY).
+calendar:
+  google_calendar_id: ""
+
 social:
   facebook: https://www.facebook.com/VolunteerTransportationCenter/
   x: https://x.com/VolTransportCtr

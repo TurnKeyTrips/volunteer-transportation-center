@@ -129,12 +129,15 @@ menu:
     - name: Events
       url: /events/
       weight: 4
+    - name: Events Calendar
+      url: /events/calendar/
+      weight: 5
     - name: Forms
       url: /forms/
-      weight: 5
+      weight: 6
     - name: FAQ
       url: /faq/
-      weight: 6
+      weight: 7
     - name: Contact Us
       url: /contact-us/
-      weight: 7
+      weight: 8

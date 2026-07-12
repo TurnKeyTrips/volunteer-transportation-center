@@ -8,12 +8,18 @@
     <div class="prose prose-slate max-w-3xl prose-headings:tracking-tight prose-a:font-medium prose-a:text-brand-700 hover:prose-a:text-brand-500">{{ . }}</div>
   {{ end }}
 
+  {{/* Upcoming events from the calendar */}}
+  <div class="mt-8 space-y-4">
+    {{ partial "upcoming-events.html" . }}
+    {{ partial "calendar-subscribe.html" . }}
+  </div>
+
   {{/* Facebook callout */}}
   {{ with hugo.Data.site.social.facebook }}
   <div class="mt-8 flex flex-col items-start gap-4 rounded-2xl bg-brand-800 p-6 text-white sm:flex-row sm:items-center sm:justify-between">
     <div>
-      <h2 class="text-lg font-bold">Looking for what's coming up?</h2>
-      <p class="mt-1 text-sm text-brand-100">Dates and details for our latest events are always posted on our Facebook page.</p>
+      <h2 class="text-lg font-bold">Follow us on Facebook</h2>
+      <p class="mt-1 text-sm text-brand-100">For up-to-date event info, photos, and announcements, follow the VTC on Facebook.</p>
     </div>
     <a href="{{ . }}" target="_blank" rel="noopener"
       class="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-brand-800 hover:bg-brand-50">
@@ -92,4 +98,6 @@
     </a>
   </div>
 </div>
+
+{{ partial "calendar-config.html" . }}
 {{ end }}

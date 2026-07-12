@@ -1,0 +1,12 @@
+{{- /*
+  Emits the JS config for the calendar components. The API key is injected by
+  GitHub Actions (secret GCAL_API_KEY -> env HUGO_VTC_GCAL_API_KEY) and is never
+  committed. With no calendar id or key, the components run in mock mode against
+  the bundled sample dataset.
+*/ -}}
+{{- $cfg := dict
+  "calendarId" (hugo.Data.site.calendar.google_calendar_id | default "")
+  "apiKey" (getenv "HUGO_VTC_GCAL_API_KEY")
+  "sampleUrl" (partial "url.html" "/data-samples/calendar-sample.json")
+-}}
+<script>window.VTC_CAL = {{ $cfg }};</script>

@@ -60,6 +60,9 @@ jobs:
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
+          # Google Calendar API key (read-only, referrer-restricted). Lives in the
+          # repo secret GCAL_API_KEY, never in the repo itself.
+          HUGO_VTC_GCAL_API_KEY: ${{ secrets.GCAL_API_KEY }}
         run: |
           hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
