@@ -3,7 +3,7 @@
 Auto-generated log of every link found in `content/**/*.md` (markdown links and raw `href`/`src` attributes).
 Regenerate with `./scripts/gen_links.sh` after content changes.
 
-**Total unique links: 36**
+**Total unique links: 38**
 
 ## Internal links (relative) (8)
 
@@ -20,11 +20,13 @@ Links within the site. Verify each resolves to a page in `content/` or a planned
 | `/files/driver-application-form-2019-getther.jpg` | `content/volunteer-transporation-getthere-scny.md` |
 | `/files/driver-application-form.pdf` | `content/1369-2.md`<br>`content/jefferson-county.md`<br>`content/lewis-county.md`<br>`content/st-lawrence-county.md` |
 
-## Internal links (absolute old-domain URLs) (0)
+## Internal links (absolute old-domain URLs) (1)
 
 Absolute URLs pointing at the old production domain — these should be converted to relative paths.
 
-_None found._
+| Link | Found in |
+| --- | --- |
+| `http://www.volunteertransportationcenter.org` | `content/posts/shootin-trap-for-trips-2026.md` |
 
 ## Old WordPress media references (1)
 
@@ -47,11 +49,12 @@ Third-party destinations. Spot-check these are still live before launch.
 | `https://form.jotform.us/61038212879155` | `content/1369-2.md` |
 | `https://www.transit.dot.gov/regulations-and-guidance/civil-rights-ada/americans-disabilities-act` | `content/corporate-compliance/ada.md` |
 
-## Email links (2)
+## Email links (3)
 
 | Link | Found in |
 | --- | --- |
 | `mailto:` | `content/jefferson-county.md`<br>`content/lewis-county.md`<br>`content/new-client-application.md`<br>`content/st-lawrence-county.md` |
+| `mailto:foundation@volunteertransportation.org` | `content/posts/shootin-trap-for-trips-2026.md` |
 | `mailto:info@volunteertransportation.org` | `content/1369-2.md`<br>`content/clients.md`<br>`content/corporate-compliance/ada.md`<br>`content/corporate-compliance/civil-rights.md` |
 
 ## Phone links (6)
