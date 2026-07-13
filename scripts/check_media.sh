@@ -2,7 +2,7 @@
 # Guard rails for editor-uploaded media, run by the deploy workflow (and
 # runnable locally). Belt-and-suspenders behind the Pages CMS config, which
 # restricts extensions but cannot enforce file sizes:
-#   - gallery photos (assets/images/news/, static/images/scrapbook/):
+#   - gallery photos (assets/images/posts/, static/images/scrapbook/):
 #     real JPEGs only, 2 MB max each
 #   - flyers (static/files/flyers/): real PDFs only, 10 MB max each
 # Exits non-zero (failing the deploy) if any file breaks the rules.
@@ -46,7 +46,7 @@ check_dir() {
   done < <(find "$ROOT/$dir" -type f ! -name '.*' -print0)
 }
 
-check_dir "assets/images/news"      "jpg jpeg" jpeg $((2 * 1024 * 1024))  "2 MB"
+check_dir "assets/images/posts"      "jpg jpeg" jpeg $((2 * 1024 * 1024))  "2 MB"
 check_dir "static/images/scrapbook" "jpg jpeg" jpeg $((2 * 1024 * 1024))  "2 MB"
 check_dir "static/files/flyers"     "pdf"      pdf  $((10 * 1024 * 1024)) "10 MB"
 

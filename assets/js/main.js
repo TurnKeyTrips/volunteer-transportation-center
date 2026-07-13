@@ -81,9 +81,15 @@ document.addEventListener('click', (e) => {
   const rect = el.getBoundingClientRect();
   burstConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2);
 
-  // Delay same-tab link navigation just long enough to enjoy the pop
-  if (el.tagName === 'A' && el.href && el.target !== '_blank' && !e.metaKey && !e.ctrlKey) {
+  // Delay navigation just long enough to enjoy the pop. New-tab links are
+  // delayed too (still within the browser's user-activation window, so the
+  // popup blocker allows it).
+  if (el.tagName === 'A' && el.href && !e.metaKey && !e.ctrlKey) {
     e.preventDefault();
-    setTimeout(() => { window.location.href = el.href; }, 500);
+    if (el.target === '_blank') {
+      setTimeout(() => { window.open(el.href, '_blank', 'noopener'); }, 500);
+    } else {
+      setTimeout(() => { window.location.href = el.href; }, 500);
+    }
   }
 });

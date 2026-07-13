@@ -15,14 +15,14 @@ hit Save. The site rebuilds itself and your change is live in about two minutes.
 
 That's it. Bookmark the page.
 
-## Writing a news post
+## Writing a post
 
-1. In the left sidebar, open **News posts** and click **Add entry**.
+1. In the left sidebar, open **Posts** and click **Add entry**.
 2. Fill in the form:
    - **Title** — the headline, e.g. "28th Annual Chili Cook-Off Wraps Up".
    - **Publish date** — today, usually. Newest posts appear first.
    - **Event date** — when the event happened (or will happen).
-   - **Summary** — one sentence for the news cards. Short and sweet.
+   - **Summary** — one sentence for the post cards. Short and sweet.
    - **Photos** — add as many as you like. **JPEG only, 2 MB max per photo.**
      When your phone or Google Photos asks what size to share, pick **Large** —
      that's well under the limit and plenty sharp. The site automatically
@@ -33,7 +33,7 @@ That's it. Bookmark the page.
      download button.
    - **Write-up** — the story. What happened? Who came? Any thank-yous?
      Results or totals?
-3. Click **Save**. Done — the post is live at `/news/` in about two minutes.
+3. Click **Save**. Done — the post is live at `/posts/` in about two minutes.
 
 ## Fixing a mistake
 
@@ -51,6 +51,10 @@ That's it. Bookmark the page.
   and a one-line caption.
 - **Annual events** — the recurring events on `/events/`: name, blurb, icon,
   and an optional link.
+
+Note: the Scrapbook and Posts keep **separate photo libraries**. A photo you
+upload to a post won't show up when adding Scrapbook photos (and vice versa) —
+if you want the same photo in both places, upload it in both places.
 
 ## Rules of thumb
 

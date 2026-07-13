@@ -95,11 +95,16 @@ menu:
       url: /events/
       parent: events
       weight: 41
-    - identifier: news
-      name: News
-      url: /news/
+    - identifier: calendar
+      name: Calendar
+      url: /events/calendar/
       parent: events
       weight: 42
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      parent: events
+      weight: 43
     - identifier: forms
       name: Forms
       url: /forms/
