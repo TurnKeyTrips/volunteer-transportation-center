@@ -8,10 +8,10 @@
 # fails the build instead of publishing).
 
 media:
-  - name: news
-    label: News photos
-    input: assets/images/news
-    output: /images/news
+  - name: posts
+    label: Post photos
+    input: assets/images/posts
+    output: /images/posts
     extensions: [jpg, jpeg]
   - name: flyers
     label: Event flyers (PDF)
@@ -25,11 +25,11 @@ media:
     extensions: [jpg, jpeg]
 
 content:
-  - name: news
-    label: News posts
-    description: Event recaps and updates shown at /news/ and on the Events page.
+  - name: posts
+    label: Posts
+    description: Event recaps and updates shown at /posts/ and on the Events page.
     type: collection
-    path: content/news
+    path: content/posts
     exclude: ["_index.md"]
     view:
       fields: [title, event_date, date]
@@ -54,14 +54,14 @@ content:
           format: yyyy-MM-dd
       - name: summary
         label: Summary
-        description: One sentence shown on the news cards. Keep it short.
+        description: One sentence shown on the post cards. Keep it short.
         type: string
       - name: photos
         label: Photos
         description: JPEG only, 2 MB max per photo. The site generates the sizes visitors see.
         type: image
         options:
-          media: news
+          media: posts
           multiple: true
           extensions: [jpg, jpeg]
       - name: google_photos_album
