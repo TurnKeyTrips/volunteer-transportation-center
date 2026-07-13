@@ -84,34 +84,6 @@ content:
         description: "What happened? Who came? Any thank-yous? Results or totals?"
         type: rich-text
 
-  - name: events
-    label: Annual events
-    description: The recurring events listed on the Events page.
-    type: file
-    path: data/events.yaml
-    list: true
-    fields:
-      - name: name
-        label: Event name
-        type: string
-        required: true
-      - name: icon
-        label: Icon
-        type: select
-        default: heart
-        options:
-          values: [heart, calendar, map-pin, users, arrow-right, truck, hand-heart, document, question]
-      - name: blurb
-        label: Blurb
-        type: text
-        required: true
-      - name: link
-        label: Link (optional)
-        type: string
-      - name: link_text
-        label: Link text (optional)
-        type: string
-
   - name: scrapbook
     label: Scrapbook
     description: Photos on the Scrapbook page, in this order.

@@ -10,10 +10,50 @@
   {{ if $posts }}
     <div class="gap-10 lg:grid lg:grid-cols-[minmax(0,1fr)_16rem]">
 
-      {{/* Latest posts as cards */}}
-      <div class="grid content-start gap-6 sm:grid-cols-2 xl:grid-cols-3">
-        {{ range first 9 $posts }}
-          {{ partial "post-card.html" . }}
+      <div>
+        {{/* Hero: the latest post */}}
+        {{ $hero := index $posts 0 }}
+        {{ $heroThumb := "" }}
+        {{ with index $hero.Params.photos 0 }}
+          {{ with resources.Get (strings.TrimPrefix "/" .) }}
+            {{ $heroThumb = (.Fill "900x600 q75 Center").RelPermalink }}
+          {{ end }}
+        {{ end }}
+        <a href="{{ $hero.RelPermalink }}"
+          class="group grid overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-brand-300 hover:shadow-md md:grid-cols-2">
+          {{ if $heroThumb }}
+            <img src="{{ $heroThumb }}" alt="" class="h-56 w-full object-cover transition duration-300 group-hover:scale-[1.02] sm:h-72 md:h-full">
+          {{ else }}
+            <div class="flex h-56 w-full items-center justify-center bg-brand-50 text-brand-300 sm:h-72 md:h-full">
+              {{ partial "icon.html" (dict "name" "document" "class" "size-14") }}
+            </div>
+          {{ end }}
+          <div class="flex flex-col justify-center p-8 lg:p-10">
+            <p class="text-xs font-bold uppercase tracking-widest text-accent-600">Latest post</p>
+            <h2 class="mt-3 text-2xl font-bold tracking-tight text-slate-900 group-hover:text-brand-700 lg:text-3xl">{{ $hero.Title }}</h2>
+            {{ with $hero.Params.event_date }}
+              <p class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-brand-700">
+                {{ partial "icon.html" (dict "name" "calendar" "class" "size-4") }}
+                {{ (time .).Format "January 2, 2006" }}
+              </p>
+            {{ end }}
+            {{ with $hero.Params.summary }}
+              <p class="mt-4 leading-relaxed text-slate-600">{{ . }}</p>
+            {{ end }}
+            <span class="mt-6 inline-flex items-center gap-2 self-start rounded-full bg-brand-700 px-6 py-2.5 text-sm font-semibold text-white transition group-hover:bg-brand-600">
+              Read more {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
+            </span>
+          </div>
+        </a>
+
+        {{/* The next six posts, three across */}}
+        {{ $rest := first 6 (after 1 $posts) }}
+        {{ if $rest }}
+          <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {{ range $rest }}
+              {{ partial "post-card.html" . }}
+            {{ end }}
+          </div>
         {{ end }}
       </div>
 

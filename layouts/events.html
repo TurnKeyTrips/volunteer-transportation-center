@@ -9,9 +9,13 @@
   {{ end }}
 
   {{/* Upcoming events from the calendar */}}
-  <div class="mt-8 space-y-4">
+  <div class="mt-8">
     {{ partial "upcoming-events.html" . }}
-    {{ partial "calendar-subscribe.html" . }}
+  </div>
+
+  {{/* Full month calendar */}}
+  <div class="mt-12">
+    {{ partial "event-calendar.html" . }}
   </div>
 
   {{/* Facebook callout */}}
@@ -29,71 +33,29 @@
   </div>
   {{ end }}
 
-  {{/* Annual events */}}
-  <h2 class="mt-14 text-2xl font-bold tracking-tight text-slate-900">Our Annual Events</h2>
-  <p class="mt-2 max-w-2xl text-sm text-slate-600">
-    Many of our events return every year. Here's a taste of what to look forward to.
-  </p>
-  <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-    {{ range $event := hugo.Data.events }}
-      <div class="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <div class="mb-3 inline-flex self-start rounded-xl bg-brand-100 p-2.5 text-brand-700">
-          {{ partial "icon.html" (dict "name" ($event.icon | default "calendar") "class" "size-6") }}
-        </div>
-        <h3 class="font-bold text-slate-900">{{ $event.name }}</h3>
-        <p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{{ $event.blurb }}</p>
-        {{ with $event.link }}
-          <a href="{{ partial "url.html" . }}" {{ if hasPrefix . "http" }}target="_blank" rel="noopener"{{ end }}
-            class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:underline">
-            {{ $event.link_text | default "Learn more" }}
-            {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
-          </a>
-        {{ end }}
-      </div>
-    {{ end }}
-  </div>
-
-  {{/* Latest posts */}}
-  {{ $posts := first 3 (where site.RegularPages "Section" "posts").ByDate.Reverse }}
-  {{ if $posts }}
-    <div class="mt-16 flex flex-wrap items-end justify-between gap-4">
-      <div>
-        <h2 class="text-2xl font-bold tracking-tight text-slate-900">Latest Posts</h2>
-        <p class="mt-2 max-w-2xl text-sm text-slate-600">Recaps and photos from our most recent events.</p>
-      </div>
-      <a href="{{ partial "url.html" "/posts/" }}" class="inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:underline">
-        All posts {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
-      </a>
-    </div>
-    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {{ range $posts }}
-        {{ partial "post-card.html" . }}
-      {{ end }}
-    </div>
-  {{ end }}
-
   {{/* Sponsors */}}
-  <h2 class="mt-16 text-2xl font-bold tracking-tight text-slate-900">Thank You to Our Sponsors</h2>
-  <p class="mt-2 max-w-2xl text-sm text-slate-600">
+  <h2 class="mt-16 text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Thank You to Our Sponsors</h2>
+  <p class="mx-auto mt-2 max-w-2xl text-center text-slate-600">
     Our events are made possible by the generosity of local businesses and foundations.
   </p>
-  <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+  <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
     {{ range hugo.Data.sponsors }}
       <a href="{{ .url }}" target="_blank" rel="noopener"
-        class="group flex items-center justify-center rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:border-brand-300 hover:shadow-md">
-        <span class="font-semibold text-slate-700 group-hover:text-brand-700">{{ .name }}</span>
+        class="group flex items-center justify-center rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm transition hover:border-brand-300 hover:shadow-md">
+        <span class="text-lg font-semibold text-slate-700 group-hover:text-brand-700">{{ .name }}</span>
       </a>
     {{ end }}
   </div>
 
-  {{/* Get involved */}}
-  <div class="mt-16 rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center">
-    <h2 class="text-xl font-bold text-slate-900">Want to sponsor or attend an event?</h2>
-    <p class="mx-auto mt-2 max-w-xl text-sm text-slate-600">
+  {{/* Sponsor CTA */}}
+  <div class="mt-12 rounded-2xl bg-brand-800 p-10 text-center text-white">
+    <h2 class="text-2xl font-bold tracking-tight">Want to sponsor an event?</h2>
+    <p class="mx-auto mt-3 max-w-xl text-brand-100">
       Every dollar raised goes to mileage reimbursement for our dedicated volunteer drivers.
       We'd love to have you along for the ride.
     </p>
-    <a href="{{ partial "url.html" "/contact-us/" }}" class="mt-5 inline-flex items-center gap-2 rounded-full bg-brand-700 px-6 py-2.5 text-sm font-semibold text-white hover:bg-brand-600">
+    <a href="{{ partial "url.html" "/contact-us/" }}" data-confetti
+      class="mt-6 inline-flex items-center gap-2 rounded-full bg-accent-500 px-7 py-3 text-sm font-semibold text-white shadow-sm hover:bg-accent-600">
       Get in touch {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
     </a>
   </div>

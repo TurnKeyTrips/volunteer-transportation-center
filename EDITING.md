@@ -49,8 +49,6 @@ That's it. Bookmark the page.
 
 - **Scrapbook** — the photo wall at `/scrapbook/`. Add a photo (JPEG, 2 MB max)
   and a one-line caption.
-- **Annual events** — the recurring events on `/events/`: name, blurb, icon,
-  and an optional link.
 
 Note: the Scrapbook and Posts keep **separate photo libraries**. A photo you
 upload to a post won't show up when adding Scrapbook photos (and vice versa) —

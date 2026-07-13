@@ -1,7 +1,10 @@
-{{ define "main" }}
-{{ partial "page-header.html" (dict "title" .Title "subtitle" "Everything coming up at the VTC. Subscribe and our events land right in your own calendar.") }}
-
-<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8" x-data="vtcCalendar">
+{{- /*
+  Full month calendar, embedded on the Events page (id="calendar" so links can
+  jump to it). Alpine component `vtcCalendar` comes from assets/js/calendar.js;
+  the page including this partial must also include calendar-config.html once.
+  Subscribe buttons live in the toolbar here — the single set on the site.
+*/ -}}
+<div id="calendar" x-data="vtcCalendar" class="scroll-mt-24">
 
   {{/* Toolbar */}}
   <div class="flex flex-wrap items-center justify-between gap-4">
@@ -18,7 +21,7 @@
         class="rounded-full border border-slate-200 px-4 py-1.5 text-sm font-semibold text-slate-700 transition hover:border-brand-400 hover:text-brand-700">
         Today
       </button>
-      <h2 class="ml-2 text-xl font-bold tracking-tight text-slate-900" x-text="monthLabel"></h2>
+      <h3 class="ml-2 text-xl font-bold tracking-tight text-slate-900" x-text="monthLabel"></h3>
     </div>
     {{ partial "calendar-subscribe.html" . }}
   </div>
@@ -29,7 +32,7 @@
   </p>
 
   {{/* Load failure fallback */}}
-  <div x-cloak x-show="failed" class="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center">
+  <div x-cloak x-show="failed" class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center">
     <p class="font-semibold text-slate-800">The calendar couldn't be loaded right now.</p>
     <p class="mt-2 text-sm text-slate-600">
       Please try again in a moment{{ with hugo.Data.site.calendar.google_calendar_id }}, or
@@ -38,13 +41,13 @@
   </div>
 
   {{/* Month grid (hidden on small screens; agenda shows instead) */}}
-  <div x-show="!failed" class="mt-6 hidden overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm md:block">
+  <div x-show="!failed" class="mt-5 hidden overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm md:block">
     <div class="grid grid-cols-7 border-b border-slate-200 bg-slate-50 text-center text-xs font-semibold uppercase tracking-wide text-slate-500">
       <div class="py-2">Sun</div><div class="py-2">Mon</div><div class="py-2">Tue</div><div class="py-2">Wed</div><div class="py-2">Thu</div><div class="py-2">Fri</div><div class="py-2">Sat</div>
     </div>
     <div class="grid grid-cols-7">
       <template x-for="day in days" :key="day.key">
-        <div class="min-h-24 border-b border-r border-slate-100 p-1.5 [&:nth-child(7n)]:border-r-0"
+        <div class="min-h-20 border-b border-r border-slate-100 p-1.5 [&:nth-child(7n)]:border-r-0"
           :class="day.inMonth ? 'bg-white' : 'bg-slate-50/60'">
           <span class="inline-flex size-6 items-center justify-center rounded-full text-xs font-semibold"
             :class="day.isToday ? 'bg-brand-700 text-white' : day.inMonth ? 'text-slate-700' : 'text-slate-400'"
@@ -85,7 +88,7 @@
   </div>
 
   {{/* Agenda (mobile) */}}
-  <div x-show="!failed" class="mt-6 md:hidden">
+  <div x-show="!failed" class="mt-5 md:hidden">
     <div x-show="loading" class="space-y-3" aria-hidden="true">
       <template x-for="i in 4">
         <div class="h-16 animate-pulse rounded-xl bg-slate-100"></div>
@@ -112,11 +115,4 @@
       </template>
     </div>
   </div>
-
-  {{ with .Content }}
-    <div class="prose prose-slate mt-10 max-w-3xl prose-headings:tracking-tight prose-a:font-medium prose-a:text-brand-700 hover:prose-a:text-brand-500">{{ . }}</div>
-  {{ end }}
 </div>
-
-{{ partial "calendar-config.html" . }}
-{{ end }}

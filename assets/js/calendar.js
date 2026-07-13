@@ -74,7 +74,7 @@ function linkifyDescription(text) {
 }
 
 export function registerCalendarComponents(Alpine) {
-  // Full month view (/events/calendar/)
+  // Full month view (embedded on /events/)
   Alpine.data('vtcCalendar', () => ({
     year: 0,
     month: 0, // 0-based

@@ -1,12 +1,12 @@
-{{- /* "Next up" widget: the 3 soonest events from the calendar (or sample data). */ -}}
-<div x-data="vtcUpcoming(3)" x-cloak x-show="!failed && (loading || events.length > 0)"
+{{- /* "Next up" widget: the 5 soonest events from the calendar (or sample data). */ -}}
+<div x-data="vtcUpcoming(5)" x-cloak x-show="!failed && (loading || events.length > 0)"
   class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
   <div class="flex flex-wrap items-center justify-between gap-3">
     <h2 class="text-lg font-bold text-slate-900">Upcoming Events</h2>
-    <a href="{{ partial "url.html" "/events/calendar/" }}"
+    <a href="#calendar"
       class="inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:underline">
       Full calendar
-      {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
+      {{ partial "icon.html" (dict "name" "chevron-down" "class" "size-4") }}
     </a>
   </div>
 

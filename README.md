@@ -31,7 +31,7 @@ In simple terms:
   a hosted form UI over this repo (nothing to install or host). Editor saves are
   git commits to `main`, so they publish automatically and anything can be
   reverted. See [For contributors](#for-contributors-writing-posts-and-photos) below.
-- **The events calendar** at `/events/calendar/` reads a Google Calendar in the
+- **The events calendar** on the Events page reads a Google Calendar in the
   browser, so event upkeep happens in Google Calendar, not in this repo. Until
   the real calendar is connected it runs in a clearly-labeled preview mode on
   `static/data-samples/calendar-sample.json`.
@@ -46,7 +46,7 @@ In simple terms:
 | Staff on About Us | [data/people.yaml](data/people.yaml) |
 | Board members | [data/boards.yaml](data/boards.yaml) |
 | Offices on Contact Us | [data/offices.yaml](data/offices.yaml) |
-| Annual events / sponsors on Events | [data/events.yaml](data/events.yaml) / [data/sponsors.yaml](data/sponsors.yaml) |
+| Sponsors on the Events page | [data/sponsors.yaml](data/sponsors.yaml) |
 | Forms on the Forms page | [data/forms.yaml](data/forms.yaml) |
 | Scrapbook photos and captions | [data/scrapbook.yaml](data/scrapbook.yaml) |
 | Posts (event recaps at `/posts/`) | `content/posts/<post>.md` — or the CMS, see below |
@@ -81,7 +81,7 @@ generates the served sizes (~50 KB thumbnails, ~200 KB lightbox images), so
 visitors never download originals.
 
 The CMS form itself is defined in [.pages.yml](.pages.yml): the Posts
-collection plus guarded editing of `data/events.yaml` and `data/scrapbook.yaml`.
+collection plus guarded editing of `data/scrapbook.yaml`.
 Rolling back an editor change: `git revert <sha> && git push`.
 
 ### Connecting the real events calendar (one-time)
@@ -202,12 +202,11 @@ site. Here's the whole workflow:
 2. **Go to [app.pagescms.org](https://app.pagescms.org)**, click **Sign in with
    GitHub**, authorize it, and pick the **volunteer-transportation-center** site.
    Bookmark the page — this is the only site you need.
-3. **Edit through the forms.** The sidebar has three sections:
+3. **Edit through the forms.** The sidebar has two sections:
    - **Posts** — event recaps and updates shown at `/posts/`, on the Events
      page, and on the home page. A post is a title, dates, a one-sentence
      summary, photos, an optional Google Photos album link, an optional PDF
      flyer, and the write-up.
-   - **Annual events** — the recurring events listed on `/events/`.
    - **Scrapbook** — the photo wall at `/scrapbook/`.
 4. **Click Save and you're published.** The site rebuilds itself; your change
    is live about two minutes later. Made a mistake? Open the entry, fix it,

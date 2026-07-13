@@ -5,104 +5,14 @@
   "timeZone": "America/New_York",
   "items": [
     {
-      "id": "sample-001",
+      "id": "sample-shootin-trap-2026",
       "status": "confirmed",
-      "htmlLink": "https://calendar.google.com/calendar/event?eid=sample-001",
-      "summary": "TEST EVENT 1",
-      "description": "This is a placeholder event while our live calendar is being set up. Real events are coming soon!",
-      "location": "Watertown, NY",
-      "start": { "dateTime": "2026-07-17T10:00:00-04:00" },
-      "end": { "dateTime": "2026-07-17T16:00:00-04:00" }
-    },
-    {
-      "id": "sample-002",
-      "status": "confirmed",
-      "htmlLink": "https://calendar.google.com/calendar/event?eid=sample-002",
-      "summary": "TEST EVENT 2",
-      "description": "This is a placeholder event while our live calendar is being set up.\n\nMore info: https://volunteertransportationcenter.org/events/",
-      "location": "VTC Office, 24685 NY Route 37, Watertown, NY",
-      "start": { "dateTime": "2026-07-22T13:00:00-04:00" },
-      "end": { "dateTime": "2026-07-22T15:00:00-04:00" }
-    },
-    {
-      "id": "sample-003",
-      "status": "confirmed",
-      "htmlLink": "https://calendar.google.com/calendar/event?eid=sample-003",
-      "summary": "TEST EVENT 3",
-      "description": "This is a placeholder event while our live calendar is being set up.",
-      "location": "Carthage, NY",
-      "start": { "dateTime": "2026-07-25T09:00:00-04:00" },
-      "end": { "dateTime": "2026-07-25T14:00:00-04:00" }
-    },
-    {
-      "id": "sample-004",
-      "status": "confirmed",
-      "htmlLink": "https://calendar.google.com/calendar/event?eid=sample-004",
-      "summary": "TEST EVENT 4",
-      "description": "This is a placeholder event while our live calendar is being set up.",
-      "location": "Watertown, NY",
-      "start": { "dateTime": "2026-08-01T10:00:00-04:00" },
-      "end": { "dateTime": "2026-08-01T15:00:00-04:00" }
-    },
-    {
-      "id": "sample-005",
-      "status": "confirmed",
-      "htmlLink": "https://calendar.google.com/calendar/event?eid=sample-005",
-      "summary": "TEST EVENT 5",
-      "description": "This is a placeholder event while our live calendar is being set up.",
-      "location": "VTC Office, Watertown, NY",
-      "start": { "dateTime": "2026-08-12T17:30:00-04:00" },
-      "end": { "dateTime": "2026-08-12T19:00:00-04:00" }
-    },
-    {
-      "id": "sample-006",
-      "status": "confirmed",
-      "htmlLink": "https://calendar.google.com/calendar/event?eid=sample-006",
-      "summary": "TEST EVENT 6",
-      "description": "This is a placeholder event while our live calendar is being set up.",
-      "location": "Lowville, NY",
-      "start": { "dateTime": "2026-09-11T09:30:00-04:00" },
-      "end": { "dateTime": "2026-09-11T16:00:00-04:00" }
-    },
-    {
-      "id": "sample-007",
-      "status": "confirmed",
-      "htmlLink": "https://calendar.google.com/calendar/event?eid=sample-007",
-      "summary": "TEST EVENT 7 (all day)",
-      "description": "This is a placeholder all-day event while our live calendar is being set up.",
-      "location": "Watertown, NY",
-      "start": { "date": "2026-09-19" },
-      "end": { "date": "2026-09-20" }
-    },
-    {
-      "id": "sample-008",
-      "status": "confirmed",
-      "htmlLink": "https://calendar.google.com/calendar/event?eid=sample-008",
-      "summary": "TEST EVENT 8",
-      "description": "This is a placeholder event while our live calendar is being set up.",
-      "location": "Watertown, NY",
-      "start": { "dateTime": "2026-10-07T16:30:00-04:00" },
-      "end": { "dateTime": "2026-10-07T19:30:00-04:00" }
-    },
-    {
-      "id": "sample-009",
-      "status": "confirmed",
-      "htmlLink": "https://calendar.google.com/calendar/event?eid=sample-009",
-      "summary": "TEST EVENT 9",
-      "description": "This is a placeholder event while our live calendar is being set up.",
-      "location": "Canton, NY",
-      "start": { "dateTime": "2026-09-09T17:30:00-04:00" },
-      "end": { "dateTime": "2026-09-09T19:00:00-04:00" }
-    },
-    {
-      "id": "sample-010",
-      "status": "confirmed",
-      "htmlLink": "https://calendar.google.com/calendar/event?eid=sample-010",
-      "summary": "TEST EVENT 10",
-      "description": "This is a placeholder event while our live calendar is being set up.",
-      "location": "Watertown, NY",
-      "start": { "dateTime": "2026-10-15T17:00:00-04:00" },
-      "end": { "dateTime": "2026-10-15T20:00:00-04:00" }
+      "htmlLink": "https://volunteertransportationcenter.org/posts/shootin-trap-for-trips-2026/",
+      "summary": "Shootin’ Trap for Trips Annual 50 Bird Shoot",
+      "description": "The 14th annual Shootin’ Trap for Trips 50 Bird Shoot at the Carthage Rod and Gun Club, benefiting the Volunteer Transportation Center. $25 per person; registration opens at 8 a.m. and sign-ups conclude at 1 p.m. Food, refreshments, raffles, and a 50-50 drawing.\n\nMore info: https://volunteertransportationcenter.org/posts/shootin-trap-for-trips-2026/",
+      "location": "Carthage Rod and Gun Club, 4500 Cold Spring Park Road, Carthage, NY",
+      "start": { "dateTime": "2026-07-18T08:00:00-04:00" },
+      "end": { "dateTime": "2026-07-18T13:00:00-04:00" }
     }
   ]
 }

@@ -62,5 +62,31 @@
     {{ partial "icon.html" (dict "name" "document" "class" "size-4 shrink-0 text-slate-400") }}
     Fax for all offices: {{ (index hugo.Data.offices 0).fax }}
   </p>
+
+  {{/* Sponsorship and giving contact */}}
+  {{ with hugo.Data.site.donate_contact }}
+  <h2 class="mt-14 text-2xl font-bold tracking-tight text-slate-900">Sponsor or Donate?</h2>
+  <div class="mt-6 flex flex-col items-start gap-6 rounded-2xl border border-slate-200 bg-slate-50 p-8 sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      <h3 class="text-lg font-bold text-slate-900">Questions about giving?</h3>
+      <p class="mt-1 text-sm text-slate-600">
+        <span class="font-semibold text-slate-800">{{ .name }}</span>, {{ .title }}, would be happy to help
+        with donations, event sponsorships, and raffle contributions.
+      </p>
+    </div>
+    <div class="flex shrink-0 flex-wrap gap-3">
+      <a href="tel:{{ .phone | replaceRE `[^0-9]` `` }}"
+        class="inline-flex items-center gap-2 rounded-full bg-brand-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600">
+        {{ partial "icon.html" (dict "name" "phone" "class" "size-4") }}
+        {{ .phone }}
+      </a>
+      <a href="mailto:{{ .email }}"
+        class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-brand-400 hover:text-brand-700">
+        {{ partial "icon.html" (dict "name" "mail" "class" "size-4") }}
+        {{ .email }}
+      </a>
+    </div>
+  </div>
+  {{ end }}
 </div>
 {{ end }}

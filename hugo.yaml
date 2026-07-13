@@ -58,6 +58,11 @@ menu:
       url: /corporate-compliance/
       parent: about
       weight: 14
+    - identifier: faq
+      name: FAQ
+      url: /faq/
+      parent: about
+      weight: 15
     - identifier: clients
       name: Get a Ride
       url: /clients/
@@ -90,29 +95,14 @@ menu:
       name: Events
       url: /events/
       weight: 40
-    - identifier: annual-events
-      name: Annual Events
-      url: /events/
-      parent: events
-      weight: 41
-    - identifier: calendar
-      name: Calendar
-      url: /events/calendar/
-      parent: events
-      weight: 42
     - identifier: posts
       name: Posts
       url: /posts/
-      parent: events
-      weight: 43
+      weight: 45
     - identifier: forms
       name: Forms
       url: /forms/
       weight: 50
-    - identifier: faq
-      name: FAQ
-      url: /faq/
-      weight: 60
     - identifier: foundation
       name: Foundation
       url: /foundation/
@@ -134,15 +124,12 @@ menu:
     - name: Events
       url: /events/
       weight: 4
-    - name: Events Calendar
-      url: /events/calendar/
-      weight: 5
     - name: Forms
       url: /forms/
-      weight: 6
+      weight: 5
     - name: FAQ
       url: /faq/
-      weight: 7
+      weight: 6
     - name: Contact Us
       url: /contact-us/
-      weight: 8
+      weight: 7
