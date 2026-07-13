@@ -14,13 +14,20 @@
           Give Online
         </h3>
         <p class="mt-2 text-sm leading-relaxed text-brand-100">
-          Make a secure one-time donation through our online checkout.
+          Make a secure one-time donation through Square or Venmo.
         </p>
-        <a href="{{ $site.links.donate_checkout }}" target="_blank" rel="noopener" data-confetti
-          class="mt-4 inline-flex items-center gap-2 rounded-full bg-accent-500 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-accent-600">
-          Donate Online Now
-          {{ partial "icon.html" (dict "name" "external" "class" "size-4") }}
-        </a>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a href="{{ $site.links.donate_square }}" target="_blank" rel="noopener" data-confetti
+            class="inline-flex items-center gap-2 rounded-full bg-accent-500 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-accent-600">
+            Donate with Square
+            {{ partial "icon.html" (dict "name" "external" "class" "size-4") }}
+          </a>
+          <a href="{{ $site.links.donate_venmo }}" target="_blank" rel="noopener" data-confetti
+            class="inline-flex items-center gap-2 rounded-full bg-accent-500 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-accent-600">
+            Donate with Venmo
+            {{ partial "icon.html" (dict "name" "external" "class" "size-4") }}
+          </a>
+        </div>
       </div>
       <div>
         <h3 class="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-accent-300">
@@ -37,9 +44,6 @@
         </p>
       </div>
     </div>
-    <p class="mt-6 border-t border-white/10 pt-4 text-xs text-brand-200">
-      More ways to give are on the way. Watch this space.
-    </p>
   </div>
 
   {{/* Why it matters — page prose */}}
