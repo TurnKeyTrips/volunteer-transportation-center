@@ -3,7 +3,7 @@
 Auto-generated log of every link found in `content/**/*.md` (markdown links and raw `href`/`src` attributes).
 Regenerate with `./scripts/gen_links.sh` after content changes.
 
-**Total unique links: 38**
+**Total unique links: 40**
 
 ## Internal links (relative) (8)
 
@@ -36,7 +36,7 @@ References to `wp-content/uploads` files. The physical files live in `_old_site_
 | --- | --- |
 | `/wp/wp-content/uploads/2021/06/website-volunteer-page.png` | `content/drivers.md` |
 
-## External links (6)
+## External links (8)
 
 Third-party destinations. Spot-check these are still live before launch.
 
@@ -47,6 +47,8 @@ Third-party destinations. Spot-check these are still live before launch.
 | `https://form.jotform.com/61038212879155` | `content/drivers.md`<br>`content/jefferson-county.md`<br>`content/lewis-county.md`<br>`content/st-lawrence-county.md`<br>`content/volunteer-transporation-getthere-scny.md` |
 | `https://form.jotform.us/61025552290145` | `content/clients.md` |
 | `https://form.jotform.us/61038212879155` | `content/1369-2.md` |
+| `https://jeffcopublictransit.com/jcpt-connect` | `content/clients.md` |
+| `https://slcnypublictransit.com/first-mile-last-mile/` | `content/clients.md` |
 | `https://www.transit.dot.gov/regulations-and-guidance/civil-rights-ada/americans-disabilities-act` | `content/corporate-compliance/ada.md` |
 
 ## Email links (3)

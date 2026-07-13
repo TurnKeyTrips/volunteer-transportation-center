@@ -23,4 +23,11 @@ Jefferson County [(866) 558-0757](tel:8665580757)\
 Lewis County [(800) 430-6681](tel:8004306681)\
 St. Lawrence County [(866) 722-4135](tel:8667224135)
 
+## Bus and Public Transit Options
+
+Prefer the bus, or need help getting to a stop?
+
+- **Jefferson County** — [JCPT Connect](https://jeffcopublictransit.com/jcpt-connect), Jefferson County Public Transit's on-demand bus service.
+- **St. Lawrence County** — the [First Mile Last Mile program](https://slcnypublictransit.com/first-mile-last-mile/): a VTC volunteer driver picks you up at home and connects you with St. Lawrence County Public Transit's bus routes, then brings you home from the stop at the end of the day.
+
 Still have questions? [Email us](mailto:info@volunteertransportation.org). We are happy to help!
