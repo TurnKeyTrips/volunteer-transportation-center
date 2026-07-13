@@ -28,9 +28,6 @@
     - name: Client Application for Service (printable)
       url: /files/2026-Client-Application.pdf
       type: pdf
-    - name: Carthage Area Hospital Referral Form
-      url: https://form.jotform.com/211433912370144
-      type: online
     - name: VTC Client Recertification Form
       url: https://form.jotform.com/vtc/client-recertification-form
       type: online
