@@ -63,10 +63,30 @@ const fmtTime = (d) =>
 const fmtLongDate = (d) =>
   d.toLocaleDateString([], { weekday: 'long', month: 'long', day: 'numeric' });
 
+// Google Calendar returns the description as HTML whenever the event was
+// written in the Calendar UI (<p>, <br>, <a>…). Flatten that to plain text —
+// keeping line breaks — so the event's own markup is never injected into the
+// page. Entities are decoded innermost-first (&amp; last) to avoid
+// double-decoding.
+function flattenDescription(text) {
+  const s = String(text ?? '');
+  if (!/<\/?[a-z][^>]*>/i.test(s)) return s;
+  return s
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/(p|div|li|ul|ol|h[1-6])>/gi, '\n')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&lt;/gi, '<').replace(/&gt;/gi, '>')
+    .replace(/&quot;/gi, '"').replace(/&#0?39;/g, "'")
+    .replace(/&amp;/gi, '&')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
 // Escape HTML, then turn bare URLs into links. Lets the calendar editor link an
 // event to a post/page just by pasting the URL into the event description.
 function linkifyDescription(text) {
-  const escaped = String(text)
+  const escaped = flattenDescription(text)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   return escaped.replace(/https?:\/\/[^\s<]+[^\s<.,)!?]/g, (url) =>
