@@ -8,13 +8,8 @@
     <div class="prose prose-slate max-w-3xl prose-headings:tracking-tight prose-a:font-medium prose-a:text-brand-700 hover:prose-a:text-brand-500">{{ . }}</div>
   {{ end }}
 
-  {{/* Upcoming events from the calendar */}}
-  <div class="mt-8">
-    {{ partial "upcoming-events.html" . }}
-  </div>
-
   {{/* Full month calendar */}}
-  <div class="mt-12">
+  <div class="mt-8">
     {{ partial "event-calendar.html" . }}
   </div>
 
@@ -33,6 +28,11 @@
   </div>
   {{ end }}
 
+  {{/* Upcoming events from the calendar */}}
+  <div class="mt-12">
+    {{ partial "upcoming-events.html" . }}
+  </div>
+
   {{/* Sponsors */}}
   <h2 class="mt-16 text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Thank You to Our Sponsors</h2>
   <p class="mx-auto mt-2 max-w-2xl text-center text-slate-600">
@@ -48,15 +48,15 @@
   </div>
 
   {{/* Sponsor CTA */}}
-  <div class="mt-12 rounded-2xl bg-brand-800 p-10 text-center text-white">
-    <h2 class="text-2xl font-bold tracking-tight">Want to sponsor an event?</h2>
-    <p class="mx-auto mt-3 max-w-xl text-brand-100">
-      Every dollar raised goes to mileage reimbursement for our dedicated volunteer drivers.
-      We'd love to have you along for the ride.
-    </p>
+  <div class="mt-8 flex flex-col items-start gap-4 rounded-2xl bg-brand-800 p-6 text-white sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      <h2 class="text-lg font-bold">Want to sponsor an event?</h2>
+      <p class="mt-1 text-sm text-brand-100">Every dollar raised goes to mileage reimbursement for our dedicated volunteer drivers.</p>
+    </div>
     <a href="{{ partial "url.html" "/contact-us/" }}" data-confetti
-      class="mt-6 inline-flex items-center gap-2 rounded-full bg-accent-500 px-7 py-3 text-sm font-semibold text-white shadow-sm hover:bg-accent-600">
-      Get in touch {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
+      class="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-brand-800 hover:bg-brand-50">
+      Get in touch
+      {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
     </a>
   </div>
 </div>
