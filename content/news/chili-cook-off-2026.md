@@ -5,6 +5,12 @@ event_date: 2026-07-18
 summary: The Carthage Rod and Gun Club on July 18 will host the Shootin’ Trap
   for Trips Annual 50 Bird Shoot fundraiser to benefit the Volunteer
   Transportation Center.
+photos:
+  - /images/news/Shootin’ Trap for Trips Returning for 14th Year/shootin trap
+    for trips top gun.jpeg
+  - /images/news/Shootin’ Trap for Trips Returning for 14th Year/Shootin Trap
+    for Trips Logo.jpg
+flyer: /files/flyers/2026/Shootin Trap for Trips Poster.pdf
 draft: false
 ---
 # Shootin’ Trap for Trips Returning for 14th Year
@@ -41,4 +47,3 @@ draft: false
 
         For more information about how you can help the Volunteer Transportation Center, about its upcoming events, or to become a volunteer driver, contact the agency in Jefferson and Lewis Counties at 315-788-0422, in St. Lawrence County at 315-714-2034, or Western New York at 585-250-5030. Volunteers drive their own cars, set their own hours and receive mileage reimbursement but, more importantly, make a difference in the community. To learn more, visit ++**[www.volunteertransportationcenter.org](http://www.volunteertransportationcenter.org)**++.
 
- 
