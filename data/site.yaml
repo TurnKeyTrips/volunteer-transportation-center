@@ -47,7 +47,7 @@ donate_contact:
 # The API key is NOT stored here: set the GCAL_API_KEY repo secret (GitHub Actions
 # injects it at build time as HUGO_VTC_GCAL_API_KEY).
 calendar:
-  google_calendar_id: ""
+  google_calendar_id: 840afc2b205d3273b091a3b8fb547559cbfb61dae31b4709dd24bcbc3018e176@group.calendar.google.com
 
 social:
   facebook: https://www.facebook.com/VolunteerTransportationCenter/
