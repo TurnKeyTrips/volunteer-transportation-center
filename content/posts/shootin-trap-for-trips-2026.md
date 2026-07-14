@@ -6,8 +6,8 @@ summary: The Carthage Rod and Gun Club on July 18 will host the Shootin’ Trap
   for Trips Annual 50 Bird Shoot fundraiser to benefit the Volunteer
   Transportation Center.
 photos:
-  - /images/posts/shootin-trap-for-trips-2026/shootin-trap-for-trips-logo.jpg
   - /images/posts/shootin-trap-for-trips-2026/shootin-trap-for-trips-top-gun.jpeg
+  - /images/posts/shootin-trap-for-trips-2026/shootin-trap-for-trips-logo.jpg
 flyer: /files/flyers/2026/shootin-trap-for-trips-poster.pdf
 draft: false
 ---
