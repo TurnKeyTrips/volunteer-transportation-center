@@ -31,6 +31,9 @@ That's it. Bookmark the page.
      Photos, paste its share link and the post gets a "View full album" button.
    - **Printable flyer (PDF)** — optional. Upload a PDF and the post gets a
      download button.
+   - **Show in the home page carousel** — on by default. The 5 newest posts
+     with this on rotate in the banner at the top of the home page; switch it
+     off for posts that shouldn't be featured there.
    - **Write-up** — the story. What happened? Who came? Any thank-yous?
      Results or totals?
 3. Click **Save**. Done — the post is live at `/posts/` in about two minutes.

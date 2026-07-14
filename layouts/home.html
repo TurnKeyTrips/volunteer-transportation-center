@@ -39,12 +39,7 @@
         </div>
       </div>
       <div class="lg:col-span-2">
-        <div class="aspect-video overflow-hidden rounded-2xl shadow-lg shadow-brand-950/60 ring-1 ring-white/20">
-          <iframe class="size-full" src="https://www.youtube-nocookie.com/embed/bXn1eE3vekY"
-            title="Watch Our Story — Volunteer Transportation Center"
-            allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <p class="mt-3 px-1 text-sm text-brand-200">Watch our story and see what a ride means to our neighbors.</p>
+        {{ partial "post-carousel.html" . }}
       </div>
     </div>
   </div>
@@ -64,56 +59,6 @@
 
 {{/* Three paths */}}
 <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8" aria-label="How to get involved">
-
-  {{/* Next upcoming event (from the calendar) + latest post, side by side */}}
-  {{ $latest := first 1 (where site.RegularPages "Section" "posts").ByDate.Reverse }}
-  <div class="mb-8 grid gap-8 {{ if $latest }}md:grid-cols-2{{ end }}">
-    <div x-data="vtcUpcoming(1)" x-cloak x-show="!failed && !loading && events.length > 0" x-transition.opacity.duration.300ms>
-      <template x-for="e in events" :key="e.id">
-        <a href="{{ partial "url.html" "/events/" }}"
-          class="group flex h-full items-center gap-5 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition hover:border-brand-300 hover:shadow-md">
-          <div class="flex size-16 shrink-0 flex-col items-center justify-center rounded-xl bg-brand-50 leading-none">
-            <span class="text-xs font-bold uppercase tracking-wide text-brand-600" x-text="monthShort(e)"></span>
-            <span class="mt-0.5 text-2xl font-extrabold text-brand-800" x-text="dayNum(e)"></span>
-          </div>
-          <div class="min-w-0 flex-1">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-accent-600">Next event</p>
-            <p class="truncate text-lg font-bold text-slate-900 group-hover:text-brand-700" x-text="e.title"></p>
-            <p class="truncate text-sm text-slate-500" x-text="when(e)"></p>
-          </div>
-          <span class="hidden shrink-0 items-center gap-1 text-sm font-semibold text-brand-700 sm:inline-flex">
-            Find out more {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
-          </span>
-        </a>
-      </template>
-    </div>
-    {{ range $latest }}
-      {{ $thumb := "" }}
-      {{ with index .Params.photos 0 }}
-        {{ with resources.Get (strings.TrimPrefix "/" .) }}
-          {{ $thumb = (.Fill "112x112 q75 Center").RelPermalink }}
-        {{ end }}
-      {{ end }}
-      <a href="{{ .RelPermalink }}"
-        class="group flex h-full items-center gap-5 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition hover:border-brand-300 hover:shadow-md">
-        {{ if $thumb }}
-          <img src="{{ $thumb }}" alt="" loading="lazy" class="size-16 shrink-0 rounded-xl object-cover">
-        {{ else }}
-          <div class="flex size-16 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
-            {{ partial "icon.html" (dict "name" "document" "class" "size-6") }}
-          </div>
-        {{ end }}
-        <div class="min-w-0 flex-1">
-          <p class="text-[10px] font-bold uppercase tracking-widest text-accent-600">Latest post</p>
-          <p class="truncate text-lg font-bold text-slate-900 group-hover:text-brand-700">{{ .Title }}</p>
-          <p class="truncate text-sm text-slate-500">{{ .Params.summary | default (.Date.Format "January 2, 2006") }}</p>
-        </div>
-        <span class="hidden shrink-0 items-center gap-1 text-sm font-semibold text-brand-700 sm:inline-flex">
-          Read more {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
-        </span>
-      </a>
-    {{ end }}
-  </div>
 
   <div class="grid gap-8 md:grid-cols-3">
     <a href="{{ partial "url.html" "/clients/" }}" class="group rounded-2xl border border-slate-200 p-8 shadow-sm transition hover:border-brand-300 hover:shadow-md">
@@ -155,6 +100,97 @@
         Donate today {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
       </span>
     </a>
+  </div>
+
+  {{/* Next upcoming event (from the calendar) + latest post, side by side */}}
+  {{ $latest := first 1 (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+  <div class="mt-8 grid gap-8 {{ if $latest }}md:grid-cols-2{{ end }}">
+    <div x-data="vtcUpcoming(1)" x-cloak x-show="!failed && !loading && events.length > 0" x-transition.opacity.duration.300ms class="min-w-0">
+      <template x-for="e in events" :key="e.id">
+        <a href="{{ partial "url.html" "/events/" }}"
+          class="group flex h-full items-center gap-5 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition hover:border-brand-300 hover:shadow-md">
+          <div class="flex size-16 shrink-0 flex-col items-center justify-center rounded-xl bg-brand-50 leading-none">
+            <span class="text-xs font-bold uppercase tracking-wide text-brand-600" x-text="monthShort(e)"></span>
+            <span class="mt-0.5 text-2xl font-extrabold text-brand-800" x-text="dayNum(e)"></span>
+          </div>
+          <div class="min-w-0 flex-1">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-accent-600">Next event</p>
+            <p class="truncate text-lg font-bold text-slate-900 group-hover:text-brand-700" x-text="e.title"></p>
+            <p class="truncate text-sm text-slate-500" x-text="when(e)"></p>
+          </div>
+          <span class="hidden shrink-0 items-center gap-1 text-sm font-semibold text-brand-700 sm:inline-flex">
+            Find out more {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
+          </span>
+        </a>
+      </template>
+    </div>
+    {{ range $latest }}
+      {{ $thumb := "" }}
+      {{ with index .Params.photos 0 }}
+        {{ with resources.Get (strings.TrimPrefix "/" .) }}
+          {{ $thumb = (.Fill "112x112 q75 Center").RelPermalink }}
+        {{ end }}
+      {{ end }}
+      <a href="{{ .RelPermalink }}"
+        class="group flex h-full min-w-0 items-center gap-5 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition hover:border-brand-300 hover:shadow-md">
+        {{ if $thumb }}
+          <img src="{{ $thumb }}" alt="" loading="lazy" class="size-16 shrink-0 rounded-xl object-cover">
+        {{ else }}
+          <div class="flex size-16 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
+            {{ partial "icon.html" (dict "name" "document" "class" "size-6") }}
+          </div>
+        {{ end }}
+        <div class="min-w-0 flex-1">
+          <p class="text-[10px] font-bold uppercase tracking-widest text-accent-600">Latest post</p>
+          <p class="truncate text-lg font-bold text-slate-900 group-hover:text-brand-700">{{ .Title }}</p>
+          <p class="truncate text-sm text-slate-500">{{ .Params.summary | default (.Date.Format "January 2, 2006") }}</p>
+        </div>
+        <span class="hidden shrink-0 items-center gap-1 text-sm font-semibold text-brand-700 sm:inline-flex">
+          Read more {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
+        </span>
+      </a>
+    {{ end }}
+  </div>
+
+  {{/* Why we do it teaser + placeholder for a future card */}}
+  <div class="mt-8 grid gap-8 md:grid-cols-2">
+    <a href="{{ partial "url.html" "/why-we-do-it/" }}"
+      class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-brand-300 hover:shadow-md">
+      {{ with resources.Get "images/video_still.jpeg" }}
+        <div class="relative overflow-hidden">
+          <img src="{{ (.Fill "800x450 q75 Center").RelPermalink }}" alt="" loading="lazy"
+            class="aspect-video w-full object-cover transition duration-300 group-hover:scale-[1.02]">
+          {{/* Dark wash + play button so the still reads as a video, not a photo */}}
+          <div class="absolute inset-0 flex items-center justify-center bg-brand-950/30 transition group-hover:bg-brand-950/40">
+            <span class="inline-flex items-center justify-center rounded-full bg-white/25 p-5 shadow-lg backdrop-blur-sm transition duration-300 group-hover:scale-110">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8 text-white" aria-hidden="true">
+                <path d="M8 5.14v13.72c0 .86.94 1.38 1.67.93l10.8-6.86a1.1 1.1 0 0 0 0-1.86L9.67 4.2A1.1 1.1 0 0 0 8 5.14Z" />
+              </svg>
+            </span>
+          </div>
+        </div>
+      {{ else }}
+        <div class="flex aspect-video w-full items-center justify-center bg-gradient-to-br from-brand-800 to-brand-950 text-white/70">
+          <span class="inline-flex items-center justify-center rounded-full bg-white/10 p-5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8" aria-hidden="true">
+              <path d="M8 5.14v13.72c0 .86.94 1.38 1.67.93l10.8-6.86a1.1 1.1 0 0 0 0-1.86L9.67 4.2A1.1 1.1 0 0 0 8 5.14Z" />
+            </svg>
+          </span>
+        </div>
+      {{ end }}
+      <div class="flex items-center justify-between gap-4 p-6">
+        <div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-brand-700">Why We Do It</h2>
+          <p class="mt-1 text-sm text-slate-600">Learn more about the mission behind every mile.</p>
+        </div>
+        <span class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-brand-700">
+          Watch our story {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
+        </span>
+      </div>
+    </a>
+    <div class="flex items-center justify-center rounded-2xl border-2 border-dashed border-slate-200 p-8">
+      <p class="text-sm font-medium text-slate-400">Content coming soon</p>
+    </div>
   </div>
 </section>
 

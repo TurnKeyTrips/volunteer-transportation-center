@@ -3,7 +3,7 @@
 Auto-generated log of every link found in `content/**/*.md` (markdown links and raw `href`/`src` attributes).
 Regenerate with `./scripts/gen_links.sh` after content changes.
 
-**Total unique links: 40**
+**Total unique links: 46**
 
 ## Internal links (relative) (8)
 
@@ -26,7 +26,7 @@ Absolute URLs pointing at the old production domain — these should be converte
 
 | Link | Found in |
 | --- | --- |
-| `http://www.volunteertransportationcenter.org` | `content/posts/shootin-trap-for-trips-2026.md` |
+| `http://www.volunteertransportationcenter.org` | `content/posts/2026-07-14-rockin-it-for-bill-to-benefit-volunteer-transportation-center.md`<br>`content/posts/shootin-trap-for-trips-2026.md` |
 
 ## Old WordPress media references (1)
 
@@ -36,13 +36,16 @@ References to `wp-content/uploads` files. The physical files live in `_old_site_
 | --- | --- |
 | `/wp/wp-content/uploads/2021/06/website-volunteer-page.png` | `content/drivers.md` |
 
-## External links (8)
+## External links (11)
 
 Third-party destinations. Spot-check these are still live before launch.
 
 | Link | Found in |
 | --- | --- |
+| `http://www.facebook.com/wppmemorialfund` | `content/posts/2026-07-14-rockin-it-for-bill-to-benefit-volunteer-transportation-center.md` |
 | `http://www.FRAUDHL.com` | `content/corporate-compliance/_index.md` |
+| `http://www.spokerride.net` | `content/posts/2026-07-14-spokerride-to-celebrate-24th-year.md` |
+| `http://www.wppmemorialfund.org` | `content/posts/2026-07-14-rockin-it-for-bill-to-benefit-volunteer-transportation-center.md` |
 | `https://form.jotform.com/61025552290145` | `content/new-client-application.md` |
 | `https://form.jotform.com/61038212879155` | `content/drivers.md`<br>`content/jefferson-county.md`<br>`content/lewis-county.md`<br>`content/st-lawrence-county.md`<br>`content/volunteer-transporation-getthere-scny.md` |
 | `https://form.jotform.us/61025552290145` | `content/clients.md` |
@@ -51,13 +54,15 @@ Third-party destinations. Spot-check these are still live before launch.
 | `https://slcnypublictransit.com/first-mile-last-mile/` | `content/clients.md` |
 | `https://www.transit.dot.gov/regulations-and-guidance/civil-rights-ada/americans-disabilities-act` | `content/corporate-compliance/ada.md` |
 
-## Email links (3)
+## Email links (5)
 
 | Link | Found in |
 | --- | --- |
 | `mailto:` | `content/jefferson-county.md`<br>`content/lewis-county.md`<br>`content/new-client-application.md`<br>`content/st-lawrence-county.md` |
 | `mailto:foundation@volunteertransportation.org` | `content/posts/shootin-trap-for-trips-2026.md` |
 | `mailto:info@volunteertransportation.org` | `content/1369-2.md`<br>`content/clients.md`<br>`content/corporate-compliance/ada.md`<br>`content/corporate-compliance/civil-rights.md` |
+| `mailto:spokerride@gmail.com` | `content/posts/2026-07-14-spokerride-to-celebrate-24th-year.md` |
+| `mailto:wppmemorialfund@gmail.com` | `content/posts/2026-07-14-rockin-it-for-bill-to-benefit-volunteer-transportation-center.md` |
 
 ## Phone links (6)
 

@@ -75,6 +75,11 @@ content:
         options:
           media: flyers
           extensions: [pdf]
+      - name: carousel
+        label: Show in the home page carousel
+        description: The 5 newest posts with this on rotate in the banner at the top of the home page.
+        type: boolean
+        default: true
       - name: draft
         label: Hide from the site (draft)
         type: boolean

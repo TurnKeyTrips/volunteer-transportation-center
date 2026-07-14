@@ -43,26 +43,31 @@ menu:
       url: /about-us/
       parent: about
       weight: 11
+    - identifier: why-we-do-it
+      name: Why We Do It
+      url: /why-we-do-it/
+      parent: about
+      weight: 12
     - identifier: board
       name: Boards of Directors
       url: /board-of-directors/
       parent: about
-      weight: 12
+      weight: 13
     - identifier: scrapbook
       name: Scrapbook
       url: /scrapbook/
       parent: about
-      weight: 13
+      weight: 14
     - identifier: compliance
       name: Corporate Compliance
       url: /corporate-compliance/
       parent: about
-      weight: 14
+      weight: 15
     - identifier: faq
       name: FAQ
       url: /faq/
       parent: about
-      weight: 15
+      weight: 16
     - identifier: clients
       name: Get a Ride
       url: /clients/

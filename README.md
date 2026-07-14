@@ -203,10 +203,11 @@ site. Here's the whole workflow:
    GitHub**, authorize it, and pick the **volunteer-transportation-center** site.
    Bookmark the page — this is the only site you need.
 3. **Edit through the forms.** The sidebar has two sections:
-   - **Posts** — event recaps and updates shown at `/posts/`, on the Events
-     page, and on the home page. A post is a title, dates, a one-sentence
-     summary, photos, an optional Google Photos album link, an optional PDF
-     flyer, and the write-up.
+   - **Posts** — event recaps and updates shown at `/posts/` and on the home
+     page. A post is a title, dates, a one-sentence summary, photos, an
+     optional Google Photos album link, an optional PDF flyer, and the
+     write-up. The 5 newest posts also rotate in the home page banner
+     carousel unless a post's "Show in the home page carousel" toggle is off.
    - **Scrapbook** — the photo wall at `/scrapbook/`.
 4. **Click Save and you're published.** The site rebuilds itself; your change
    is live about two minutes later. Made a mistake? Open the entry, fix it,
