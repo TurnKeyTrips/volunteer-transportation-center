@@ -1,6 +1,6 @@
 ---
 title: Shootin’ Trap for Trips Returning for 14th Year
-date: 2026-07-13
+date: 2026-07-10
 event_date: 2026-07-18
 summary: The Carthage Rod and Gun Club on July 18 will host the Shootin’ Trap
   for Trips Annual 50 Bird Shoot fundraiser to benefit the Volunteer
