@@ -48,7 +48,7 @@ content:
           format: yyyy-MM-dd
       - name: event_date
         label: Event date
-        description: When the event happens or happened.
+        description: Optional. When the event happens or happened — leave empty for posts that aren't about an event.
         type: date
         options:
           format: yyyy-MM-dd

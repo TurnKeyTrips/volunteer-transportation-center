@@ -4,14 +4,9 @@
 <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
 
   {{/* Dates */}}
-  <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
-    {{ with .Params.event_date }}
-      <p class="inline-flex items-center gap-1.5 font-medium text-brand-700">
-        {{ partial "icon.html" (dict "name" "calendar" "class" "size-4") }}
-        Event date: {{ (time .).Format "January 2, 2006" }}
-      </p>
-    {{ end }}
+  <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
     <p>Posted {{ .Date.Format "January 2, 2006" }}</p>
+    {{ with .Params.event_date }}{{ partial "event-pill.html" . }}{{ end }}
   </div>
 
   {{/* Write-up */}}

@@ -21,7 +21,9 @@ That's it. Bookmark the page.
 2. Fill in the form:
    - **Title** — the headline, e.g. "28th Annual Chili Cook-Off Wraps Up".
    - **Publish date** — today, usually. Newest posts appear first.
-   - **Event date** — when the event happened (or will happen).
+   - **Event date** — optional. When the event happened (or will happen);
+     it shows as a small orange "Event:" pill on the post. Leave it empty
+     for posts that aren't about an event.
    - **Summary** — one sentence for the post cards. Short and sweet.
    - **Photos** — add as many as you like. **JPEG only, 2 MB max per photo.**
      When your phone or Google Photos asks what size to share, pick **Large** —

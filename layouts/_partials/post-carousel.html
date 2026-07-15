@@ -39,12 +39,10 @@
           </div>
         {{ end }}
         <div class="p-4">
-          {{ with $p.Params.event_date }}
-            <p class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-700">
-              {{ partial "icon.html" (dict "name" "calendar" "class" "size-3.5") }}
-              {{ (time .).Format "January 2, 2006" }}
-            </p>
-          {{ end }}
+          <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1">
+            <p class="text-xs text-slate-500">Posted {{ $p.Date.Format "January 2, 2006" }}</p>
+            {{ with $p.Params.event_date }}{{ partial "event-pill.html" . }}{{ end }}
+          </div>
           <h2 class="mt-1 text-lg font-bold leading-snug text-slate-900 line-clamp-2">{{ $p.Title }}</h2>
           {{ with $p.Params.summary }}
             <p class="mt-1.5 text-sm leading-relaxed text-slate-600 line-clamp-2">{{ . }}</p>

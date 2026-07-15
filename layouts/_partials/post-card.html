@@ -1,7 +1,7 @@
 {{- /*
-  Post card: first photo as thumbnail, event date, title, summary teaser.
-  Usage: partial "post-card.html" $postPage
-  Used by the /posts/ list grid and the "Latest Posts" strip on /events/.
+  Post card: first photo as thumbnail, post date + optional event pill,
+  title, summary teaser. Usage: partial "post-card.html" $postPage
+  Used by the /posts/ list grid.
 */ -}}
 {{- $thumb := "" -}}
 {{- with index .Params.photos 0 -}}
@@ -21,12 +21,10 @@
     </div>
   {{ end }}
   <div class="flex flex-1 flex-col p-5">
-    {{ with .Params.event_date }}
-      <p class="inline-flex items-center gap-1.5 text-xs font-medium text-brand-700">
-        {{ partial "icon.html" (dict "name" "calendar" "class" "size-4") }}
-        {{ (time .).Format "January 2, 2006" }}
-      </p>
-    {{ end }}
+    <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1">
+      <p class="text-xs text-slate-500">Posted {{ .Date.Format "January 2, 2006" }}</p>
+      {{ with .Params.event_date }}{{ partial "event-pill.html" . }}{{ end }}
+    </div>
     <h3 class="mt-1.5 font-bold text-slate-900 group-hover:text-brand-700">{{ .Title }}</h3>
     {{ with .Params.summary }}<p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600 line-clamp-3">{{ . }}</p>{{ end }}
     <p class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
