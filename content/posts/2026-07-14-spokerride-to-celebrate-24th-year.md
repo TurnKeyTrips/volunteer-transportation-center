@@ -14,7 +14,7 @@ draft: false
 ---
 **Annual SpokerRide to Celebrate its 24th Year this July in Sackets Harbor**
 
-> *Event again benefits American Cancer Society, Volunteer Transportation Cent*
+> *Event again benefits American Cancer Society, Volunteer Transportation Center*
 
 SACKETS HARBOR, N.Y. – North Country Against Cancer, organizer of the annual SpokerRide, has announced the ride will return for its 24th year. The event will begin and end at American Legion Post 1757, 209 Ambrose St.
 
@@ -51,7 +51,7 @@ Those interested in sponsoring or participating in this year’s SpokerRide may 
 
 For more information, to register, or to sponsor the SpokerRide, contact organizer Jeff Wood at 315-783-6258 or [spokerride@gmail.com](mailto:spokerride@gmail.com).
 
-## BACKGROUND ON THE SPOKERRIDE
+## Background on the Spokerride
 
 The SpokerRide began in 2003. That was when Mr. Wood and his brother, Steve, both cancer survivors, were looking for a way to give back to all of the people and organizations that helped them during their individual cancer journeys.
 
