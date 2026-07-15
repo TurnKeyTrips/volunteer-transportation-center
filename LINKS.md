@@ -36,7 +36,7 @@ References to `wp-content/uploads` files. The physical files live in `_old_site_
 | --- | --- |
 | `/wp/wp-content/uploads/2021/06/website-volunteer-page.png` | `content/drivers.md` |
 
-## External links (11)
+## External links (10)
 
 Third-party destinations. Spot-check these are still live before launch.
 
@@ -46,9 +46,8 @@ Third-party destinations. Spot-check these are still live before launch.
 | `http://www.FRAUDHL.com` | `content/corporate-compliance/_index.md` |
 | `http://www.spokerride.net` | `content/posts/2026-07-14-spokerride-to-celebrate-24th-year.md` |
 | `http://www.wppmemorialfund.org` | `content/posts/2026-07-14-rockin-it-for-bill-to-benefit-volunteer-transportation-center.md` |
-| `https://form.jotform.com/61025552290145` | `content/new-client-application.md` |
+| `https://form.jotform.com/230543320621038` | `content/clients.md`<br>`content/new-client-application.md` |
 | `https://form.jotform.com/61038212879155` | `content/drivers.md`<br>`content/jefferson-county.md`<br>`content/lewis-county.md`<br>`content/st-lawrence-county.md`<br>`content/volunteer-transporation-getthere-scny.md` |
-| `https://form.jotform.us/61025552290145` | `content/clients.md` |
 | `https://form.jotform.us/61038212879155` | `content/1369-2.md` |
 | `https://jeffcopublictransit.com/jcpt-connect` | `content/clients.md` |
 | `https://slcnypublictransit.com/first-mile-last-mile/` | `content/clients.md` |
