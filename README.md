@@ -205,7 +205,7 @@ site. Here's the whole workflow:
 3. **Edit through the forms.** The sidebar has two sections:
    - **Posts** — event recaps and updates shown at `/posts/` and on the home
      page. A post is a title, dates, a one-sentence summary, photos, an
-     optional Google Photos album link, an optional PDF flyer, and the
+     optional Google Photos album link, any number of labeled PDF downloads, and the
      write-up. The 5 newest posts also rotate in the home page banner
      carousel unless a post's "Show in the home page carousel" toggle is off.
    - **Scrapbook** — the photo wall at `/scrapbook/`.

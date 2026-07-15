@@ -9,14 +9,10 @@
     {{ with .Params.event_date }}{{ partial "event-pill.html" . }}{{ end }}
   </div>
 
-  {{/* Write-up */}}
-  {{ with .Content }}
-    <div class="prose prose-slate mt-6 max-w-3xl prose-headings:tracking-tight prose-a:font-medium prose-a:text-brand-700 hover:prose-a:text-brand-500 prose-img:rounded-lg">{{ . }}</div>
-  {{ end }}
-
-  {{/* Flyer download + external album */}}
-  {{ if or .Params.flyer .Params.google_photos_album }}
-    <div class="mt-8 flex flex-wrap items-center gap-4">
+  {{/* PDF downloads, right under the dates */}}
+  {{ if or .Params.attachments .Params.flyer }}
+    <div class="mt-5 flex flex-wrap items-center gap-3">
+      {{/* Legacy single-flyer front matter, kept for older posts */}}
       {{ with .Params.flyer }}
         <a href="{{ partial "url.html" . }}" download
           class="inline-flex items-center gap-2 rounded-full bg-brand-700 px-6 py-2.5 text-sm font-semibold text-white hover:bg-brand-600">
@@ -24,13 +20,31 @@
           Download printable flyer (PDF)
         </a>
       {{ end }}
-      {{ with .Params.google_photos_album }}
-        <a href="{{ . }}" target="_blank" rel="noopener"
-          class="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-6 py-2.5 text-sm font-semibold text-brand-700 hover:bg-brand-100">
-          View full album on Google Photos
-          {{ partial "icon.html" (dict "name" "external" "class" "size-4") }}
-        </a>
+      {{ range .Params.attachments }}
+        {{ if and .file .label }}
+          <a href="{{ partial "url.html" .file }}" download
+            class="inline-flex items-center gap-2 rounded-full bg-brand-700 px-6 py-2.5 text-sm font-semibold text-white hover:bg-brand-600">
+            {{ partial "icon.html" (dict "name" "download" "class" "size-4") }}
+            {{ .label }}
+          </a>
+        {{ end }}
       {{ end }}
+    </div>
+  {{ end }}
+
+  {{/* Write-up */}}
+  {{ with .Content }}
+    <div class="prose prose-slate mt-6 max-w-3xl prose-headings:tracking-tight prose-a:font-medium prose-a:text-brand-700 hover:prose-a:text-brand-500 prose-img:rounded-lg">{{ . }}</div>
+  {{ end }}
+
+  {{/* External album link, at the bottom before the gallery */}}
+  {{ with .Params.google_photos_album }}
+    <div class="mt-8">
+      <a href="{{ . }}" target="_blank" rel="noopener"
+        class="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-6 py-2.5 text-sm font-semibold text-brand-700 hover:bg-brand-100">
+        View full album on Google Photos
+        {{ partial "icon.html" (dict "name" "external" "class" "size-4") }}
+      </a>
     </div>
   {{ end }}
 

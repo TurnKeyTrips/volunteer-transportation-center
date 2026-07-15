@@ -31,8 +31,11 @@ That's it. Bookmark the page.
      creates the smaller sizes visitors actually download.
    - **Google Photos album link** — optional. If the full album lives on Google
      Photos, paste its share link and the post gets a "View full album" button.
-   - **Printable flyer (PDF)** — optional. Upload a PDF and the post gets a
-     download button.
+   - **PDF downloads** — optional. Each entry becomes a download button on
+     the post. Click **+** to add as many as you need; each has a label
+     (what the button says — it starts as "Download printable flyer", but
+     change it to anything, e.g. "Download registration form") and a PDF
+     file.
    - **Show in the home page carousel** — on by default. The 5 newest posts
      with this on rotate in the banner at the top of the home page; switch it
      off for posts that shouldn't be featured there.

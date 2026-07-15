@@ -68,13 +68,27 @@ content:
         label: Google Photos album link
         description: Optional. Paste a share link to the full album.
         type: string
-      - name: flyer
-        label: Printable flyer (PDF)
-        description: Optional. Shows a download button on the post.
-        type: file
-        options:
-          media: flyers
-          extensions: [pdf]
+      - name: attachments
+        label: PDF downloads
+        description: Optional. Each one becomes a download button on the post — flyers, registration forms, anything. Use + to add as many as you need.
+        type: object
+        list:
+          collapsible:
+            summary: "{label}"
+        fields:
+          - name: label
+            label: Button label
+            description: 'What the button says, e.g. "Download printable flyer" or "Download registration form".'
+            type: string
+            default: Download printable flyer
+            required: true
+          - name: file
+            label: PDF file
+            type: file
+            required: true
+            options:
+              media: flyers
+              extensions: [pdf]
       - name: carousel
         label: Show in the home page carousel
         description: The 5 newest posts with this on rotate in the banner at the top of the home page.

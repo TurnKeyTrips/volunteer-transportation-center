@@ -8,7 +8,9 @@ summary: The Carthage Rod and Gun Club on July 18 will host the Shootin’ Trap
 photos:
   - /images/posts/shootin-trap-for-trips-2026/shootin-trap-for-trips-top-gun.jpeg
   - /images/posts/shootin-trap-for-trips-2026/shootin-trap-for-trips-logo.jpg
-flyer: /files/flyers/2026/shootin-trap-for-trips-poster.pdf
+attachments:
+  - label: Download printable flyer
+    file: /files/flyers/2026/shootin-trap-for-trips-poster.pdf
 draft: false
 ---
 > *Sponsors, donations for event being sought*

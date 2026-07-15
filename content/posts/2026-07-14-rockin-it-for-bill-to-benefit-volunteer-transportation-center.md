@@ -7,7 +7,9 @@ summary: The William P. Plante Memorial Fund Committee will host "Rockin' It For
 photos:
   - /images/posts/Rockin' It For Bill.jpg
   - /images/posts/Rockin' it For Bill Logo.jpg
-flyer: /files/flyers/Rockin' It For Bill Flyer.pdf
+attachments:
+  - label: Download printable flyer
+    file: /files/flyers/Rockin' It For Bill Flyer.pdf
 draft: false
 ---
 ### *Golf Tournament to be Hosted at Willowbrook Golf Club July 17*

@@ -6,7 +6,9 @@ summary: The 24th Annual SpokerRide will return to Sackets Harbor to benefit the
   Volunteer Transportation Center and the American Cancer Society.
 photos:
   - /images/posts/SpokerRide Press Release Photo.jpg
-flyer: /files/flyers/SpokerRide Poster.pdf
+attachments:
+  - label: Download printable flyer
+    file: /files/flyers/SpokerRide Poster.pdf
 draft: false
 ---
 **Annual SpokerRide to Celebrate its 24th Year this July in Sackets Harbor**  
