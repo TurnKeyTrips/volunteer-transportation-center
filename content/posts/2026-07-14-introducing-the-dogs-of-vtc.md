@@ -1,7 +1,6 @@
 ---
 title: Introducing the Dogs of VTC
-date: 2026-07-01
-event_date: ""
+date: 2026-01-01
 summary: Dogs of VTC!
 photos:
   - /images/posts/ollie-sample.jpeg
