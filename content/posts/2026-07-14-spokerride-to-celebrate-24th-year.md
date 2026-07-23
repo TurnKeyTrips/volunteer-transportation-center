@@ -1,6 +1,6 @@
 ---
 title: SpokerRide to Celebrate 24th Year
-date: 2026-06-02
+date: 2026-07-17
 event_date: 2026-07-25
 summary: The 24th Annual SpokerRide will return to Sackets Harbor to benefit the
   Volunteer Transportation Center and the American Cancer Society.
