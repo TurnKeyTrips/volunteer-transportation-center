@@ -18,7 +18,7 @@ Last year’s event raised $28,000 to help the VTC provide services for the comm
 
 “It was our best year yet,” said Mr. Papineau.
 
-The VTC Jefferson-Lewis Golf Tournament will again follow a captain and crew format, beginning with registration at 8 a.m. and with a shotgun start at 9 a.m. Registration will be $400 per team, which includes a cart, dinner and tournament shirt. Skins and super skins may be purchased at registration. Raffles and a 50-50 drawing will also round out the event. ++**Only the first 42 teams to register can be included**++.
+The VTC Jefferson-Lewis Golf Tournament will again follow a captain and crew format, beginning with registration at 8 a.m. and with a shotgun start at 9 a.m. Registration will be $400 per team, which includes a cart, dinner and tournament shirt. Skins and super skins may be purchased at registration. Raffles and a 50-50 drawing will also round out the event. ++**Only the first 48 teams to register can be included**++.
 
 The tournament will take place regardless of weather, so no rain date or refunds will be offered.
 
