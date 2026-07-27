@@ -111,6 +111,7 @@ teams:
       - name: Bobby Zhu
         title: Software Engineer Intern
         photo: /images/people/bobby-zhu-1.jpeg
+        photo2: /images/people/bobby-zhu-2.jpeg
       - name: Ollie
         title: QA/QC Lead
         title_2: Deputy Bark™ Liaison
