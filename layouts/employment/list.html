@@ -1,0 +1,74 @@
+{{ define "main" }}
+{{ partial "page-header.html" (dict "title" .Title "subtitle" .Params.subtitle) }}
+
+<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+  {{ with .Content }}
+    <div class="prose prose-slate mb-8 max-w-3xl prose-headings:tracking-tight prose-a:font-medium prose-a:text-brand-700 hover:prose-a:text-brand-500">{{ . }}</div>
+  {{ end }}
+
+  {{ $jobs := .Pages.ByDate.Reverse }}
+
+  {{/* Standing note: a visible post may still be open even if marked Closed */}}
+  {{ if $jobs }}
+    <div class="mb-8 flex max-w-3xl items-start gap-3 rounded-2xl border border-brand-200 bg-brand-50 p-4 text-sm text-brand-900">
+      {{ partial "icon.html" (dict "name" "question" "class" "size-5 shrink-0 text-brand-600") }}
+      <p>If a posting appears here it may still be accepting applications, even one marked <span class="font-semibold">Closed</span>. When in doubt, please reach out using the contact on the posting to inquire.</p>
+    </div>
+  {{ end }}
+
+  {{ if $jobs }}
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {{ range $jobs }}
+        {{ $closed := false }}
+        {{ with .Params.close_date }}{{ if lt (time.AsTime .) now }}{{ $closed = true }}{{ end }}{{ end }}
+        <div class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-brand-300 hover:shadow-md">
+
+          {{/* Type / location / closed tags */}}
+          <div class="flex flex-wrap items-center gap-2">
+            {{ with .Params.employment_type }}
+              <span class="inline-flex items-center rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold text-brand-800">{{ . }}</span>
+            {{ end }}
+            {{ with .Params.location }}
+              <span class="inline-flex items-center gap-1 text-xs font-medium text-slate-500">
+                {{ partial "icon.html" (dict "name" "map-pin" "class" "size-3.5") }}{{ . }}
+              </span>
+            {{ end }}
+            {{ if $closed }}
+              <span class="inline-flex items-center rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold text-slate-600">Closed</span>
+            {{ end }}
+          </div>
+
+          <h2 class="mt-3 text-lg font-bold tracking-tight text-slate-900 group-hover:text-brand-700">{{ .Title }}</h2>
+
+          {{/* Application window */}}
+          {{ if or .Params.open_date .Params.close_date }}
+            <p class="mt-2 flex items-center gap-1.5 text-xs text-slate-500">
+              {{ partial "icon.html" (dict "name" "calendar" "class" "size-3.5") }}
+              {{ with .Params.open_date }}Opens {{ (time.AsTime .).Format "Jan 2, 2006" }}{{ end }}
+              {{ if and .Params.open_date .Params.close_date }} &ndash; {{ end }}
+              {{ with .Params.close_date }}Closes {{ (time.AsTime .).Format "Jan 2, 2006" }}{{ end }}
+            </p>
+          {{ end }}
+
+          {{ with .Params.summary }}
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600">{{ . }}</p>
+          {{ else }}
+            <div class="flex-1"></div>
+          {{ end }}
+
+          <a href="{{ .RelPermalink }}"
+            class="mt-5 inline-flex items-center justify-center gap-2 self-start rounded-full bg-brand-700 px-5 py-2.5 text-sm font-semibold text-white transition group-hover:bg-brand-600">
+            Learn more {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
+          </a>
+        </div>
+      {{ end }}
+    </div>
+  {{ else }}
+    <p class="max-w-3xl rounded-2xl border border-slate-200 bg-white p-6 text-slate-600 shadow-sm">
+      There are no open positions right now. Please check back soon, or reach out to
+      <a href="mailto:{{ hugo.Data.site.org.email }}" class="font-medium text-brand-700 hover:underline">{{ hugo.Data.site.org.email }}</a>
+      to introduce yourself.
+    </p>
+  {{ end }}
+</div>
+{{ end }}

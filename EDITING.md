@@ -53,6 +53,19 @@ That's it. Bookmark the page.
 - **Something looks really wrong?** Contact the site administrator — every
   change is saved in the site's history and can be rolled back.
 
+## Posting a job opening
+
+1. In the left sidebar, open **Employment** and click **Add entry**.
+2. Fill in the form — the job **title**, **type** (Full-time, Part-time, etc.),
+   **location**, an optional application **opens/closes** date, a one-line
+   **summary** for the card, the **application form** applicants download (PDF),
+   any **additional PDFs**, and the **job description** write-up.
+3. Click **Save**. The opening appears at `/employment/` in about two minutes.
+
+To take a job down, open it and **delete** it (or flip on "Hide from the site").
+Setting a close date does **not** remove the job — it just adds a "Closed" tag and
+the posting stays visible, since a position may still be accepting applications.
+
 ## Other things you can edit
 
 - **Scrapbook** — the photo wall at `/scrapbook/`. Add a photo (JPEG, 2 MB max)

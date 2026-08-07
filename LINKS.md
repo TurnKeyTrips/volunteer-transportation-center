@@ -3,15 +3,16 @@
 Auto-generated log of every link found in `content/**/*.md` (markdown links and raw `href`/`src` attributes).
 Regenerate with `./scripts/gen_links.sh` after content changes.
 
-**Total unique links: 46**
+**Total unique links: 50**
 
-## Internal links (relative) (8)
+## Internal links (relative) (9)
 
 Links within the site. Verify each resolves to a page in `content/` or a planned redirect.
 
 | Link | Found in |
 | --- | --- |
 | `/contact-us/` | `content/new-client-application.md` |
+| `/employment/` | `content/about-us.md` |
 | `/files/2015.05.22-Complaint-Procedures.pdf` | `content/corporate-compliance/civil-rights.md` |
 | `/files/2018.03.13-Complaint-of-Discrimination-Form.pdf` | `content/corporate-compliance/civil-rights.md` |
 | `/files/2020-Client-Application-for-Service.pdf` | `content/new-client-application.md` |
@@ -26,7 +27,7 @@ Absolute URLs pointing at the old production domain — these should be converte
 
 | Link | Found in |
 | --- | --- |
-| `http://www.volunteertransportationcenter.org` | `content/posts/2026-07-14-rockin-it-for-bill-to-benefit-volunteer-transportation-center.md`<br>`content/posts/shootin-trap-for-trips-2026.md` |
+| `http://www.volunteertransportationcenter.org` | `content/posts/2026-07-14-rockin-it-for-bill-to-benefit-volunteer-transportation-center.md`<br>`content/posts/2026-07-23-vtc-jefferson-lewis-golf-tournament-slated-for-sept-12.md`<br>`content/posts/shootin-trap-for-trips-2026.md` |
 
 ## Old WordPress media references (1)
 
@@ -36,7 +37,7 @@ References to `wp-content/uploads` files. The physical files live in `_old_site_
 | --- | --- |
 | `/wp/wp-content/uploads/2021/06/website-volunteer-page.png` | `content/drivers.md` |
 
-## External links (10)
+## External links (11)
 
 Third-party destinations. Spot-check these are still live before launch.
 
@@ -46,6 +47,7 @@ Third-party destinations. Spot-check these are still live before launch.
 | `http://www.FRAUDHL.com` | `content/corporate-compliance/_index.md` |
 | `http://www.spokerride.net` | `content/posts/2026-07-14-spokerride-to-celebrate-24th-year.md` |
 | `http://www.wppmemorialfund.org` | `content/posts/2026-07-14-rockin-it-for-bill-to-benefit-volunteer-transportation-center.md` |
+| `https://bit.ly/VTC-golf-tourney-Jeff-Lewis` | `content/posts/2026-07-23-vtc-jefferson-lewis-golf-tournament-slated-for-sept-12.md` |
 | `https://form.jotform.com/230543320621038` | `content/clients.md`<br>`content/new-client-application.md` |
 | `https://form.jotform.com/61038212879155` | `content/drivers.md`<br>`content/jefferson-county.md`<br>`content/lewis-county.md`<br>`content/st-lawrence-county.md`<br>`content/volunteer-transporation-getthere-scny.md` |
 | `https://form.jotform.us/61038212879155` | `content/1369-2.md` |
@@ -58,7 +60,7 @@ Third-party destinations. Spot-check these are still live before launch.
 | Link | Found in |
 | --- | --- |
 | `mailto:` | `content/jefferson-county.md`<br>`content/lewis-county.md`<br>`content/new-client-application.md`<br>`content/st-lawrence-county.md` |
-| `mailto:foundation@volunteertransportation.org` | `content/posts/shootin-trap-for-trips-2026.md` |
+| `mailto:foundation@volunteertransportation.org` | `content/posts/2026-07-23-vtc-jefferson-lewis-golf-tournament-slated-for-sept-12.md`<br>`content/posts/shootin-trap-for-trips-2026.md` |
 | `mailto:info@volunteertransportation.org` | `content/1369-2.md`<br>`content/clients.md`<br>`content/corporate-compliance/ada.md`<br>`content/corporate-compliance/civil-rights.md` |
 | `mailto:spokerride@gmail.com` | `content/posts/2026-07-14-spokerride-to-celebrate-24th-year.md` |
 | `mailto:wppmemorialfund@gmail.com` | `content/posts/2026-07-14-rockin-it-for-bill-to-benefit-volunteer-transportation-center.md` |

@@ -11,3 +11,5 @@ wordpress_id: 8
 The Volunteer Transportation Center, Inc. (VTC) is a 501(c)(3) non-profit organization. Thanks to the work of our certified Volunteer Drivers, Staff, Boards of Directors, and the generosity of our donors, the VTC provides essential rides to health, social, and other destinations for residents of Northern New York who have no other transportation alternatives.
 
 We envision a community where transportation is available to everyone.
+
+> **Interested in joining our team?** Visit our [employment page](/employment/) to see current open opportunities.

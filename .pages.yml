@@ -18,6 +18,11 @@ media:
     input: static/files/flyers
     output: /files/flyers
     extensions: [pdf]
+  - name: employment
+    label: Employment PDFs
+    input: static/files/employment
+    output: /files/employment
+    extensions: [pdf]
   - name: scrapbook
     label: Scrapbook photos
     input: static/images/scrapbook
@@ -121,3 +126,99 @@ content:
         label: Caption
         type: string
         required: true
+
+  - name: employment
+    label: Employment
+    description: Job openings shown at /employment/ and in the About menu. Delete a job (or tick "Hide") to take it down.
+    type: collection
+    path: content/employment
+    exclude: ["_index.md"]
+    view:
+      fields: [title, employment_type, close_date]
+      primary: title
+      sort: [date]
+    fields:
+      - name: title
+        label: Job title
+        type: string
+        required: true
+      - name: date
+        label: Posted date
+        description: Controls ordering — newest first.
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: employment_type
+        label: Employment type
+        description: 'e.g. Full-time, Part-time, Per-diem. Shown as a tag on the card.'
+        type: string
+        default: Full-time
+      - name: location
+        label: Location
+        description: 'e.g. Watertown, NY or St. Lawrence County.'
+        type: string
+      - name: open_date
+        label: Application opens
+        description: Optional. Leave empty if there's no set opening date.
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: close_date
+        label: Application closes
+        description: Optional. After this date the card shows a "Closed" tag but stays visible until you remove it.
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: summary
+        label: Summary
+        description: One sentence shown on the job card. Keep it short.
+        type: string
+      - name: apply_pdf
+        label: Application form (PDF)
+        description: The main application applicants download and fill out. This is the primary download button.
+        type: file
+        options:
+          media: employment
+          extensions: [pdf]
+      - name: pdfs
+        label: Additional PDFs
+        description: Optional. Any other PDFs to offer — benefits summary, job description, etc. Each becomes its own download button.
+        type: object
+        list:
+          collapsible:
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Button label
+            description: 'What the button says, e.g. "Benefits Overview" or "Full job description".'
+            type: string
+            required: true
+          - name: file
+            label: PDF file
+            type: file
+            required: true
+            options:
+              media: employment
+              extensions: [pdf]
+      - name: inquiry
+        label: Who to contact
+        description: Optional. Shown in the "Questions or ready to apply?" box. Any field left blank falls back to the main office email.
+        type: object
+        fields:
+          - name: name
+            label: Contact name
+            type: string
+          - name: email
+            label: Contact email
+            type: string
+          - name: phone
+            label: Contact phone
+            type: string
+      - name: draft
+        label: Hide from the site (draft)
+        type: boolean
+        default: false
+      - name: body
+        label: Job description
+        description: "Responsibilities, qualifications, and how to apply. Add a \"How to apply\" heading near the bottom."
+        type: rich-text

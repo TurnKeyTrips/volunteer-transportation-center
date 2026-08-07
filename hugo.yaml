@@ -68,6 +68,11 @@ menu:
       url: /faq/
       parent: about
       weight: 16
+    - identifier: employment
+      name: Employment
+      url: /employment/
+      parent: about
+      weight: 17
     - identifier: clients
       name: Get a Ride
       url: /clients/
