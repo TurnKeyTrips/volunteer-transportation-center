@@ -14,7 +14,7 @@ inquiry:
   phone: 315-788-0422
 draft: false
 ---
-The **Transportation Supervisor** coordinates and oversees the daily operations of our transportation network, ensuring the **safe, efficient, and timely delivery** of passengers. This role directly manages drivers, dispatch schedules, and fleet compliance while strictly enforcing local, state, and federal **Department of Transportation (DOT) regulations**. The ideal candidate combines hands-on logistics expertise with strong leadership skills to minimize operational costs, manage driver performance, and resolve transit disruptions in real time.
+The Transportation Supervisor coordinates and oversees the daily operations of our transportation network, ensuring the safe, efficient, and timely delivery of passengers. This role directly manages drivers, dispatch schedules, and fleet compliance while strictly enforcing local, state, and federal Department of Transportation (DOT) regulations. The ideal candidate combines hands-on logistics expertise with strong leadership skills to minimize operational costs, manage driver performance, and resolve transit disruptions in real time.
 
 **Core Responsibilities**  
 
