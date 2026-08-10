@@ -4,6 +4,7 @@ date: 2026-08-10
 employment_type: Full-time
 location: Watertown
 open_date: 2026-08-10
+close_date: 2026-08-31
 summary: "The Transportation Supervisor coordinates and oversees the daily
   operations of our transportation network, ensuring the safe, efficient, and
   timely delivery of passengers. "
