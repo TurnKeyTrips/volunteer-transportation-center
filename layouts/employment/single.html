@@ -37,9 +37,16 @@
     </div>
   {{ end }}
 
-  {{/* PDF downloads */}}
-  {{ if or .Params.apply_pdf .Params.pdfs }}
+  {{/* Apply + PDF downloads. The APPLY NOW form link is stock on every posting. */}}
+  {{ if or hugo.Data.site.links.employment_apply .Params.apply_pdf .Params.pdfs }}
     <div class="mt-6 flex flex-wrap items-center gap-3">
+      {{ with hugo.Data.site.links.employment_apply }}
+        <a href="{{ . }}" target="_blank" rel="noopener" data-confetti
+          class="inline-flex items-center gap-2 rounded-full bg-accent-500 px-6 py-2.5 text-sm font-semibold text-white hover:bg-accent-600">
+          Apply now
+          {{ partial "icon.html" (dict "name" "arrow-right" "class" "size-4") }}
+        </a>
+      {{ end }}
       {{ with .Params.apply_pdf }}
         <a href="{{ partial "url.html" . }}" download data-confetti
           class="inline-flex items-center gap-2 rounded-full bg-brand-700 px-6 py-2.5 text-sm font-semibold text-white hover:bg-brand-600">
