@@ -38,4 +38,7 @@ The Transportation Specialist is responsible for providing safe, reliable, and e
 - Proven ability to work independently with minimal supervision, while maintaining a strong willingness to help team members and accept support when needed.  
 - Ability to sit and drive for extended periods, and assist passengers in and out of vehicles as required.
 
+**Hours:** 37.5 hours per week    
+**Rate of Pay:** $17.00-$20.00/hour
+
 **APPLY ONLINE HERE:** [https://bit.ly/VTC-Employment-Application](https://bit.ly/VTC-Employment-Application](https://bit.ly/VTC-Employment-Application))
