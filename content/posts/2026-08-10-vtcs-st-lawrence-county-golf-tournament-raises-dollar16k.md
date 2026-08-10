@@ -1,7 +1,6 @@
 ---
 title: VTC’s St. Lawrence County Golf Tournament Raises $16K
 date: 2026-08-10
-event_date: 2026-07-10
 summary: The Volunteer Transportation Center Foundation’s Annual Volunteer
   Transportation Center St. Lawrence County Golf Tournament, which marked its
   11th year, has been deemed a huge success.
