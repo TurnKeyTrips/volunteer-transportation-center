@@ -31,4 +31,7 @@ The Finance Clerk’s primary responsibility is to assist in the Finance office 
 
 **Preferred Qualifications:**  A combination of education and work experience that demonstrates the ability to carry out job duties as described.  An Associates Degree and two (2) years of work experience is preferable.  Must have excellent oral and written communications and interpersonal skills.  Must be well-organized, able to work independently and able to meet deadlines.  Must be able to perform well under pressure.
 
+**Hours:** 37.5 hours per week  
+**Rate of Pay:** $17.00-$20.00/hour
+
 **APPLY ONLINE HERE: [https://bit.ly/VTC-Employment-Application](https://bit.ly/VTC-Employment-Application](https://bit.ly/VTC-Employment-Application))**
