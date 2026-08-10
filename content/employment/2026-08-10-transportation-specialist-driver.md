@@ -2,18 +2,12 @@
 title: Transportation Specialist (Driver)
 date: 2026-08-10
 employment_type: Full-time
-location: The Transportation Specialist is responsible for providing safe,
-  reliable, and efficient passenger transport to and from appointments,
-  primarily within the local city limits.
+location: Watertown
 open_date: 2026-08-10
 close_date: 2026-08-31
 summary: The Transportation Specialist is responsible for providing safe,
   reliable, and efficient passenger transport to and from appointments,
-  primarily within the local city limits. This role requires strict adherence to
-  all traffic laws, proactive route planning, and the diligent upkeep of Agency
-  vehicles. The ideal candidate is highly adaptable, possess excellent
-  communication and computer skills, and is dedicated to delivering exceptional
-  customer service while supporting the organization's core mission.
+  primarily within the local city limits.
 inquiry:
   name: Luanne Wilson
   email: hr@volunteertransportation.org
