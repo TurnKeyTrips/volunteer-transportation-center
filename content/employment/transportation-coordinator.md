@@ -5,7 +5,8 @@ employment_type: Full-time
 location: Watertown, NY
 open_date: 2026-08-01
 close_date: 2026-09-15
-summary: Coordinate rides between our volunteer drivers and the clients who depend on them.
+summary: Coordinate rides between our volunteer drivers and the clients who
+  depend on them.
 apply_pdf: /files/employment/example-application.pdf
 pdfs:
   - title: Benefits Overview
@@ -14,9 +15,8 @@ inquiry:
   name: VTC Human Resources
   email: info@volunteertransportation.org
   phone: (315) 788-0422
-draft: false
+draft: true
 ---
-
 The Volunteer Transportation Center is seeking a full-time **Transportation Coordinator** to join our Watertown team. This is a rewarding, people-focused role at the heart of our mission: matching volunteer drivers with the neighbors who count on them to reach medical, social, and essential appointments.
 
 ## What you'll do
