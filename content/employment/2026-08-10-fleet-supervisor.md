@@ -4,14 +4,10 @@ date: 2026-08-10
 employment_type: Full-time
 location: Watertown
 open_date: 2026-08-10
-summary: The Transportation Supervisor coordinates and oversees the daily
+close_date: 2026-08-10
+summary: "The Transportation Supervisor coordinates and oversees the daily
   operations of our transportation network, ensuring the safe, efficient, and
-  timely delivery of passengers. This role directly manages drivers, dispatch
-  schedules, and fleet compliance while strictly enforcing local, state, and
-  federal Department of Transportation (DOT) regulations. The ideal candidate
-  combines hands-on logistics expertise with strong leadership skills to
-  minimize operational costs, manage driver performance, and resolve transit
-  disruptions in real time.
+  timely delivery of passengers. "
 inquiry:
   name: Luanne Wilson
   email: hr@volunteertransportation.org
@@ -21,6 +17,7 @@ draft: false
 The **Transportation Supervisor** coordinates and oversees the daily operations of our transportation network, ensuring the **safe, efficient, and timely delivery** of passengers. This role directly manages drivers, dispatch schedules, and fleet compliance while strictly enforcing local, state, and federal **Department of Transportation (DOT) regulations**. The ideal candidate combines hands-on logistics expertise with strong leadership skills to minimize operational costs, manage driver performance, and resolve transit disruptions in real time.
 
 **Core Responsibilities**  
+
 - Oversee the daily routing, driver assignments, and dispatch activities to guarantee optimal efficiency.  
 - Utilize Agency software for GPS tracking to monitor driver locations and ensure on-time performance.  
 - Handle real-time transit challenges, such as mechanical breakdowns, weather delays, and route adjustments.  
@@ -35,6 +32,7 @@ The **Transportation Supervisor** coordinates and oversees the daily operations 
 - Other duties as assigned.
 
 **Required Skills & Qualifications**  
+
 - High School Diploma or GED required; Supply Chain Management, or Business is highly preferred.  
 - Minimum of 3–5 years of experience in transportation or logistics operations, with at least 1–2 years in a supervisory role.  
 - A valid, clear Driver’s License is required.  
