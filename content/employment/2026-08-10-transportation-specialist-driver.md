@@ -2,7 +2,7 @@
 title: Transportation Specialist (Driver)
 date: 2026-08-10
 employment_type: Full-time
-location: Watertown
+location: Watertown, NY
 open_date: 2026-08-10
 close_date: 2026-08-31
 summary: The Transportation Specialist is responsible for providing safe,
