@@ -2,6 +2,7 @@
 title: Finance Clerk
 date: 2026-08-10
 employment_type: Full-time
+location: Watertown, NY
 open_date: 2026-08-10
 close_date: 2026-08-31
 summary: The Finance Clerk’s primary responsibility is to assist in the Finance
