@@ -39,4 +39,7 @@ The Transportation Supervisor coordinates and oversees the daily operations of o
 - Exceptional problem-solving, active listening, and verbal communication skills under high-pressure scenarios.  
 - Occasional lifting up to 25-50 lbs, standing/sitting for extended periods, and assisting with vehicle inspections.
 
+**Hours:** 37.5 hours per week    
+**Rate of Pay:** $23.00-$26.00/hour
+
 **APPLY ONLINE HERE:** [https://bit.ly/VTC-Employment-Application](https://bit.ly/VTC-Employment-Application)
