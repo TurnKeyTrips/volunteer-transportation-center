@@ -157,15 +157,9 @@ content:
         label: Location
         description: 'e.g. Watertown, NY or St. Lawrence County.'
         type: string
-      - name: open_date
-        label: Application opens
-        description: Optional. Leave empty if there's no set opening date.
-        type: date
-        options:
-          format: yyyy-MM-dd
       - name: close_date
         label: Application closes
-        description: Optional. After this date the card shows a "Closed" tag but stays visible until you remove it.
+        description: Optional. Leave empty and the posting shows "Open until filled". If you set a date, the card shows a "Closed" tag after it passes but stays visible until you remove it.
         type: date
         options:
           format: yyyy-MM-dd

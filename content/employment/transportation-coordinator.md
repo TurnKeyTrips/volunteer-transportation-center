@@ -3,7 +3,6 @@ title: Transportation Coordinator
 date: 2026-08-07
 employment_type: Full-time
 location: Watertown, NY
-open_date: 2026-08-01
 close_date: 2026-09-15
 summary: Coordinate rides between our volunteer drivers and the clients who
   depend on them.
