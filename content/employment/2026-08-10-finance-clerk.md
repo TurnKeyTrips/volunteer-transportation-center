@@ -34,4 +34,4 @@ The Finance Clerk’s primary responsibility is to assist in the Finance office 
 **Hours:** 37.5 hours per week  
 **Rate of Pay:** $17.00-$20.00/hour
 
-**APPLY ONLINE HERE: [https://bit.ly/VTC-Employment-Application](https://bit.ly/VTC-Employment-Application](https://bit.ly/VTC-Employment-Application))**
+**APPLY ONLINE HERE: [https://bit.ly/VTC-Employment-Application](https://bit.ly/VTC-Employment-Application](https://bit.ly/VTC-Employment-Application)**
