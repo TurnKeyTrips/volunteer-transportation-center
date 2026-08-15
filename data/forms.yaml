@@ -59,6 +59,9 @@
     - name: Accident/Incident Report (online)
       url: https://form.jotform.com/241654220139046
       type: online
+    - name: Vehicle Inspection Form (online)
+      url: https://form.jotform.com/230783958857072
+      type: online
     - name: Background Check Form (printable)
       url: /files/Unique-Background-Check-Authorization.pdf
       type: pdf
