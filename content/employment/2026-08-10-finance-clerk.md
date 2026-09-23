@@ -10,7 +10,7 @@ inquiry:
   name: Luanne Wilson
   email: hr@volunteertransportation.org
   phone: 315-788-0422
-draft: false
+draft: true
 ---
 The Finance Clerk’s primary responsibility is to assist in the Finance office through a variety of duties and to provide back-up coverage as needed.
 
