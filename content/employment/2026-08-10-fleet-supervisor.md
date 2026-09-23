@@ -11,7 +11,7 @@ inquiry:
   name: Luanne Wilson
   email: hr@volunteertransportation.org
   phone: 315-788-0422
-draft: false
+draft: true
 ---
 The Transportation Supervisor coordinates and oversees the daily operations of our transportation network, ensuring the safe, efficient, and timely delivery of passengers. This role directly manages drivers, dispatch schedules, and fleet compliance while strictly enforcing local, state, and federal Department of Transportation (DOT) regulations. The ideal candidate combines hands-on logistics expertise with strong leadership skills to minimize operational costs, manage driver performance, and resolve transit disruptions in real time.
 
@@ -38,7 +38,7 @@ The Transportation Supervisor coordinates and oversees the daily operations of o
 - Exceptional problem-solving, active listening, and verbal communication skills under high-pressure scenarios.  
 - Occasional lifting up to 25-50 lbs, standing/sitting for extended periods, and assisting with vehicle inspections.
 
-**Hours:** 37.5 hours per week    
+**Hours:** 37.5 hours per week  
 **Rate of Pay:** $23.00-$26.00/hour
 
 **APPLY ONLINE HERE:** [https://bit.ly/VTC-Employment-Application](https://bit.ly/VTC-Employment-Application)
