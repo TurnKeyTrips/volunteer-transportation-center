@@ -15,6 +15,12 @@ function normalize(item) {
   const end = item.end
     ? new Date(item.end.date ? item.end.date + 'T00:00:00' : item.end.dateTime)
     : start;
+  // Last calendar day the event visually covers. Google all-day events use an
+  // EXCLUSIVE end.date (midnight of the day AFTER the final day), so step back a
+  // day; then clamp so a missing/degenerate end never lands before the start.
+  const lastDay = new Date(end);
+  if (allDay && item.end && item.end.date) lastDay.setDate(lastDay.getDate() - 1);
+  if (lastDay < start) lastDay.setTime(start.getTime());
   return {
     id: item.id,
     title: item.summary || '(untitled event)',
@@ -24,7 +30,10 @@ function normalize(item) {
     allDay,
     start,
     end,
-    dayKey: localDayKey(start),
+    dayKey: localDayKey(start),   // start day — groups the mobile agenda
+    startKey: localDayKey(start), // first/last covered days. Keys are YYYY-MM-DD,
+    endKey: localDayKey(lastDay), // so plain string compare == chronological order.
+    multiDay: localDayKey(start) !== localDayKey(lastDay),
   };
 }
 
@@ -40,7 +49,9 @@ async function fetchEvents(timeMin, timeMax) {
     const data = await res.json();
     return (data.items || [])
       .map(normalize)
-      .filter((e) => e.start >= timeMin && e.start < timeMax)
+      // Keep any event that OVERLAPS the window, not just those starting in it,
+      // so a multi-day event beginning in a prior month still shows here.
+      .filter((e) => e.start < timeMax && e.end > timeMin)
       .sort((a, b) => a.start - b.start);
   }
   const url = new URL('https://www.googleapis.com/calendar/v3/calendars/' + encodeURIComponent(cfg().calendarId) + '/events');
@@ -130,7 +141,9 @@ export function registerCalendarComponents(Alpine) {
           num: date.getDate(),
           inMonth: date.getMonth() === this.month,
           isToday: key === todayKey,
-          events: this.events.filter((e) => e.dayKey === key),
+          // A day shows an event if it falls anywhere in the event's covered
+          // range (start..last day inclusive), so multi-day events span cells.
+          events: this.events.filter((e) => e.startKey <= key && key <= e.endKey),
         };
       });
     },
