@@ -6,7 +6,7 @@ summary: The Carthage Rod and Gun Club hosted the 14th Annual Shootin’ Trap fo
   Trips fundraiser for the Volunteer Transportation Center Foundation on July
   18.
 photos:
-  - /images/posts/Shootin' Trap for Trips - Top Gun.jpg
+  - /images/posts/Shootin Trap for Trips - Top Gun.jpg
 google_photos_album: https://photos.app.goo.gl/HPonqzTxksJ4TzFP6
 carousel: true
 draft: false
