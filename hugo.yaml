@@ -105,6 +105,16 @@ menu:
       name: Events
       url: /events/
       weight: 40
+    - identifier: events-calendar
+      name: Events Calendar
+      url: /events/
+      parent: events
+      weight: 41
+    - identifier: chili-cook-off
+      name: Chili Cook-Off
+      url: /chili-cook-off/
+      parent: events
+      weight: 42
     - identifier: posts
       name: Posts
       url: /posts/

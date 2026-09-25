@@ -108,6 +108,29 @@ content:
         description: "What happened? Who came? Any thank-yous? Results or totals?"
         type: rich-text
 
+  - name: chili-cook-off
+    label: Chili Cook-Off page
+    description: The Chili Cook-Off landing page shown at /chili-cook-off/ (linked under Events).
+    type: file
+    path: content/chili-cook-off.md
+    fields:
+      - name: title
+        label: Page title
+        type: string
+        required: true
+      - name: subtitle
+        label: Subtitle
+        description: Optional. Shown in lighter text under the title.
+        type: string
+      - name: draft
+        label: Hide from the site (draft)
+        type: boolean
+        default: false
+      - name: body
+        label: Page content
+        description: "Everything about the Chili Cook-Off: date, time, location, how to enter, and cost. Replace the placeholder text when the details are ready."
+        type: rich-text
+
   - name: scrapbook
     label: Scrapbook
     description: Photos on the Scrapbook page, in this order.
