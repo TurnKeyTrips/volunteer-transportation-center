@@ -38,20 +38,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Belt-and-suspenders behind the Pages CMS config: editors commit straight
-      # to main, so a bad upload (non-JPEG or oversized photo) fails the deploy
-      # here instead of publishing.
-      - name: Check editor-uploaded media
-        run: ./scripts/check_media.sh
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
 
-      - name: Install Node dependencies (Tailwind CSS, Alpine.js)
+      - name: Install Node dependencies (Tailwind CSS, Alpine.js, sharp)
         run: npm ci
+
+      # Pages CMS validates file extension but NOT size, so an editor can commit a
+      # full-resolution phone photo straight to main. Shrink any oversized JPEG in
+      # the photo dirs to fit under the cap BEFORE the media check and the build,
+      # so the deploy succeeds instead of failing. Fixes only the CI checkout (no
+      # commit back); Hugo then generates its display sizes from the smaller file.
+      - name: Auto-resize oversized editor photos
+        run: node scripts/resize_media.mjs
+
+      # Belt-and-suspenders behind the Pages CMS config and the resize step above:
+      # enforce JPEG-only + 2 MB for photos and the PDF rules for flyers. After the
+      # resize this passes on size, and it still catches non-JPEG/mislabeled files.
+      - name: Check editor-uploaded media
+        run: ./scripts/check_media.sh
 
       - name: Setup Pages
         id: pages
