@@ -32,6 +32,13 @@ module:
       target: assets/notwatching/hugo_stats.json
       disableWatch: true
 
+# Whitelist the tailwindcss binary for css.TailwindCSS. Hugo 0.166 dropped it
+# from the default security.exec.allow list, which breaks the CSS build; because
+# setting `allow` replaces the default list, the standard entries are repeated.
+security:
+  exec:
+    allow: ['^(dart-)?sass$', '^go$', '^git$', '^node$', '^npx$', '^postcss$', '^tailwindcss$']
+
 menu:
   main:
     - identifier: about
