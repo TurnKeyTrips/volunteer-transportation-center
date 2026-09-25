@@ -19,25 +19,25 @@ draft: false
 
 Top Gun of this year’s 50 Bird Shoot was Ethan Clemons of the Lowville Fish & Game Club with a perfect score of (50). Other winners of the shoot were:
 
-++**CLASS		WINNER**++						
+++**CLASS/WINNER**++						
 
-Junior:		Mason Grandjean (46) - Sackets Harbor Sportsman’s Club
+Junior: Mason Grandjean (46) - Sackets Harbor Sportsman’s Club
 
-Veteran:		Bob Green (47) - Sackets Harbor Sportsman’s Club
+Veteran: Bob Green (47) - Sackets Harbor Sportsman’s Club
 
-Senior Veteran:		Don Bonham (48) - Sno Fun Hunting Preserve
+Senior Veteran: Don Bonham (48) - Sno Fun Hunting Preserve
 
-Ladies:		Stacie Ramos (44) - Glen-Greig Fish and Game Club
+Ladies: Stacie Ramos (44) - Glen-Greig Fish and Game Club
 
-D:		Laurel Sprague (43) - Adams Center Sportsman’s Club
+D: Laurel Sprague (43) - Adams Center Sportsman’s Club
 
-C:		Zach Jackson (47) - Carthage Rod & Gun Club
+C: Zach Jackson (47) - Carthage Rod & Gun Club
 
-B:		Nick Larose (48) - Sackets Harbor Sportsman’s Club
+B: Nick Larose (48) - Sackets Harbor Sportsman’s Club
 
-A:		Duane Hoch (49) - Harrisville Rod & Gun Club
+A: Duane Hoch (49) - Harrisville Rod & Gun Club
 
-AA:		Justin Bach (50) - Carthage Rod & Gun Club
+AA: Justin Bach (50) - Carthage Rod & Gun Club
 
 Mr. Papineau credited the Carthage Rod and Gun Club with their hard work behind the scenes to get this year’s event off the ground, including club president Dennis Jackson, trap team captain Alan Arndt, and kitchen manager Valda Arndt. He further credited the support of several volunteers who worked the event, including Billie Brown, Dana Brown, Jayden Brown, Brandon Brown, Jennifer McFall, Tim McFall, Penny Covey, David Covey, Sam Purington, and Julia Purington.
 
