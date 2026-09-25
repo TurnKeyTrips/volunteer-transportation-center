@@ -5,11 +5,13 @@ event_date: 2026-07-18
 summary: The Carthage Rod and Gun Club hosted the 14th Annual Shootin’ Trap for
   Trips fundraiser for the Volunteer Transportation Center Foundation on July
   18.
+photos:
+  - /images/posts/Shootin Trap for Trips - Top Gun.jpg
 google_photos_album: https://photos.app.goo.gl/HPonqzTxksJ4TzFP6
 carousel: true
 draft: false
 ---
-*(Editor's Note: Check out photos from this year's event in the Google Photos album link at the bottom of this page).*
+*(Editor's Note: Check out photos from this year's event in the Google Photos album link at the bottom of this page).* 
 
 (CARTHAGE, N.Y.) – The Carthage Rod and Gun Club hosted the 14th Annual Shootin’ Trap for Trips fundraiser for the Volunteer Transportation Center Foundation on July 18. This year’s 50 Bird Shoot saw 57 participants and raised $3,700 to benefit transportation of Volunteer Transportation Center clients in Jefferson and Lewis Counties. The amount raised was significantly less than last year and attendance was down said VTC Foundation Director and Director of Communications Jeremiah S. Papineau.
 
