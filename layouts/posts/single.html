@@ -9,6 +9,24 @@
     {{ with .Params.event_date }}{{ partial "event-pill.html" . }}{{ end }}
   </div>
 
+  {{/* Prominent photo-album callout, near the top so it stands out */}}
+  {{ with .Params.google_photos_album }}
+    <a href="{{ . }}" target="_blank" rel="noopener"
+      class="group mt-6 flex items-center gap-4 rounded-2xl border border-brand-200 bg-brand-50 p-4 transition hover:border-brand-300 hover:bg-brand-100 sm:p-5">
+      <span class="flex size-12 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white shadow-sm">
+        {{ partial "icon.html" (dict "name" "photo" "class" "size-6") }}
+      </span>
+      <span class="min-w-0 flex-1">
+        <span class="block font-bold text-brand-900">See more photos from this event</span>
+        <span class="block text-sm text-brand-700">View the full album on Google Photos</span>
+      </span>
+      <span class="inline-flex shrink-0 items-center gap-2 rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition group-hover:bg-brand-700">
+        Open album
+        {{ partial "icon.html" (dict "name" "external" "class" "size-4") }}
+      </span>
+    </a>
+  {{ end }}
+
   {{/* PDF downloads, right under the dates */}}
   {{ if or .Params.attachments .Params.flyer }}
     <div class="mt-5 flex flex-wrap items-center gap-3">
