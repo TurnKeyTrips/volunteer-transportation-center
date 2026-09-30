@@ -1,6 +1,6 @@
 ---
 title: VTC Foundation Participating in ‘Cartober’
-date: 2026-09-30
+date: 2026-10-01
 event_date: 2026-10-01
 summary: The Volunteer Transportation Center Foundation is once again
   participating in “Cartober,” a national campaign that raises awareness about
