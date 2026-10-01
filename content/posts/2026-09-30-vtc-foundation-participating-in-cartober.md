@@ -11,7 +11,7 @@ photos:
 carousel: true
 draft: false
 ---
-(WATERTOWN, N.Y.) — The Volunteer Transportation Center Foundation is once again participating in “Cartober,” a national campaign that raises awareness about making vehicle donations through Charitable Adult Rides and Services (CARS) during the month of October.
+(WATERTOWN, N.Y.) — The Volunteer Transportation Center Foundation is once again participating in “Cartober,” a national campaign that raises awareness about making vehicle donations through Charitable Adult Rides and Services (CARS) during the month of October. 
 
 The “Cartober” campaign was developed by CARS, a 501(C)(3) nonprofit vehicle donation program, which the Volunteer Transportation Center Foundation connected with last year as a way to raise money in support of the Volunteer Transportation Center.
 
