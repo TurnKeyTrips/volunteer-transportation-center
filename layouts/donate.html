@@ -46,6 +46,39 @@
     </div>
   </div>
 
+  {{/* Donating your vehicle — CARS partnership. Prominent card between the
+       giving options and the prose; facts come from site.yaml. */}}
+  {{ with $site.vehicle_donation }}
+  <div class="mt-8 rounded-2xl border border-brand-200 bg-brand-50 p-8 shadow-sm">
+    <div class="flex items-start gap-4">
+      <span class="hidden size-12 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white sm:flex">
+        {{ partial "icon.html" (dict "name" "truck" "class" "size-6") }}
+      </span>
+      <div class="min-w-0">
+        <h2 class="text-xl font-bold text-slate-900">Donating Your Vehicle</h2>
+        <p class="mt-3 text-sm leading-relaxed text-slate-700">
+          Have a vehicle you no longer need? Turn it into support for the {{ $site.org.name }}! Through our partnership with Charitable Adult Rides and Services (CARS), you can donate a working or non-working vehicle from anywhere in the United States. The process is simple, pickup is free, and proceeds from your donation help support VTC's mission of providing transportation to those in need throughout our community.
+        </p>
+        <div class="mt-5">
+          <a href="{{ .url }}" target="_blank" rel="noopener" data-confetti
+            class="inline-flex items-center gap-2 rounded-full bg-accent-500 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-accent-600">
+            Learn more or donate your vehicle
+            {{ partial "icon.html" (dict "name" "external" "class" "size-4") }}
+          </a>
+        </div>
+        <p class="mt-5 text-sm leading-relaxed text-slate-600">
+          Want more information? Contact VTC Foundation Director {{ $site.donate_contact.name }} at
+          <a href="tel:{{ $site.donate_contact.phone | replaceRE `[^0-9]` `` }}" class="font-medium text-brand-700 hover:text-brand-500">{{ $site.donate_contact.phone }}</a>
+          or email
+          <a href="mailto:{{ .contact_email }}" class="font-medium text-brand-700 hover:text-brand-500">{{ .contact_email }}</a>.
+          Those wishing to donate a vehicle but who would rather begin the donation process by phone may call Mr. Papineau or contact CARS at
+          <a href="tel:{{ .cars_phone | replaceRE `[^0-9]` `` }}" class="font-medium text-brand-700 hover:text-brand-500">{{ .cars_phone_label }}</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+
   {{/* Why it matters — page prose */}}
   <div class="prose prose-slate mt-12 max-w-none prose-headings:tracking-tight prose-a:font-medium prose-a:text-brand-700 hover:prose-a:text-brand-500">
     {{ .Content }}
