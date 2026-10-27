@@ -3,6 +3,10 @@ title: Donate
 date: '2017-04-04T20:35:41'
 draft: false
 layout: donate
+# Redirect the dead WordPress-era URL (printed on leftover donation slips / QR
+# codes) to this page. Hugo emits a redirect stub at the alias path.
+aliases:
+  - /2023/10/02/vtc-foundation-now-accepting-donations-of-vehicles-through-cars/
 old_url: https://volunteertransportationcenter.org/donate/
 old_path: /donate/
 wordpress_id: 14
